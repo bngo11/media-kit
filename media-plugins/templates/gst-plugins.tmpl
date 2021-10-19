@@ -1,0 +1,18 @@
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=7
+
+DESCRIPTION="{{description}}"
+KEYWORDS="*"
+SLOT="1.0"
+
+{%- if iuse is defined %}
+IUSE="{{iuse}}"
+{%- else %}
+IUSE=""
+{%- endif %}
+
+RDEPEND="
+{{rdepend}}"
+
+DEPEND="${RDEPEND}"

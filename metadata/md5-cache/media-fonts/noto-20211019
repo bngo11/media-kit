@@ -1,0 +1,14 @@
+DEFINED_PHASES=install postinst postrm setup
+DEPEND=X? ( >=x11-apps/mkfontscale-1.2.0 media-fonts/encodings )
+DESCRIPTION=Google's font family that aims to support all the world's languages
+EAPI=7
+HOMEPAGE=https://www.google.com/get/noto/ https://github.com/googlefonts/noto-fonts
+IUSE=cjk +extra X
+KEYWORDS=*
+LICENSE=OFL-1.1
+RDEPEND=cjk? ( media-fonts/noto-cjk )
+RESTRICT=binchecks strip
+SLOT=0
+SRC_URI=https://github.com/googlei18n/noto-fonts/archive/66631608b6a418ab9f0cb2387c01741aab368be6.tar.gz -> noto-fonts-20211019-66631608b6a418ab9f0cb2387c01741aab368be6.tar.gz
+_eclasses_=font	dd073b36fe3fd8b868c23bc23209db45
+_md5_=5c80a4ba3026b807f9e39f806747142b
