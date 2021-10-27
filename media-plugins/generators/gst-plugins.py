@@ -16,7 +16,7 @@ async def generate(hub, **pkginfo):
 	else:
 		name = pkginfo["name"]
 
-	json_data = await hub.pkgtools.fetch.get_page(f"https://gitlab.freedesktop.org/api/v4/projects/{gitlab_id}/repository/tags")
+	json_data = await hub.pkgtools.fetch.get_page(f"https://gitlab.freedesktop.org/api/v4/projects/{gitlab_id}/repository/tags?per_page=100")
 	json_list = json.loads(json_data)
 	version = None
 
@@ -26,11 +26,14 @@ async def generate(hub, **pkginfo):
 		for release in json_list:
 			try:
 				version = release["name"]
+				list(map(int, version.split(".")))
 				if version.split('.')[0:-1] == pkginfo["base_version"].split('.'):
 					break
 
-			except (KeyError, IndexError):
+			except (KeyError, IndexError, ValueError):
 				continue
+		else:
+			version = None
 
 	if version:
 		if "template" not in pkginfo:
