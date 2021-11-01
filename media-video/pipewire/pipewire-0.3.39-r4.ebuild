@@ -37,7 +37,6 @@ BDEPEND="
 	)
 "
 RDEPEND="
-	acct-group/audio
 	media-libs/alsa-lib
 	sys-apps/dbus
 	sys-libs/readline:=
