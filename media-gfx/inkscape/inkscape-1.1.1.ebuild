@@ -2,15 +2,14 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_7 )
+PYTHON_COMPAT=( python3+ )
 PYTHON_REQ_USE="xml"
 
 inherit cmake flag-o-matic xdg toolchain-funcs python-single-r1
 
 DESCRIPTION="SVG based generic vector-drawing program"
 HOMEPAGE="https://inkscape.org/"
-SRC_URI="https://inkscape.org/gallery/item/23820/${P}.tar.xz"
-
+SRC_URI="https://media.inkscape.org/dl/resources/file/inkscape-1.1.1.tar.xz -> inkscape-1.1.1.tar.xz"
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="*"
@@ -93,11 +92,7 @@ DEPEND="${COMMON_DEPEND}
 
 RESTRICT="test"
 
-S="${WORKDIR}"/${P}_2021-01-15_e86c870879
-
-PATCHES=(
-	"${FILESDIR}"/glib-2.67.3.patch
-)
+S="${WORKDIR}"/inkscape-1.1.1_2021-09-20_3bf5ae0d25
 
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != binary ]] && use openmp; then
@@ -150,7 +145,4 @@ src_install() {
 	if [[ -e "${extdir}" ]] && [[ -n $(find "${extdir}" -mindepth 1) ]]; then
 		python_optimize "${ED}"/usr/share/${PN}/extensions
 	fi
-
-	# Empty directory causes sandbox issues, see bug #761915
-	rm -r "${ED}/usr/share/inkscape/fonts" || die "Failed to remove fonts directory."
 }
