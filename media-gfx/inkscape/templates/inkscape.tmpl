@@ -9,7 +9,7 @@ inherit cmake flag-o-matic xdg toolchain-funcs python-single-r1
 
 DESCRIPTION="SVG based generic vector-drawing program"
 HOMEPAGE="https://inkscape.org/"
-SRC_URI="https://media.inkscape.org/dl/resources/file/inkscape-1.1.tar.xz"
+SRC_URI="{{artifacts[0].src_uri}}"
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="*"
@@ -17,10 +17,6 @@ IUSE="cdr dbus dia exif graphicsmagick imagemagick inkjar jemalloc jpeg lcms
 openmp postscript spell static-libs svg2 visio wpg"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
-
-PATCHES=(
-	# "${FILESDIR}/missing_atomic_include.patch"
-)
 
 BDEPEND="
 	dev-util/glib-utils
@@ -96,7 +92,7 @@ DEPEND="${COMMON_DEPEND}
 
 RESTRICT="test"
 
-S="${WORKDIR}"/inkscape-1.1_2021-05-24_c4e8f9ed74
+S="${WORKDIR}"/{{srcdir}}
 
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != binary ]] && use openmp; then
