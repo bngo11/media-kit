@@ -103,6 +103,7 @@ pkg_pretend() {
 src_prepare() {
 	cmake_src_prepare
 	sed -i "/install.*COPYING/d" CMakeScripts/ConfigCPack.cmake || die
+	sed -i -e "s/font->getTag()->getCString()/font->getTag().getCString()/" src/extension/internal/pdfinput/pdf-parser.cpp || die
 }
 
 src_configure() {
