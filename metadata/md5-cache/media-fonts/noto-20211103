@@ -11,4 +11,4 @@ RESTRICT=binchecks strip
 SLOT=0
 SRC_URI=https://github.com/googlei18n/noto-fonts/archive/ea061156341f8df1108c5acf7c6bc0538017d8b1.tar.gz -> noto-fonts-20211103-ea061156341f8df1108c5acf7c6bc0538017d8b1.tar.gz
 _eclasses_=font	dd073b36fe3fd8b868c23bc23209db45
-_md5_=98bfcd822b6575b393c4968037043d33
+_md5_=eacba63c7c1cb99726c89fd7eb7e33c7

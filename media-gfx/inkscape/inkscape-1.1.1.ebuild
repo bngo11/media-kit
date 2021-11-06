@@ -90,6 +90,10 @@ DEPEND="${COMMON_DEPEND}
 	>=dev-libs/boost-1.65
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-poppler-fix.patch
+)
+
 RESTRICT="test"
 
 S="${WORKDIR}"/inkscape-1.1.1_2021-09-20_3bf5ae0d25
@@ -103,7 +107,6 @@ pkg_pretend() {
 src_prepare() {
 	cmake_src_prepare
 	sed -i "/install.*COPYING/d" CMakeScripts/ConfigCPack.cmake || die
-	sed -i -e "s/font->getTag()->getCString()/font->getTag().getCString()/" src/extension/internal/pdfinput/pdf-parser.cpp || die
 }
 
 src_configure() {
