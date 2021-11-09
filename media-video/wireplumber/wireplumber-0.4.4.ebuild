@@ -31,7 +31,7 @@ BDEPEND="
 "
 
 DEPEND="
-	${LUA_DEPS}
+	>=dev-lua/lua-5.3
 	>=dev-libs/glib-2.62
 	>=media-video/pipewire-0.3.37
 	virtual/libc
