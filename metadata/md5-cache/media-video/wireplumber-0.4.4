@@ -1,16 +1,16 @@
 BDEPEND=dev-libs/glib dev-util/gdbus-codegen dev-util/glib-utils >=dev-util/meson-0.48.2 >=dev-util/ninja-1.7.2 virtual/pkgconfig
 DEFINED_PHASES=compile configure install postinst setup test
-DEPEND=lua_single_target_lua5-3? ( dev-lang/lua:5.3 ) lua_single_target_lua5-4? ( dev-lang/lua:5.4 ) >=dev-libs/glib-2.62 >=media-video/pipewire-0.3.37 virtual/libc elogind? ( sys-auth/elogind ) systemd? ( sys-apps/systemd )
+DEPEND=>=dev-lua/lua-5.3 >=dev-libs/glib-2.62 >=media-video/pipewire-0.3.37 virtual/libc elogind? ( sys-auth/elogind ) systemd? ( sys-apps/systemd )
 DESCRIPTION=Replacement for pipewire-media-session
 EAPI=7
 HOMEPAGE=https://gitlab.freedesktop.org/pipewire/wireplumber
 IUSE=elogind systemd test lua_single_target_lua5-3 lua_single_target_lua5-4
 KEYWORDS=*
 LICENSE=MIT
-RDEPEND=lua_single_target_lua5-3? ( dev-lang/lua:5.3 ) lua_single_target_lua5-4? ( dev-lang/lua:5.4 ) >=dev-libs/glib-2.62 >=media-video/pipewire-0.3.37 virtual/libc elogind? ( sys-auth/elogind ) systemd? ( sys-apps/systemd )
+RDEPEND=>=dev-lua/lua-5.3 >=dev-libs/glib-2.62 >=media-video/pipewire-0.3.37 virtual/libc elogind? ( sys-auth/elogind ) systemd? ( sys-apps/systemd )
 REQUIRED_USE=^^ ( lua_single_target_lua5-3 lua_single_target_lua5-4 ) ?? ( elogind systemd )
 RESTRICT=!test? ( test )
 SLOT=0
 SRC_URI=https://gitlab.freedesktop.org/pipewire/wireplumber/-/archive/0.4.4/wireplumber-0.4.4.tar.gz
 _eclasses_=lua-single	d51249bd993b9dda6dde2d2276b8dc90	lua-utils	661d14f97b7d04273143565853fdfbfe	meson	2fbe03e3b496f82fd941bcdb9d351c91	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	132cbb376048d079b5a012f5467c4e7f	python-utils-r1	263e4bbfa6a84be6dc6272a6702aedca	systemd	71fd8d2065d102753fb9e4d20eaf3e9f	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
-_md5_=799273d42ea79d3263e02a6bdeafe7a8
+_md5_=bfcd40c592bb90335084903fe311a4d6
