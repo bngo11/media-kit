@@ -9,10 +9,10 @@ adler32-1.2.0
 aho-corasick-0.7.18
 ansi_term-0.11.0
 ansi_term-0.12.1
-anyhow-1.0.45
+anyhow-1.0.49
 aom-sys-0.3.0
 arbitrary-0.4.7
-arg_enum_proc_macro-0.3.1
+arg_enum_proc_macro-0.3.2
 arrayvec-0.7.2
 assert_cmd-2.0.2
 atty-0.2.14
@@ -27,7 +27,7 @@ bumpalo-3.8.0
 bytemuck-1.7.2
 byteorder-1.4.3
 cast-0.2.7
-cc-1.0.71
+cc-1.0.72
 cexpr-0.4.0
 cfg-expr-0.7.4
 cfg-if-1.0.0
@@ -37,7 +37,7 @@ clap-2.33.3
 cmake-0.1.46
 color_quant-1.1.0
 console-0.14.1
-crc32fast-1.2.1
+crc32fast-1.2.2
 criterion-0.3.5
 criterion-plot-0.4.4
 crossbeam-0.8.1
@@ -75,9 +75,9 @@ js-sys-0.3.55
 lab-0.11.0
 lazy_static-1.4.0
 lazycell-1.3.0
-libc-0.2.107
+libc-0.2.108
 libfuzzer-sys-0.3.5
-libloading-0.7.1
+libloading-0.7.2
 log-0.4.14
 memchr-2.4.1
 memoffset-0.6.4
@@ -103,7 +103,7 @@ plotters-backend-0.3.2
 plotters-svg-0.3.1
 png-0.16.8
 ppv-lite86-0.2.15
-predicates-2.0.3
+predicates-2.1.0
 predicates-core-1.0.2
 predicates-tree-1.0.4
 pretty_assertions-0.7.2
@@ -133,7 +133,7 @@ semver-1.0.4
 serde-1.0.130
 serde_cbor-0.11.2
 serde_derive-1.0.130
-serde_json-1.0.69
+serde_json-1.0.72
 shlex-1.1.0
 signal-hook-0.3.10
 signal-hook-registry-1.4.0
@@ -142,7 +142,7 @@ smallvec-1.7.0
 strsim-0.8.0
 strum-0.21.0
 strum_macros-0.21.1
-syn-1.0.81
+syn-1.0.82
 system-deps-3.1.2
 termcolor-1.1.2
 terminal_size-0.1.17
