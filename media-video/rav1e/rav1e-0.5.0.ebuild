@@ -7,9 +7,8 @@ addr2line-0.17.0
 adler-1.0.2
 adler32-1.2.0
 aho-corasick-0.7.18
-ansi_term-0.11.0
 ansi_term-0.12.1
-anyhow-1.0.50
+anyhow-1.0.51
 aom-sys-0.3.0
 arbitrary-0.4.7
 arg_enum_proc_macro-0.3.2
@@ -33,11 +32,11 @@ cfg-expr-0.7.4
 cfg-if-1.0.0
 chrono-0.4.19
 clang-sys-1.3.0
-clap-2.33.3
+clap-2.34.0
 cmake-0.1.46
 color_quant-1.1.0
 console-0.14.1
-crc32fast-1.2.2
+crc32fast-1.3.0
 criterion-0.3.5
 criterion-plot-0.4.4
 crossbeam-0.8.1
