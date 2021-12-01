@@ -27,7 +27,6 @@ REQUIRED_USE="jack-sdk? ( !jack-client )"
 RESTRICT="!test? ( test )"
 
 BDEPEND="
-	!media-sound/pulseaudio
 	>=dev-util/meson-0.59
 	virtual/pkgconfig
 	${PYTHON_DEPS}
