@@ -1,7 +1,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-PYTHON_COMPAT=( python{3_5,3_6,3_7} )
+PYTHON_COMPAT=( python3+ )
 PYTHON_REQ_USE="sqlite"
 GNOME_ORG_PVP=$(ver_cut 1)
 
@@ -21,7 +21,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 # Do not forget to check pitivi/check.py for dependencies!!!
 # pycanberra, libav, libnotify and liwnck are optional
-GST_VER="gstreamer-sharp-1.18.5"
+GST_VER="1.18.5"
 
 COMMON_DEPEND="
 	${PYTHON_DEPS}
