@@ -14,7 +14,7 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="*"
 
-IUSE="v4l test"
+IUSE="v4l"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 # XXX: recommends gst-plugins-libav and frei0r-plugins
@@ -65,15 +65,7 @@ BDEPEND="
 	dev-util/itstool
 	sys-devel/gettext
 	virtual/pkgconfig
-	test? ( dev-python/nose2[${PYTHON_USEDEP}] )
 "
-
-src_configure() {
-	local emesonargs=(
-		-Denable-tests=$(usex test true false)
-	)
-	meson_src_configure
-}
 
 src_compile() {
 	meson_src_compile
