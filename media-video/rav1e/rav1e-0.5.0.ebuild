@@ -74,7 +74,7 @@ js-sys-0.3.55
 lab-0.11.0
 lazy_static-1.4.0
 lazycell-1.3.0
-libc-0.2.108
+libc-0.2.109
 libfuzzer-sys-0.3.5
 libloading-0.7.2
 log-0.4.14
@@ -82,7 +82,7 @@ memchr-2.4.1
 memoffset-0.6.5
 miniz_oxide-0.3.7
 miniz_oxide-0.4.4
-nasm-rs-0.2.1
+nasm-rs-0.2.2
 nom-5.1.2
 noop_proc_macro-0.3.0
 num-derive-0.3.3
