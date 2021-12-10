@@ -74,7 +74,7 @@ js-sys-0.3.55
 lab-0.11.0
 lazy_static-1.4.0
 lazycell-1.3.0
-libc-0.2.109
+libc-0.2.110
 libfuzzer-sys-0.3.5
 libloading-0.7.2
 log-0.4.14
@@ -129,9 +129,9 @@ same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.1.0
 semver-1.0.4
-serde-1.0.130
+serde-1.0.131
 serde_cbor-0.11.2
-serde_derive-1.0.130
+serde_derive-1.0.131
 serde_json-1.0.72
 shlex-1.1.0
 signal-hook-0.3.12
