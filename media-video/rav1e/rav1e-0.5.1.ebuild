@@ -69,12 +69,13 @@ interpolate_name-0.2.3
 itertools-0.8.2
 itertools-0.10.3
 itoa-0.4.8
+itoa-1.0.1
 jobserver-0.1.24
 js-sys-0.3.55
 lab-0.11.0
 lazy_static-1.4.0
 lazycell-1.3.0
-libc-0.2.109
+libc-0.2.112
 libfuzzer-sys-0.3.5
 libloading-0.7.2
 log-0.4.14
@@ -96,7 +97,7 @@ oorandom-11.1.3
 output_vt100-0.1.2
 paste-1.0.6
 peeking_take_while-0.1.2
-pkg-config-0.3.23
+pkg-config-0.3.24
 plotters-0.3.1
 plotters-backend-0.3.2
 plotters-svg-0.3.1
@@ -106,7 +107,7 @@ predicates-2.1.0
 predicates-core-1.0.2
 predicates-tree-1.0.4
 pretty_assertions-0.7.2
-proc-macro2-1.0.33
+proc-macro2-1.0.34
 quote-1.0.10
 rand-0.8.4
 rand_chacha-0.3.1
@@ -124,7 +125,7 @@ rust_hawktracer_sys-0.4.2
 rustc-demangle-0.1.21
 rustc-hash-1.1.0
 rustc_version-0.4.0
-ryu-1.0.6
+ryu-1.0.9
 same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.1.0
@@ -132,7 +133,7 @@ semver-1.0.4
 serde-1.0.131
 serde_cbor-0.11.2
 serde_derive-1.0.131
-serde_json-1.0.72
+serde_json-1.0.73
 shlex-1.1.0
 signal-hook-0.3.12
 signal-hook-registry-1.4.0
@@ -179,7 +180,7 @@ y4m-0.7.0
 inherit cargo
 
 SRC_URI="
-	https://api.github.com/repos/xiph/rav1e/tarball/v0.5.0 -> rav1e-0.5.0.tar.gz
+	https://api.github.com/repos/xiph/rav1e/tarball/v0.5.1 -> rav1e-0.5.1.tar.gz
 	$(cargo_crate_uris ${CRATES})
 "
 KEYWORDS="*"
