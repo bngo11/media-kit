@@ -8,7 +8,7 @@ inherit cmake flag-o-matic python-single-r1
 
 DESCRIPTION="A color management framework for visual effects and animation"
 HOMEPAGE="https://opencolorio.org https://github.com/AcademySoftwareFoundation/OpenColorIO"
-SRC_URI="https://api.github.com/repos/AcademySoftwareFoundation/OpenColorIO/tarball/v2.0.2 -> opencolorio-2.0.2.tar.gz"
+SRC_URI="https://api.github.com/repos/AcademySoftwareFoundation/OpenColorIO/tarball/v2.1.1 -> opencolorio-2.1.1.tar.gz"
 
 KEYWORDS="*"
 LICENSE="BSD"
@@ -23,10 +23,7 @@ REQUIRED_USE="
 RDEPEND="
 	dev-cpp/pystring
 	dev-python/pybind11
-	|| (
-		dev-libs/imath
-		media-libs/ilmbase
-	)
+    dev-libs/imath
 	dev-cpp/yaml-cpp:=
 	dev-libs/tinyxml
 	opengl? (
@@ -67,7 +64,6 @@ src_unpack() {
 }
 
 src_prepare() {
-	eapply "${FILESDIR}"/opencolorio-2.0.2-imath.patch
 	cmake_src_prepare
 
 	sed -i -e "s|LIBRARY DESTINATION lib|LIBRARY DESTINATION $(get_libdir)|g" {,src/bindings/python/,src/OpenColorIO/,src/libutils/oiiohelpers/,src/libutils/oglapphelpers/}CMakeLists.txt || die
