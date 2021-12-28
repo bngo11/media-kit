@@ -107,8 +107,8 @@ predicates-2.1.0
 predicates-core-1.0.2
 predicates-tree-1.0.4
 pretty_assertions-0.7.2
-proc-macro2-1.0.34
-quote-1.0.10
+proc-macro2-1.0.36
+quote-1.0.14
 rand-0.8.4
 rand_chacha-0.3.1
 rand_core-0.6.3
@@ -142,7 +142,7 @@ smallvec-1.7.0
 strsim-0.8.0
 strum-0.21.0
 strum_macros-0.21.1
-syn-1.0.83
+syn-1.0.84
 system-deps-3.1.2
 termcolor-1.1.2
 terminal_size-0.1.17
