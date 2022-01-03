@@ -1,4 +1,3 @@
-# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # TODO
@@ -18,7 +17,7 @@ LICENSE="GPL-2"
 SLOT="0/6" # libgphoto2.so soname version
 
 KEYWORDS="*"
-IUSE="doc examples exif gd jpeg nls serial"
+IUSE="+doc examples exif gd jpeg nls serial"
 
 # By default, drivers for all supported cameras will be compiled.
 # If you want to only compile for specific camera(s), set CAMERAS
@@ -112,7 +111,7 @@ multilib_src_configure() {
 		$(use_enable nls) \
 		$(use_with exif libexif auto) \
 		$(use_with gd) \
-		$(use_with jpeg) \
+		$(use_with jpeg auto) \
 		$(use_enable serial) \
 		$(use_enable serial lockdev) \
 		--with-libusb=no \
