@@ -102,7 +102,7 @@ plotters-0.3.1
 plotters-backend-0.3.2
 plotters-svg-0.3.1
 png-0.16.8
-ppv-lite86-0.2.15
+ppv-lite86-0.2.16
 predicates-2.1.0
 predicates-core-1.0.2
 predicates-tree-1.0.4
@@ -130,10 +130,10 @@ same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.1.0
 semver-1.0.4
-serde-1.0.132
+serde-1.0.133
 serde_cbor-0.11.2
-serde_derive-1.0.132
-serde_json-1.0.73
+serde_derive-1.0.133
+serde_json-1.0.74
 shlex-1.1.0
 signal-hook-0.3.13
 signal-hook-registry-1.4.0
@@ -158,7 +158,7 @@ unicode-width-0.1.9
 unicode-xid-0.2.2
 vec_map-0.8.2
 version-compare-0.0.11
-version_check-0.9.3
+version_check-0.9.4
 wait-timeout-0.2.0
 walkdir-2.3.2
 wasi-0.10.2+wasi-snapshot-preview1
