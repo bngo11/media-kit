@@ -1,8 +1,8 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
-PYTHON_COMPAT=( python2_7 python3_{5,6} )
+EAPI=7
+PYTHON_COMPAT=( python3_{7,8,9} )
 GNOME2_LA_PUNT="yes"
 
 inherit bash-completion-r1 gnome2 python-r1
@@ -22,12 +22,12 @@ RDEPEND="
 	${PYTHON_DEPS}
 	>=dev-libs/glib-2.40.0:2
 	dev-libs/libxml2:2
-	dev-python/pygobject:3[${PYTHON_USEDEP}]
 	>=media-libs/gstreamer-${PV}:1.0[introspection?]
 	>=media-libs/gst-plugins-base-${PV}:1.0[introspection?]
 	introspection? ( >=dev-libs/gobject-introspection-0.9.6:= )
 "
-DEPEND="${RDEPEND}
+DEPEND="${RDEPEND}"
+BDEPEND="
 	>=dev-util/gtk-doc-am-1.3
 	virtual/pkgconfig
 "
@@ -35,12 +35,18 @@ DEPEND="${RDEPEND}
 # AM_TEST_ENVIRONMENT setup.
 RESTRICT="test"
 
+src_prepare() {
+	gnome2_src_prepare
+	# Install python overrides manually for each python and old upstream
+	# autotools code prefers python2 and installs in wrong location
+	sed -e '/WITH_PYTHON/d' -i bindings/Makefile.in || die
+}
+
 src_configure() {
 	# gtk is only used for examples
 	gnome2_src_configure \
 		$(use_enable introspection) \
 		--disable-examples \
-		--without-gtk \
 		--with-bash-completion-dir="$(get_bashcompdir)" \
 		--with-package-name="GStreamer editing services ebuild for Gentoo" \
 		--with-package-origin="https://packages.gentoo.org/package/media-libs/gstreamer-editing-services"
@@ -52,4 +58,10 @@ src_compile() {
 	# https://bugzilla.gnome.org/show_bug.cgi?id=744134
 	addpredict /dev
 	gnome2_src_compile
+}
+
+src_install() {
+	gnome2_src_install
+	python_moduleinto gi.overrides
+	python_foreach_impl python_domodule bindings/python/gi/overrides/GES.py
 }
