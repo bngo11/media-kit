@@ -57,7 +57,7 @@ either-1.6.1
 encode_unicode-0.3.6
 env_logger-0.8.4
 fern-0.6.0
-getrandom-0.2.3
+getrandom-0.2.4
 gimli-0.26.1
 glob-0.3.0
 half-1.8.2
@@ -77,7 +77,7 @@ lazy_static-1.4.0
 lazycell-1.3.0
 libc-0.2.112
 libfuzzer-sys-0.3.5
-libloading-0.7.2
+libloading-0.7.3
 log-0.4.14
 memchr-2.4.1
 memoffset-0.6.5
@@ -138,7 +138,7 @@ shlex-1.1.0
 signal-hook-0.3.13
 signal-hook-registry-1.4.0
 simd_helpers-0.1.0
-smallvec-1.7.0
+smallvec-1.8.0
 strsim-0.8.0
 strum-0.21.0
 strum_macros-0.21.1
