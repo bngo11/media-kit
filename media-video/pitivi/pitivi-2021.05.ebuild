@@ -21,7 +21,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 # Do not forget to check pitivi/check.py for dependencies!!!
 # pycanberra, libav, libnotify and liwnck are optional
-GST_VER="1.18.5"
+GST_VER="1.18.6"
 
 COMMON_DEPEND="
 	${PYTHON_DEPS}
