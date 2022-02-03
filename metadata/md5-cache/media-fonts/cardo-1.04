@@ -9,4 +9,5 @@ KEYWORDS=*
 LICENSE=OFL-1.1
 SLOT=0
 SRC_URI=http://scholarsfonts.net/cardo104.zip
+_eclasses_=font	dd073b36fe3fd8b868c23bc23209db45
 _md5_=423b4877e2f3a9ca6542c7ad43415d71

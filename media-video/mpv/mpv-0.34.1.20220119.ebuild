@@ -9,7 +9,7 @@ inherit bash-completion-r1 eapi7-ver flag-o-matic gnome2-utils pax-utils python-
 
 DESCRIPTION="Media player based on MPlayer and mplayer2"
 HOMEPAGE="https://mpv.io/ https://github.com/mpv-player/mpv"
-SRC_URI="https://github.com/mpv-player/mpv/archive/ddef9eb52d02dd6d5115c80a4adec99a8952bf96.tar.gz -> mpv-0.34.1.20220203-ddef9eb52d02dd6d5115c80a4adec99a8952bf96.tar.gz https://waf.io/waf-2.0.20"
+SRC_URI="https://github.com/mpv-player/mpv/archive/9cddd73f67f11dba2f2921124e2c39c77af01651.tar.gz -> mpv-0.34.1.20220119-9cddd73f67f11dba2f2921124e2c39c77af01651.tar.gz https://waf.io/waf-2.0.20"
 
 DOCS=( RELEASE_NOTES README.md DOCS/{client-api,interface}-changes.rst )
 
