@@ -29,10 +29,10 @@ cast-0.2.7
 cc-1.0.72
 cexpr-0.6.0
 cfg-expr-0.7.4
-cfg-expr-0.9.0
+cfg-expr-0.9.1
 cfg-if-1.0.0
 chrono-0.4.19
-clang-sys-1.3.0
+clang-sys-1.3.1
 clap-2.34.0
 cmake-0.1.48
 color_quant-1.1.0
@@ -63,6 +63,7 @@ gimli-0.26.1
 glob-0.3.0
 half-1.8.2
 heck-0.3.3
+heck-0.4.0
 hermit-abi-0.1.19
 humantime-2.1.0
 image-0.23.14
@@ -76,7 +77,7 @@ js-sys-0.3.56
 lab-0.11.0
 lazy_static-1.4.0
 lazycell-1.3.0
-libc-0.2.116
+libc-0.2.117
 libfuzzer-sys-0.3.5
 libloading-0.7.3
 log-0.4.14
@@ -146,7 +147,7 @@ strum-0.21.0
 strum_macros-0.21.1
 syn-1.0.86
 system-deps-3.1.2
-system-deps-6.0.0
+system-deps-6.0.1
 termcolor-1.1.2
 terminal_size-0.1.17
 termtree-0.2.4

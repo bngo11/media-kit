@@ -29,7 +29,6 @@ async def generate(hub, **pkginfo):
 	readme = list(glob.iglob(os.path.join(artifact.extract_path, "*/README")))[0]
 	with open(readme, "r") as readmefile:
 		readme_str = readmefile.read()
-		print(readme_str)
 	drivers_minver = re.search(r"Linux: ([0-9.]+)", readme_str).group(1)
 	artifact.cleanup()
 	ebuild = hub.pkgtools.ebuild.BreezyBuild(
