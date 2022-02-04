@@ -11,5 +11,4 @@ RDEPEND=dev-libs/glib:2[gtk-doc?] dev-libs/libxml2:2 sys-libs/zlib gstreamer? ( 
 RESTRICT=!test? ( test )
 SLOT=0
 SRC_URI=https://github.com/AravisProject/aravis/releases/download/0.8.20/aravis-0.8.20.tar.xz -> aravis-0.8.20.tar.xz
-_eclasses_=meson	2fbe03e3b496f82fd941bcdb9d351c91	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	132cbb376048d079b5a012f5467c4e7f	python-utils-r1	8b6048ab112e99353b21b318b9074eb6	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	xdg	c7ba313ea1eaf266f95cc6235f7d6a07	xdg-utils	14d00d009167652b1fa363e55effe213
 _md5_=674bc19499e969036808c590c9cfd7a4
