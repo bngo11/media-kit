@@ -12,4 +12,5 @@ REQUIRED_USE=corefonts? ( truetype ) svg? ( xml ) test? ( corefonts )
 RESTRICT=!test? ( test )
 SLOT=0/7.1.0.22
 SRC_URI=https://api.github.com/repos/ImageMagick/ImageMagick/tarball/7.1.0-22 -> imagemagick-7.1.0-22.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	a09389deba2c0a7108b581e02c7cecbf	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	perl-functions	d0d18687b96ee3d2307b88eefdd1735b	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
 _md5_=d16d41caf00954e0ac9ee35162a02aa5
