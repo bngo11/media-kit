@@ -9,7 +9,7 @@ inherit python-any-r1 toolchain-funcs
 
 DESCRIPTION="Library for making brushstrokes"
 HOMEPAGE="https://github.com/mypaint/libmypaint"
-SRC_URI="https://api.github.com/repos/mypaint/libmypaint/tarball/refs/tags/v1.6.1 -> libmypaint-1.6.1-2768251dacce3939136c839aeca413f4aa4241d0.tar.gz"
+SRC_URI="{{artifacts[0].src_uri}}"
 
 LICENSE="ISC"
 # See https://github.com/mypaint/libmypaint/releases/tag/v1.6.1
@@ -38,7 +38,7 @@ RDEPEND="
 	!<media-gfx/mypaint-1.2.1
 "
 post_src_unpack() {
-	mv "${WORKDIR}/"mypaint-libmypaint* "${S}" || die
+	mv "${WORKDIR}/"{{github_user}}-{{github_repo}}* "${S}" || die
 }
 
 src_prepare() {

@@ -6,18 +6,18 @@ inherit autotools
 
 DESCRIPTION="Default MyPaint brushes"
 HOMEPAGE="https://github.com/mypaint/mypaint-brushes"
-SRC_URI="https://api.github.com/repos/mypaint/mypaint-brushes/tarball/refs/tags/v2.0.2 -> mypaint-brushes-2.0.2-0df6d130152a94c3bd67709941978074a1303cc5.tar.gz"
+SRC_URI="{{artifacts[0].src_uri}}"
 
 LICENSE="CC0-1.0"
 
-SLOT="2" # due to pkgconfig name "mypaint-brushes-2.0"
+SLOT="{{slot}}" # due to pkgconfig name "mypaint-brushes-2.0"
 KEYWORDS="*"
 
 # Chosen to exclude README symlink
 DOCS=( AUTHORS NEWS README.md )
 
 post_src_unpack() {
-	mv "${WORKDIR}/"mypaint-mypaint-brushes* "${S}" || die
+	mv "${WORKDIR}/"{{github_user}}-{{github_repo}}* "${S}" || die
 }
 
 src_prepare() {
