@@ -9,7 +9,7 @@ inherit cmake flag-o-matic xdg toolchain-funcs python-single-r1
 
 DESCRIPTION="SVG based generic vector-drawing program"
 HOMEPAGE="https://inkscape.org/"
-SRC_URI="https://media.inkscape.org/dl/resources/file/inkscape-1.1.1.tar.xz -> inkscape-1.1.1.tar.xz"
+SRC_URI="https://media.inkscape.org/dl/resources/file/inkscape-1.1.2.tar.xz -> inkscape-1.1.2.tar.xz"
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="*"
@@ -96,7 +96,7 @@ PATCHES=(
 
 RESTRICT="test"
 
-S="${WORKDIR}"/inkscape-1.1.1_2021-09-20_3bf5ae0d25
+S="${WORKDIR}"/inkscape-1.1.2_2022-02-04_0a00cf5339
 
 pkg_pretend() {
 	if [[ ${MERGE_TYPE} != binary ]] && use openmp; then
