@@ -1,10 +1,10 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="7"
+EAPI=7
 
 PYTHON_COMPAT=( python3+ )
 
-inherit meson optfeature prefix python-any-r1 udev
+inherit meson optfeature prefix python-any-r1 systemd udev
 
 SRC_URI="https://gitlab.freedesktop.org/${PN}/${PN}/-/archive/${PV}/${P}.tar.gz"
 KEYWORDS="*"
@@ -13,8 +13,9 @@ DESCRIPTION="Multimedia processing graphs"
 HOMEPAGE="https://pipewire.org/"
 
 LICENSE="MIT LGPL-2.1+ GPL-2"
+# ABI was broken in 0.3.42 for https://gitlab.freedesktop.org/pipewire/wireplumber/-/issues/49
 SLOT="0"
-IUSE="bluetooth doc echo-cancel extra gstreamer jack-client jack-sdk pipewire-alsa test v4l"
+IUSE="bluetooth doc echo-cancel extra gstreamer jack-client jack-sdk lv2 pipewire-alsa ssl system-service systemd test v4l X zeroconf"
 
 # Once replacing system JACK libraries is possible, it's likely that
 # jack-client IUSE will need blocking to avoid users accidentally
@@ -22,7 +23,10 @@ IUSE="bluetooth doc echo-cancel extra gstreamer jack-client jack-sdk pipewire-al
 # JACK's sink - doing so is likely to yield no audio, cause a CPU
 # cycles consuming loop (and may even cause GUI crashes)!
 
-REQUIRED_USE="jack-sdk? ( !jack-client )"
+REQUIRED_USE="
+	jack-sdk? ( !jack-client )
+	system-service? ( systemd )
+"
 
 RESTRICT="!test? ( test )"
 
@@ -37,6 +41,7 @@ BDEPEND="
 	)
 "
 RDEPEND="
+	acct-group/audio
 	media-libs/alsa-lib
 	sys-apps/dbus
 	sys-libs/readline:=
@@ -49,6 +54,7 @@ RDEPEND="
 		media-libs/libfreeaptx
 		media-libs/sbc
 		>=net-wireless/bluez-4.101:=
+		virtual/libusb:1
 	)
 	echo-cancel? ( media-libs/webrtc-audio-processing:0 )
 	extra? (
@@ -64,12 +70,24 @@ RDEPEND="
 		!media-sound/jack-audio-connection-kit
 		!media-sound/jack2
 	)
+	lv2? ( media-libs/lilv )
 	pipewire-alsa? (
 		>=media-libs/alsa-lib-1.1.7
 		!media-plugins/alsa-plugins[pulseaudio]
 	)
 	!pipewire-alsa? ( media-plugins/alsa-plugins[pulseaudio] )
+	ssl? ( dev-libs/openssl:= )
+	systemd? ( sys-apps/systemd )
+	system-service? (
+		acct-user/pipewire
+		acct-group/pipewire
+	)
 	v4l? ( media-libs/libv4l )
+	X? (
+		media-libs/libcanberra
+		x11-libs/libX11
+	)
+	zeroconf? ( net-dns/avahi )
 "
 
 DEPEND="${RDEPEND}"
@@ -111,6 +129,12 @@ src_prepare() {
 
 		@audio	-	memlock 256
 
+		$(use system-service && {
+			echo @pipewire - rtprio 95
+			echo @pipewire - priority -19
+			echo @pipewire - memlock 4194304
+		})
+
 		# End of ${limitsdfile} from ${P}
 	EOF
 }
@@ -118,52 +142,65 @@ src_prepare() {
 src_configure() {
 	local emesonargs=(
 		-Ddocdir="${EPREFIX}"/usr/share/doc/${PF}
-		$(meson_feature doc docs)
-		-Dexamples=enabled # TODO: Figure out if this is still important now that media-session gone
-		-Dman=enabled
+
+		$(meson_native_use_feature zeroconf avahi)
+		$(meson_native_use_feature doc docs)
+		$(meson_native_enabled examples) # TODO: Figure out if this is still important now that media-session gone
+		$(meson_native_enabled man)
 		$(meson_feature test tests)
 		-Dinstalled_tests=disabled # Matches upstream; Gentoo never installs tests
-		$(meson_feature gstreamer)
-		$(meson_feature gstreamer gstreamer-device-provider)
-		-Dsystemd=disabled
-		-Dsystemd-system-service=disabled # Matches upstream
-		-Dsystemd-user-service=disabled
+		$(meson_native_use_feature gstreamer)
+		$(meson_native_use_feature gstreamer gstreamer-device-provider)
+		$(meson_native_use_feature systemd)
+
+		$(meson_native_use_feature system-service systemd-system-service)
+		-Dsystemd-system-unit-dir="$(systemd_get_systemunitdir)"
+		-Dsystemd-user-unit-dir="$(systemd_get_userunitdir)"
+
+		$(meson_native_use_feature systemd systemd-user-service)
 		$(meson_feature pipewire-alsa) # Allows integrating ALSA apps into PW graph
 		-Dspa-plugins=enabled
 		-Dalsa=enabled # Allows using kernel ALSA for sound I/O (NOTE: media-session is gone so IUSE=alsa/spa_alsa/alsa-backend might be possible)
 		-Daudiomixer=enabled # Matches upstream
 		-Daudioconvert=enabled # Matches upstream
-		$(meson_feature bluetooth bluez5)
-		$(meson_feature bluetooth bluez5-backend-hsp-native)
-		$(meson_feature bluetooth bluez5-backend-hfp-native)
-		$(meson_feature bluetooth bluez5-backend-ofono)
-		$(meson_feature bluetooth bluez5-backend-hsphfpd)
-		$(meson_feature bluetooth bluez5-codec-aac)
-		$(meson_feature bluetooth bluez5-codec-aptx)
-		$(meson_feature bluetooth bluez5-codec-ldac)
-		$(meson_feature echo-cancel echo-cancel-webrtc) #807889
+		$(meson_native_use_feature bluetooth bluez5)
+		$(meson_native_use_feature bluetooth bluez5-backend-hsp-native)
+		$(meson_native_use_feature bluetooth bluez5-backend-hfp-native)
+		$(meson_native_use_feature bluetooth bluez5-backend-ofono)
+		$(meson_native_use_feature bluetooth bluez5-backend-hsphfpd)
+		$(meson_native_use_feature bluetooth bluez5-codec-aac)
+		$(meson_native_use_feature bluetooth bluez5-codec-aptx)
+		$(meson_native_use_feature bluetooth bluez5-codec-ldac)
+		$(meson_native_use_feature bluetooth libusb) # At least for now only used by bluez5 native (quirk detection of adapters)
+		$(meson_native_use_feature echo-cancel echo-cancel-webrtc) #807889
 		-Dcontrol=enabled # Matches upstream
 		-Daudiotestsrc=enabled # Matches upstream
 		-Dffmpeg=disabled # Disabled by upstream and no major developments to spa/plugins/ffmpeg/ since May 2020
 		-Dpipewire-jack=enabled # Allows integrating JACK apps into PW graph
-		$(meson_feature jack-client jack) # Allows PW to act as a JACK client
+		$(meson_native_use_feature jack-client jack) # Allows PW to act as a JACK client
 		$(meson_use jack-sdk jack-devel)
 		$(usex jack-sdk "-Dlibjack-path=${EPREFIX}/usr/$(get_libdir)" '')
 		-Dsupport=enabled # Miscellaneous/common plugins, such as null sink
 		-Devl=disabled # Matches upstream
 		-Dtest=disabled # fakesink and fakesource plugins
-		$(meson_feature v4l v4l2)
+		$(meson_native_use_feature lv2)
+		$(meson_native_use_feature v4l v4l2)
 		-Dlibcamera=disabled # libcamera is not in Portage tree
+		$(meson_native_use_feature ssl raop)
 		-Dvideoconvert=enabled # Matches upstream
 		-Dvideotestsrc=enabled # Matches upstream
 		-Dvolume=enabled # Matches upstream
 		-Dvulkan=disabled # Uses pre-compiled Vulkan compute shader to provide a CGI video source (dev thing; disabled by upstream)
-		$(meson_feature extra pw-cat)
+		$(meson_native_use_feature extra pw-cat)
 		-Dudev=enabled
 		-Dudevrulesdir="${EPREFIX}$(get_udevdir)/rules.d"
 		-Dsdl2=disabled # Controls SDL2 dependent code (currently only examples when -Dinstalled_tests=enabled which we never install)
-		$(meson_feature extra sndfile) # Enables libsndfile dependent code (currently only pw-cat)
+		$(meson_native_use_feature extra sndfile) # Enables libsndfile dependent code (currently only pw-cat)
 		-Dsession-managers="[]" # All available session managers are now their own projects, so there's nothing to build
+
+		# Just for bell sounds in X11 right now.
+		$(meson_native_use_feature X x11)
+		$(meson_native_use_feature X libcanberra)
 	)
 
 	meson_src_configure
@@ -172,7 +209,6 @@ src_configure() {
 src_install() {
 	# Our custom DOCS do not exist in multilib source directory
 	DOCS= meson_src_install
-
 	einstalldocs
 
 	insinto /etc/security/limits.d
@@ -186,12 +222,14 @@ src_install() {
 		dosym ../../../usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d/99-pipewire-default.conf
 	fi
 
-	insinto /etc/xdg/autostart
-	newins "${FILESDIR}"/pipewire.desktop-r1 pipewire.desktop
+	if ! use systemd; then
+		insinto /etc/xdg/autostart
+		newins "${FILESDIR}"/pipewire.desktop-r1 pipewire.desktop
 
-	exeinto /usr/bin
-	newexe "${FILESDIR}"/gentoo-pipewire-launcher.in gentoo-pipewire-launcher
-	eprefixify "${ED}"/usr/bin/gentoo-pipewire-launcher
+		exeinto /usr/bin
+		newexe "${FILESDIR}"/gentoo-pipewire-launcher.in gentoo-pipewire-launcher
+		eprefixify "${ED}"/usr/bin/gentoo-pipewire-launcher
+	fi
 }
 
 pkg_postinst() {
@@ -211,36 +249,60 @@ pkg_postinst() {
 		elog
 	fi
 
-	ewarn "PipeWire daemon startup has been moved to a launcher script!"
-	ewarn "Make sure that ${EROOT}/etc/pipewire/pipewire.conf either does not exist or no"
-	ewarn "longer is set to start a session manager or PulseAudio compatibility daemon (all"
-	ewarn "lines similar to '{ path = /usr/bin/pipewire*' should be commented out)"
-	ewarn
-	ewarn "Those manually starting /usr/bin/pipewire via .xinitrc or similar _must_ from"
-	ewarn "now on start ${EROOT}/usr/bin/gentoo-pipewire-launcher instead! It is highly"
-	ewarn "advised that a D-Bus user session is set up before starting the script."
-	ewarn
-	if has_version 'media-sound/pulseaudio[daemon]' || has_version 'media-sound/pulseaudio-daemon'; then
-		elog "This ebuild auto-enables PulseAudio replacement. Because of that, users"
-		elog "are recommended to edit: ${EROOT}/etc/pulse/client.conf and disable"
-		elog "autospawning of the original daemon by setting:"
+	if use systemd; then
+		elog "When switching from PulseAudio, you may need to disable PulseAudio:"
 		elog
-		elog "  autospawn = no"
+		elog "  systemctl --user disable pulseaudio.service pulseaudio.socket"
 		elog
-		elog "Please note that the semicolon (;) must _NOT_ be at the beginning of the line!"
+		elog "To use PipeWire, the user units must be manually enabled"
+		elog "by running this command as each user you use for desktop activities:"
 		elog
-		elog "Alternatively, if replacing PulseAudio daemon is not desired, edit"
-		elog "${EROOT}/usr/bin/gentoo-pipewire-launcher by commenting out the relevant"
-		elog "command:"
+		elog "  systemctl --user enable pipewire.socket pipewire-pulse.socket"
 		elog
-		elog "#${EROOT}/usr/bin/pipewire -c pipewire-pulse.conf &"
+		elog "A reboot is recommended to avoid interferences from still running"
+		elog "PulseAudio daemon."
 		elog
+		elog "Both new users and those upgrading need to enable WirePlumber"
+		elog "for relevant users:"
+		elog
+		elog "  systemctl --user disable pipewire-media-session.service"
+		elog "  systemctl --user --force enable wireplumber.service"
+		elog
+		elog "Root user may replace --user with --global to change system default"
+		elog "configuration for all of the above commands."
+	else
+		ewarn "PipeWire daemon startup has been moved to a launcher script!"
+		ewarn "Make sure that ${EROOT}/etc/pipewire/pipewire.conf either does not exist or no"
+		ewarn "longer is set to start a session manager or PulseAudio compatibility daemon (all"
+		ewarn "lines similar to '{ path = /usr/bin/pipewire*' should be commented out)"
+		ewarn
+		ewarn "Those manually starting /usr/bin/pipewire via .xinitrc or similar _must_ from"
+		ewarn "now on start ${EROOT}/usr/bin/gentoo-pipewire-launcher instead! It is highly"
+		ewarn "advised that a D-Bus user session is set up before starting the script."
+		ewarn
+		if has_version 'media-sound/pulseaudio[daemon]' || has_version 'media-sound/pulseaudio-daemon'; then
+			elog "This ebuild auto-enables PulseAudio replacement. Because of that, users"
+			elog "are recommended to edit: ${EROOT}/etc/pulse/client.conf and disable"
+			elog "autospawning of the original daemon by setting:"
+			elog
+			elog "  autospawn = no"
+			elog
+			elog "Please note that the semicolon (;) must _NOT_ be at the beginning of the line!"
+			elog
+			elog "Alternatively, if replacing PulseAudio daemon is not desired, edit"
+			elog "${EROOT}/usr/bin/gentoo-pipewire-launcher by commenting out the relevant"
+			elog "command:"
+			elog
+			elog "#${EROOT}/usr/bin/pipewire -c pipewire-pulse.conf &"
+			elog
+		fi
+		elog "NOTE:"
+		elog "Starting with PipeWire-0.3.30, this package is no longer installing its config"
+		elog "into ${EROOT}/etc/pipewire by default. In case you need to change"
+		elog "its config, please start by copying default config from ${EROOT}/usr/share/pipewire"
+		elog "and just override the sections you want to change."
 	fi
-	elog "NOTE:"
-	elog "Starting with PipeWire-0.3.30, this package is no longer installing its config"
-	elog "into ${EROOT}/etc/pipewire by default. In case you need to change"
-	elog "its config, please start by copying default config from ${EROOT}/usr/share/pipewire"
-	elog "and just override the sections you want to change."
+	elog
 
 	elog "For latest tips and tricks, troubleshooting information and documentation"
 	elog "in general, please refer to https://wiki.gentoo.org/wiki/PipeWire"
@@ -251,7 +313,22 @@ pkg_postinst() {
 
 	if has_version 'net-misc/ofono' ; then
 		ewarn "Native backend has become default. Please disable oFono via:"
-		ewarn "rc-update delete ofono"
+		if systemd_is_booted ; then
+			ewarn "systemctl disable ofono"
+		else
+			ewarn "rc-update delete ofono"
+		fi
+		ewarn
+	fi
+
+	if use system-service; then
+		ewarn
+		ewarn "WARNING: you have enabled the system-service USE flag, which installs"
+		ewarn "the system-wide systemd units that enable PipeWire to run as a system"
+		ewarn "service. This is more than likely NOT what you want. You are strongly"
+		ewarn "advised not to enable this mode and instead stick with systemd user"
+		ewarn "units. The default configuration files will likely not work out of"
+		ewarn "box, and you are on your own with configuration."
 		ewarn
 	fi
 }
