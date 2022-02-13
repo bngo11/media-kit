@@ -97,7 +97,7 @@ num-traits-0.2.14
 num_cpus-1.13.1
 object-0.27.1
 oorandom-11.1.3
-output_vt100-0.1.2
+output_vt100-0.1.3
 paste-1.0.6
 peeking_take_while-0.1.2
 pkg-config-0.3.24
@@ -136,7 +136,7 @@ semver-1.0.5
 serde-1.0.136
 serde_cbor-0.11.2
 serde_derive-1.0.136
-serde_json-1.0.78
+serde_json-1.0.79
 shlex-1.1.0
 signal-hook-0.3.13
 signal-hook-registry-1.4.0
