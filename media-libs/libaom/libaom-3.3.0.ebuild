@@ -6,7 +6,7 @@ inherit cmake
 
 DESCRIPTION="Alliance for Open Media AV1 Codec SDK"
 HOMEPAGE="https://aomedia.org"
-SRC_URI="https://storage.googleapis.com/aom-releases/libaom-3.2.0.tar.gz -> libaom-3.2.0.tar.gz"
+SRC_URI="https://storage.googleapis.com/aom-releases/libaom-3.3.0.tar.gz -> libaom-3.3.0.tar.gz"
 KEYWORDS="*"
 LICENSE="BSD-2"
 SLOT="0/3"
@@ -27,8 +27,6 @@ BDEPEND="
 
 # the PATENTS file is required to be distributed with this package bug #682214
 DOCS=( PATENTS )
-
-S="${WORKDIR}"
 
 src_configure() {
 	local mycmakeargs=(

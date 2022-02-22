@@ -8,7 +8,7 @@ adler-1.0.2
 adler32-1.2.0
 aho-corasick-0.7.18
 ansi_term-0.12.1
-anyhow-1.0.53
+anyhow-1.0.55
 aom-sys-0.3.1
 arbitrary-0.4.7
 arg_enum_proc_macro-0.3.2
@@ -26,10 +26,10 @@ bumpalo-3.9.1
 bytemuck-1.7.3
 byteorder-1.4.3
 cast-0.2.7
-cc-1.0.72
+cc-1.0.73
 cexpr-0.6.0
 cfg-expr-0.7.4
-cfg-expr-0.9.1
+cfg-expr-0.10.1
 cfg-if-1.0.0
 chrono-0.4.19
 clang-sys-1.3.1
@@ -58,7 +58,7 @@ either-1.6.1
 encode_unicode-0.3.6
 env_logger-0.9.0
 fern-0.6.0
-getrandom-0.2.4
+getrandom-0.2.5
 gimli-0.26.1
 glob-0.3.0
 half-1.8.2
@@ -77,7 +77,7 @@ js-sys-0.3.56
 lab-0.11.0
 lazy_static-1.4.0
 lazycell-1.3.0
-libc-0.2.117
+libc-0.2.119
 libfuzzer-sys-0.3.5
 libloading-0.7.3
 log-0.4.14
@@ -131,7 +131,7 @@ ryu-1.0.9
 same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.1.0
-semver-1.0.5
+semver-1.0.6
 serde-1.0.136
 serde_cbor-0.11.2
 serde_derive-1.0.136
@@ -146,7 +146,7 @@ strum-0.21.0
 strum_macros-0.21.1
 syn-1.0.86
 system-deps-3.1.2
-system-deps-6.0.1
+system-deps-6.0.2
 termcolor-1.1.2
 terminal_size-0.1.17
 termtree-0.2.4
