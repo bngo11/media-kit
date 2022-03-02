@@ -9,7 +9,11 @@ inherit cmake flag-o-matic xdg toolchain-funcs python-single-r1
 
 DESCRIPTION="SVG based generic vector-drawing program"
 HOMEPAGE="https://inkscape.org/"
+<<<<<<<< HEAD:media-kit/curated/media-gfx/inkscape/templates/inkscape.tmpl
 SRC_URI="{{artifacts[0].src_uri}}"
+========
+SRC_URI="https://media.inkscape.org/dl/resources/file/inkscape-${PV}.tar.xz"
+>>>>>>>> 7ae6bcc79d399911349938b94c21c7075a014a76:media-kit/curated/media-gfx/inkscape/inkscape-1.1.2.ebuild
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="*"
@@ -90,6 +94,13 @@ DEPEND="${COMMON_DEPEND}
 	>=dev-libs/boost-1.65
 "
 
+<<<<<<<< HEAD:media-kit/curated/media-gfx/inkscape/templates/inkscape.tmpl
+========
+#PATCHES=(
+#	"${FILESDIR}"/${P}-poppler-fix.patch
+#)
+
+>>>>>>>> 7ae6bcc79d399911349938b94c21c7075a014a76:media-kit/curated/media-gfx/inkscape/inkscape-1.1.2.ebuild
 RESTRICT="test"
 
 S="${WORKDIR}"/{{srcdir}}
