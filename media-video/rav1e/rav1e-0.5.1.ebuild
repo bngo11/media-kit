@@ -23,7 +23,7 @@ bitflags-1.3.2
 bitstream-io-1.2.0
 bstr-0.2.17
 bumpalo-3.9.1
-bytemuck-1.7.3
+bytemuck-1.8.0
 byteorder-1.4.3
 cast-0.2.7
 cc-1.0.73
@@ -147,7 +147,7 @@ strum_macros-0.21.1
 syn-1.0.86
 system-deps-3.1.2
 system-deps-6.0.2
-termcolor-1.1.2
+termcolor-1.1.3
 terminal_size-0.1.17
 termtree-0.2.4
 textwrap-0.11.0
