@@ -2,7 +2,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python2+ python3+ )
+PYTHON_COMPAT=( python3+ )
 
 inherit ltprune python-r1 xdg-utils meson
 
