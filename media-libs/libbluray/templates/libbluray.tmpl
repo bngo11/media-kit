@@ -38,7 +38,7 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-jars.patch
 )
 
-DOCS=( ChangeLog README.txt )
+DOCS=( ChangeLog README.md )
 
 src_prepare() {
 	default
