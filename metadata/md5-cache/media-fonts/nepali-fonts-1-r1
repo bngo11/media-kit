@@ -8,5 +8,4 @@ KEYWORDS=*
 LICENSE=freedist
 SLOT=0
 SRC_URI=mirror://gentoo/nepali-fonts-1.tar.bz2
-_eclasses_=font	dd073b36fe3fd8b868c23bc23209db45
 _md5_=3e2e1d757cac2c218ab4ba63e9612d81
