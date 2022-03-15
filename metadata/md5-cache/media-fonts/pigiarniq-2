@@ -9,4 +9,5 @@ KEYWORDS=*
 LICENSE=public-domain
 SLOT=0
 SRC_URI=http://ch.gov.nu.ca/fonts/pigiarniq.zip -> pigiarniq-2.zip
+_eclasses_=font	dd073b36fe3fd8b868c23bc23209db45
 _md5_=289c3e0fa6bea2e33c2d162d91847f46

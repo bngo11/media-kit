@@ -6,7 +6,7 @@ inherit font
 DESCRIPTION="Google's font family that aims to support all the world's languages"
 HOMEPAGE="https://www.google.com/get/noto/ https://github.com/googlefonts/noto-fonts"
 
-SRC_URI="https://github.com/googlefonts/noto-fonts/tarball/9b479a1e7c843da5ea247530a8578f288b49f870 -> noto-fonts-20220304-9b479a1e7c843da5ea247530a8578f288b49f870.tar.gz"
+SRC_URI="https://github.com/googlefonts/noto-fonts/tarball/1fa2d9b8270805c778e0856f80b6d023caa0e535 -> noto-fonts-20220314-1fa2d9b8270805c778e0856f80b6d023caa0e535.tar.gz"
 
 LICENSE="OFL-1.1"
 SLOT="0"
