@@ -6,7 +6,7 @@ inherit xdg-utils meson python-any-r1
 
 DESCRIPTION="A thin layer of types for graphic libraries"
 HOMEPAGE="https://ebassi.github.io/graphene/"
-SRC_URI="https://github.com/ebassi/graphene/releases/download/1.10.6/graphene-1.10.6.tar.xz -> graphene-1.10.6.tar.xz"
+SRC_URI="https://download.gnome.org/sources/graphene/1.10/graphene-1.10.8.tar.xz -> graphene-1.10.8.tar.xz"
 
 LICENSE="MIT"
 SLOT="0"

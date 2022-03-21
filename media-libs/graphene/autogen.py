@@ -14,25 +14,19 @@ async def generate(hub, **pkginfo):
 
 			version = item["tag_name"]
 			list(map(int, version.split(".")))
-
-			for asset in item['assets']:
-				asset_name = asset["name"]
-
-				if asset_name.endswith("tar.xz"):
-					url = asset["browser_download_url"]
-					break
-
-			if url:
-				break
+			break
 
 		except (KeyError, IndexError, ValueError):
 			continue
 
-	if version and url:
+	if version:
+		base = ".".join(version.split(".")[:2])
+		final_name = f"graphene-{version}.tar.xz"
+		url = f"https://download.gnome.org/sources/graphene/{base}/{final_name}"
 		ebuild = hub.pkgtools.ebuild.BreezyBuild(
 			**pkginfo,
 			version=version,
-			artifacts=[hub.pkgtools.ebuild.Artifact(url=url, final_name=asset_name)]
+			artifacts=[hub.pkgtools.ebuild.Artifact(url=url, final_name=final_name)]
 		)
 		ebuild.push()
 
