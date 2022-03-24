@@ -4,14 +4,14 @@ EAPI=7
 
 DESCRIPTION="FFmpeg version of headers required to interface with Nvidias codec APIs"
 HOMEPAGE="https://git.videolan.org/?p=ffmpeg/nv-codec-headers.git"
-SRC_URI="https://api.github.com/repos/FFmpeg/nv-codec-headers/tarball/refs/tags/n10.0.26.1 -> nv-codec-headers-10.0.26.1.tar.gz"
+SRC_URI="https://api.github.com/repos/FFmpeg/nv-codec-headers/tarball/refs/tags/n11.1.5.1 -> nv-codec-headers-11.1.5.1.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64"
 IUSE=""
 
-RDEPEND=">=x11-drivers/nvidia-drivers-445.87"
+RDEPEND=">=x11-drivers/nvidia-drivers-470.57.02"
 
 src_unpack() {
 	unpack ${A}

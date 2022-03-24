@@ -6,7 +6,7 @@ import os
 
 
 async def generate(hub, **pkginfo):
-	wanted_version = "10.0.26.1"
+	wanted_version = "11.1.5.1"
 	github_user = "FFmpeg"
 	github_repo = "nv-codec-headers"
 	json_list = await hub.pkgtools.fetch.get_page(
