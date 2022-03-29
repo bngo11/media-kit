@@ -58,7 +58,7 @@ either-1.6.1
 encode_unicode-0.3.6
 env_logger-0.9.0
 fern-0.6.0
-getrandom-0.2.5
+getrandom-0.2.6
 gimli-0.26.1
 glob-0.3.0
 half-1.8.2
@@ -131,7 +131,7 @@ ryu-1.0.9
 same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.1.0
-semver-1.0.6
+semver-1.0.7
 serde-1.0.136
 serde_cbor-0.11.2
 serde_derive-1.0.136
@@ -144,7 +144,7 @@ smallvec-1.8.0
 strsim-0.8.0
 strum-0.21.0
 strum_macros-0.21.1
-syn-1.0.89
+syn-1.0.90
 system-deps-3.1.2
 system-deps-6.0.2
 termcolor-1.1.3
