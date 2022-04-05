@@ -91,7 +91,8 @@ DEPEND="${COMMON_DEPEND}
 "
 
 PATCHES=(
-	"${FILESDIR}"/${P}-poppler-fix.patch
+	"${FILESDIR}/${P}-fix-build-with-poppler-22.03.patch"
+	"${FILESDIR}/${P}-fix-build-with-poppler-22.04.patch"
 )
 
 RESTRICT="test"
