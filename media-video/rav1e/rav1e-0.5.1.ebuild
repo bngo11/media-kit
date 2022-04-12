@@ -77,7 +77,7 @@ js-sys-0.3.57
 lab-0.11.0
 lazy_static-1.4.0
 lazycell-1.3.0
-libc-0.2.122
+libc-0.2.123
 libfuzzer-sys-0.3.5
 libloading-0.7.3
 log-0.4.16
@@ -111,7 +111,7 @@ predicates-core-1.0.3
 predicates-tree-1.0.5
 pretty_assertions-0.7.2
 proc-macro2-1.0.37
-quote-1.0.17
+quote-1.0.18
 rand-0.8.5
 rand_chacha-0.3.1
 rand_core-0.6.3
