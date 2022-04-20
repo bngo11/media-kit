@@ -17,7 +17,7 @@ assert_cmd-2.0.4
 atty-0.2.14
 autocfg-1.1.0
 av-metrics-0.7.2
-backtrace-0.3.64
+backtrace-0.3.65
 bindgen-0.59.2
 bitflags-1.3.2
 bitstream-io-1.3.0
@@ -77,7 +77,7 @@ js-sys-0.3.57
 lab-0.11.0
 lazy_static-1.4.0
 lazycell-1.3.0
-libc-0.2.123
+libc-0.2.124
 libfuzzer-sys-0.3.5
 libloading-0.7.3
 log-0.4.16
@@ -85,7 +85,7 @@ memchr-2.4.1
 memoffset-0.6.5
 minimal-lexical-0.2.1
 miniz_oxide-0.3.7
-miniz_oxide-0.4.4
+miniz_oxide-0.5.1
 nasm-rs-0.2.4
 nom-7.1.1
 noop_proc_macro-0.3.0
@@ -95,7 +95,7 @@ num-iter-0.1.42
 num-rational-0.3.2
 num-traits-0.2.14
 num_cpus-1.13.1
-object-0.27.1
+object-0.28.3
 oorandom-11.1.3
 output_vt100-0.1.3
 paste-1.0.7
