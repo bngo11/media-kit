@@ -27,7 +27,7 @@ PATCHES=(
 	"${FILESDIR}/${P}-fmt-8.patch"
 )
 
-inherit autotools cmake-utils eutils gnome2-utils linux-info pax-utils python-single-r1 xdg-utils
+inherit autotools cmake-utils eutils gnome3-utils linux-info pax-utils python-single-r1 xdg-utils
 
 DESCRIPTION="A free and open source media-player and entertainment hub"
 HOMEPAGE="https://kodi.tv/ https://kodi.wiki/"
@@ -369,11 +369,11 @@ src_install() {
 }
 
 pkg_postinst() {                                                                                                                   
-        gnome2_icon_cache_update                                                        
+        gnome3_icon_cache_update                                                        
         xdg_desktop_database_update                                                                                                                 
 }                                                                                                                                  
                                                                                         
 pkg_postrm() {                                                                                                                                      
-        gnome2_icon_cache_update                                                                                                   
+        gnome3_icon_cache_update                                                                                                   
         xdg_desktop_database_update                                                     
 }
