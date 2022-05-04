@@ -1,3 +1,4 @@
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -9,24 +10,26 @@ LIBDVDNAV_VERSION="6.0.0-Leia-Alpha-3"
 FFMPEG_VERSION="4.3.2"
 CODENAME="Matrix"
 FFMPEG_KODI_VERSION="19.1"
-PYTHON_COMPAT=( python3+ )
+PYTHON_COMPAT=( python3_{8,9,10} )
 SRC_URI="https://github.com/xbmc/libdvdcss/archive/${LIBDVDCSS_VERSION}.tar.gz -> libdvdcss-${LIBDVDCSS_VERSION}.tar.gz
 	https://github.com/xbmc/libdvdread/archive/${LIBDVDREAD_VERSION}.tar.gz -> libdvdread-${LIBDVDREAD_VERSION}.tar.gz
 	https://github.com/xbmc/libdvdnav/archive/${LIBDVDNAV_VERSION}.tar.gz -> libdvdnav-${LIBDVDNAV_VERSION}.tar.gz
 	!system-ffmpeg? ( https://github.com/xbmc/FFmpeg/archive/${FFMPEG_VERSION}-${CODENAME}-${FFMPEG_KODI_VERSION}.tar.gz -> ffmpeg-${PN}-${FFMPEG_VERSION}-${CODENAME}-${FFMPEG_KODI_VERSION}.tar.gz )"
-
-MY_PV=${PV/_p/_r}
-MY_PV=${MY_PV/_alpha/a}
-MY_PV=${MY_PV/_beta/b}
-MY_PV=${MY_PV/_rc/RC}
-MY_P="${PN}-${MY_PV}"
-SRC_URI+=" https://github.com/xbmc/xbmc/archive/${MY_PV}-${CODENAME}.tar.gz -> ${MY_P}.tar.gz"
-KEYWORDS="*"
-S=${WORKDIR}/xbmc-${MY_PV}-${CODENAME}
-
-PATCHES=(
-	"${FILESDIR}/${P}-fmt-8.patch"
-)
+if [[ ${PV} == *9999 ]] ; then
+	EGIT_REPO_URI="https://github.com/xbmc/xbmc.git"
+	EGIT_BRANCH="Matrix"
+	inherit git-r3
+else
+	MY_PV=${PV/_p/_r}
+	MY_PV=${MY_PV/_alpha/a}
+	MY_PV=${MY_PV/_beta/b}
+	MY_PV=${MY_PV/_rc/RC}
+	MY_PV="${MY_PV}-${CODENAME}"
+	MY_P="${PN}-${MY_PV}"
+	SRC_URI+=" https://github.com/xbmc/xbmc/archive/${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
+	KEYWORDS="~amd64 ~arm ~arm64 ~x86"
+	S=${WORKDIR}/xbmc-${MY_PV}
+fi
 
 inherit autotools cmake desktop linux-info pax-utils python-single-r1 xdg
 
@@ -90,7 +93,7 @@ COMMON_TARGET_DEPEND="${PYTHON_DEPS}
 	dev-libs/libfstrcmp
 	gbm? (
 		>=dev-libs/libinput-1.10.5
-		media-libs/mesa[gbm]
+		media-libs/mesa[gbm(+)]
 		x11-libs/libxkbcommon
 	)
 	gles? (
@@ -102,11 +105,11 @@ COMMON_TARGET_DEPEND="${PYTHON_DEPS}
 	media-fonts/roboto
 	>=media-libs/freetype-2.10.1
 	>=media-libs/libass-0.13.4
-	!raspberry-pi? ( media-libs/mesa[egl] )
+	!raspberry-pi? ( media-libs/mesa[egl(+)] )
 	>=media-libs/taglib-1.11.1
 	system-ffmpeg? (
 		>=media-video/ffmpeg-${FFMPEG_VERSION}:=[dav1d?,encode,postproc]
-		media-video/ffmpeg[openssl]
+		=media-video/ffmpeg-4*[openssl]
 	)
 	!system-ffmpeg? (
 		app-arch/bzip2
@@ -117,9 +120,9 @@ COMMON_TARGET_DEPEND="${PYTHON_DEPS}
 	>=net-misc/curl-7.68.0[http2]
 	nfs? ( >=net-fs/libnfs-2.0.0:= )
 	!gles? ( media-libs/glu )
-	>=dev-libs/openssl-1.0.2l:0=
+	>=dev-libs/openssl-1.1.1k:0=
 	raspberry-pi? (
-		|| ( media-libs/raspberrypi-userland media-libs/raspberrypi-userland-bin media-libs/mesa[egl,gles2,video_cards_vc4] )
+		|| ( media-libs/raspberrypi-userland media-libs/raspberrypi-userland-bin media-libs/mesa[egl(+),gles2,video_cards_vc4] )
 	)
 	pulseaudio? ( media-sound/pulseaudio )
 	samba? ( >=net-fs/samba-3.4.6[smbclient(+)] )
@@ -130,7 +133,7 @@ COMMON_TARGET_DEPEND="${PYTHON_DEPS}
 		x11-libs/libva:=
 		!gles? ( x11-libs/libva[opengl] )
 		system-ffmpeg? ( media-video/ffmpeg[vaapi] )
-		vdpau? ( x11-libs/libva[vdpau] )
+		vdpau? ( x11-libs/libva-vdpau-driver )
 		wayland? ( x11-libs/libva[wayland] )
 		X? ( x11-libs/libva[X] )
 	)
@@ -326,6 +329,12 @@ src_compile() {
 }
 
 src_test() {
+	local myctestargs=(
+		# Known failing, unreliable test
+		# bug #743938
+		-E "(TestCPUInfo.GetCPUFrequency)"
+	)
+
 	# see https://github.com/xbmc/xbmc/issues/17860#issuecomment-630120213
 	KODI_HOME="${BUILD_DIR}" cmake_build check
 }

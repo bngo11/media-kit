@@ -80,7 +80,7 @@ lazycell-1.3.0
 libc-0.2.125
 libfuzzer-sys-0.3.5
 libloading-0.7.3
-log-0.4.16
+log-0.4.17
 memchr-2.5.0
 memoffset-0.6.5
 minimal-lexical-0.2.1
@@ -93,7 +93,7 @@ num-derive-0.3.3
 num-integer-0.1.45
 num-iter-0.1.43
 num-rational-0.3.2
-num-traits-0.2.14
+num-traits-0.2.15
 num_cpus-1.13.1
 object-0.28.3
 oorandom-11.1.3
@@ -135,7 +135,7 @@ semver-1.0.9
 serde-1.0.137
 serde_cbor-0.11.2
 serde_derive-1.0.137
-serde_json-1.0.80
+serde_json-1.0.81
 shlex-1.1.0
 signal-hook-0.3.13
 signal-hook-registry-1.4.0
