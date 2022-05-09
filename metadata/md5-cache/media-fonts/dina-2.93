@@ -10,5 +10,4 @@ LICENSE=MIT
 RESTRICT=strip binchecks
 SLOT=0
 SRC_URI=https://www.donationcoder.com/forum/index.php?action=dlattach;topic=36049.0;attach=78562 -> dina-2.93.zip
-_eclasses_=font	dd073b36fe3fd8b868c23bc23209db45	font-ebdftopcf	e23db122fd578442f37e3e79267eedd8
 _md5_=6543b4684ccb97aeac1755c3a0478173
