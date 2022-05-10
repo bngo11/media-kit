@@ -8,4 +8,5 @@ KEYWORDS=*
 LICENSE=public-domain HPND non-free? ( free-noncomm )
 SLOT=0
 SRC_URI=mirror://gnu/intlfonts/intlfonts-1.2.1.tar.gz
+_eclasses_=font	dd073b36fe3fd8b868c23bc23209db45
 _md5_=6f80bd5e8d59cebb237473b862ca254f

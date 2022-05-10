@@ -10,4 +10,5 @@ RDEPEND=media-libs/alsa-lib media-libs/flac media-libs/faad2 media-libs/libvorbi
 REQUIRED_USE=hw_raspi? ( gpio )
 SLOT=0
 SRC_URI=https://www.github.com/ralph-irving/squeezelite/tarball/f503048 -> squeezelite-f503048.tar.gz
+_eclasses_=eutils	6e6c2737b59a4b982de6fb3ecefd87f8	user	e68863263b1e8611dacf381bec5c8b2b
 _md5_=8dc0efb04fd488a40874dcf895861523
