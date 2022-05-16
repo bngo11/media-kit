@@ -71,7 +71,7 @@ interpolate_name-0.2.3
 itertools-0.8.2
 itertools-0.10.3
 itoa-0.4.8
-itoa-1.0.1
+itoa-1.0.2
 jobserver-0.1.24
 js-sys-0.3.57
 lab-0.11.0
@@ -115,8 +115,8 @@ quote-1.0.18
 rand-0.8.5
 rand_chacha-0.3.1
 rand_core-0.6.3
-rayon-1.5.2
-rayon-core-1.9.2
+rayon-1.5.3
+rayon-core-1.9.3
 regex-1.5.5
 regex-automata-0.1.10
 regex-syntax-0.6.25
@@ -127,7 +127,7 @@ rust_hawktracer_sys-0.4.2
 rustc-demangle-0.1.21
 rustc-hash-1.1.0
 rustc_version-0.4.0
-ryu-1.0.9
+ryu-1.0.10
 same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.1.0
@@ -144,7 +144,7 @@ smallvec-1.8.0
 strsim-0.8.0
 strum-0.21.0
 strum_macros-0.21.1
-syn-1.0.92
+syn-1.0.94
 system-deps-3.1.2
 system-deps-6.0.2
 termcolor-1.1.3
