@@ -90,11 +90,6 @@ DEPEND="${COMMON_DEPEND}
 	>=dev-libs/boost-1.65
 "
 
-PATCHES=(
-	"${FILESDIR}/${P}-fix-build-with-poppler-22.03.patch"
-	"${FILESDIR}/${P}-fix-build-with-poppler-22.04.patch"
-)
-
 RESTRICT="test"
 
 S="${WORKDIR}"/inkscape-1.2_2022-05-15_dc2aedaf03
