@@ -32,7 +32,7 @@ cfg-expr-0.7.4
 cfg-expr-0.10.3
 cfg-if-1.0.0
 chrono-0.4.19
-clang-sys-1.3.2
+clang-sys-1.3.3
 clap-2.34.0
 cmake-0.1.48
 color_quant-1.1.0
@@ -85,7 +85,7 @@ memchr-2.5.0
 memoffset-0.6.5
 minimal-lexical-0.2.1
 miniz_oxide-0.3.7
-miniz_oxide-0.5.1
+miniz_oxide-0.5.3
 nasm-rs-0.2.4
 nom-7.1.1
 noop_proc_macro-0.3.0
