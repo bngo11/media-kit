@@ -1,14 +1,14 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-PYTHON_COMPAT=( python3+ )
+PYTHON_COMPAT=( python3_8+ )
 PYTHON_REQ_USE="sqlite"
 GNOME_ORG_PVP=$(ver_cut 1)
 
-inherit gnome.org meson python-single-r1 virtualx xdg
+inherit gnome.org meson python-single-r1 xdg
 
 DESCRIPTION="A non-linear video editor using the GStreamer multimedia framework"
-HOMEPAGE="http://www.pitivi.org"
+HOMEPAGE="https://www.pitivi.org"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
@@ -20,7 +20,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 # XXX: recommends gst-plugins-libav and frei0r-plugins
 
 # Do not forget to check pitivi/check.py for dependencies!!!
-# pycanberra, libav, libnotify and liwnck are optional
+# gsound, libav, libnotify and v4l are optional
 GST_VER="1.18.6"
 
 COMMON_DEPEND="
@@ -67,13 +67,18 @@ BDEPEND="
 	virtual/pkgconfig
 "
 
-src_compile() {
-	meson_src_compile
+PATCHES=(
+	# https://gitlab.gnome.org/GNOME/pitivi/-/commit/ddf2369d1fc6fddd63f676cc905a8b8e96291a4c
+	"${FILESDIR}"/${P}-meson-compatibility.patch
+	"${FILESDIR}"/${P}-python-collections.patch
+)
+
+src_configure() {
+	meson_src_configure
 }
 
-src_test() {
-	export PITIVI_TOP_LEVEL_DIR="${S}"
-	virtx meson_src_test
+src_compile() {
+	meson_src_compile
 }
 
 src_install() {
