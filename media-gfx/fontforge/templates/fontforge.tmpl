@@ -5,9 +5,9 @@ EAPI=7
 PYTHON_COMPAT=( python3+ )
 inherit python-single-r1 xdg cmake
 
-DESCRIPTION="Free (libre) font editor for Windows, Mac OS X and GNU+Linux"
+DESCRIPTION="{{ description }}"
 HOMEPAGE="https://fontforge.org/"
-SRC_URI="https://github.com/fontforge/fontforge/tarball/582bd41a9bf04326300fc02a677fe3610d6d3ccd -> fontforge-20220308-582bd41.tar.gz"
+SRC_URI="{{ artifacts[0].src_uri }}"
 
 LICENSE="BSD GPL-3+"
 SLOT="0"
@@ -52,7 +52,7 @@ BDEPEND="
 
 post_src_unpack() {
 	if [ ! -d "${S}" ]; then
-		mv fontforge-fontforge* "${S}" || die
+		mv {{ github_user }}-{{ github_repo }}* "${S}" || die
 	fi
 }
 
