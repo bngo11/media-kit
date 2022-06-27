@@ -8,7 +8,7 @@ adler-1.0.2
 adler32-1.2.0
 aho-corasick-0.7.18
 ansi_term-0.12.1
-anyhow-1.0.57
+anyhow-1.0.58
 aom-sys-0.3.1
 arbitrary-0.4.7
 arg_enum_proc_macro-0.3.2
@@ -45,7 +45,7 @@ crossbeam-channel-0.5.5
 crossbeam-deque-0.8.1
 crossbeam-epoch-0.9.9
 crossbeam-queue-0.3.5
-crossbeam-utils-0.8.9
+crossbeam-utils-0.8.10
 csv-1.1.6
 csv-core-0.1.10
 ctor-0.1.22
@@ -111,8 +111,8 @@ predicates-2.1.1
 predicates-core-1.0.3
 predicates-tree-1.0.5
 pretty_assertions-0.7.2
-proc-macro2-1.0.39
-quote-1.0.18
+proc-macro2-1.0.40
+quote-1.0.20
 rand-0.8.5
 rand_chacha-0.3.1
 rand_core-0.6.3
@@ -141,11 +141,11 @@ shlex-1.1.0
 signal-hook-0.3.14
 signal-hook-registry-1.4.0
 simd_helpers-0.1.0
-smallvec-1.8.0
+smallvec-1.8.1
 strsim-0.8.0
 strum-0.21.0
 strum_macros-0.21.1
-syn-1.0.96
+syn-1.0.98
 system-deps-3.1.2
 system-deps-6.0.2
 termcolor-1.1.3
