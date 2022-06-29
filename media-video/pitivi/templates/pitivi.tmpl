@@ -67,12 +67,6 @@ BDEPEND="
 	virtual/pkgconfig
 "
 
-PATCHES=(
-	# https://gitlab.gnome.org/GNOME/pitivi/-/commit/ddf2369d1fc6fddd63f676cc905a8b8e96291a4c
-	"${FILESDIR}"/${P}-meson-compatibility.patch
-	"${FILESDIR}"/${P}-python-collections.patch
-)
-
 src_configure() {
 	meson_src_configure
 }
