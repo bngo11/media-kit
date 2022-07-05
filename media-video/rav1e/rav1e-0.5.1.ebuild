@@ -23,7 +23,7 @@ bitflags-1.3.2
 bitstream-io-1.5.0
 bstr-0.2.17
 bumpalo-3.10.0
-bytemuck-1.9.1
+bytemuck-1.10.0
 byteorder-1.4.3
 cast-0.2.7
 cc-1.0.73
@@ -96,7 +96,7 @@ num-rational-0.3.2
 num-traits-0.2.15
 num_cpus-1.13.1
 object-0.28.4
-once_cell-1.12.0
+once_cell-1.13.0
 oorandom-11.1.3
 output_vt100-0.1.3
 paste-1.0.7
@@ -133,9 +133,9 @@ same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.1.0
 semver-1.0.12
-serde-1.0.137
+serde-1.0.138
 serde_cbor-0.11.2
-serde_derive-1.0.137
+serde_derive-1.0.138
 serde_json-1.0.82
 shlex-1.1.0
 signal-hook-0.3.14
