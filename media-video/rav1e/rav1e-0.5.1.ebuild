@@ -102,9 +102,9 @@ output_vt100-0.1.3
 paste-1.0.7
 peeking_take_while-0.1.2
 pkg-config-0.3.25
-plotters-0.3.1
-plotters-backend-0.3.2
-plotters-svg-0.3.1
+plotters-0.3.2
+plotters-backend-0.3.3
+plotters-svg-0.3.2
 png-0.16.8
 ppv-lite86-0.2.16
 predicates-2.1.1
@@ -118,9 +118,9 @@ rand_chacha-0.3.1
 rand_core-0.6.3
 rayon-1.5.3
 rayon-core-1.9.3
-regex-1.5.6
+regex-1.6.0
 regex-automata-0.1.10
-regex-syntax-0.6.26
+regex-syntax-0.6.27
 rust_hawktracer-0.7.0
 rust_hawktracer_normal_macro-0.4.1
 rust_hawktracer_proc_macro-0.4.1
