@@ -17,7 +17,7 @@ assert_cmd-2.0.4
 atty-0.2.14
 autocfg-1.1.0
 av-metrics-0.7.2
-backtrace-0.3.65
+backtrace-0.3.66
 bindgen-0.59.2
 bitflags-1.3.2
 bitstream-io-1.5.0
@@ -26,6 +26,7 @@ bumpalo-3.10.0
 bytemuck-1.10.0
 byteorder-1.4.3
 cast-0.2.7
+cast-0.3.0
 cc-1.0.73
 cexpr-0.6.0
 cfg-expr-0.7.4
@@ -38,7 +39,7 @@ cmake-0.1.48
 color_quant-1.1.0
 console-0.14.1
 crc32fast-1.3.2
-criterion-0.3.5
+criterion-0.3.6
 criterion-plot-0.4.4
 crossbeam-0.8.1
 crossbeam-channel-0.5.5
@@ -95,7 +96,7 @@ num-iter-0.1.43
 num-rational-0.3.2
 num-traits-0.2.15
 num_cpus-1.13.1
-object-0.28.4
+object-0.29.0
 once_cell-1.13.0
 oorandom-11.1.3
 output_vt100-0.1.3
@@ -103,7 +104,7 @@ paste-1.0.7
 peeking_take_while-0.1.2
 pkg-config-0.3.25
 plotters-0.3.2
-plotters-backend-0.3.3
+plotters-backend-0.3.4
 plotters-svg-0.3.2
 png-0.16.8
 ppv-lite86-0.2.16

@@ -3,16 +3,17 @@
 EAPI=7
 
 CMAKE_ECLASS=cmake
-inherit cmake
+inherit cmake-multilib java-pkg-opt-2
 
 DESCRIPTION="MMX, SSE, and SSE2 SIMD accelerated JPEG library"
 HOMEPAGE="https://libjpeg-turbo.org/ https://sourceforge.net/projects/libjpeg-turbo/"
-SRC_URI="https://github.com/libjpeg-turbo/libjpeg-turbo/tarball/c5f269eb9665435271c05fbcaf8721fa58e9eafa -> libjpeg-turbo-2.1.3-c5f269e.tar.gz"
+SRC_URI="https://sourceforge.net/projects/libjpeg-turbo/files/2.1.3/libjpeg-turbo-2.1.3.tar.gz -> libjpeg-turbo-2.1.3.tar.gz
+         https://gentoo.osuosl.org/distfiles/libjpeg8_8d-2.debian.tar.gz"
 
 LICENSE="BSD IJG ZLIB"
 SLOT="0/0.2"
 KEYWORDS="*"
-IUSE="cpu_flags_arm_neon static-libs"
+IUSE="cpu_flags_arm_neon java static-libs"
 
 ASM_DEPEND="|| ( dev-lang/nasm dev-lang/yasm )"
 
@@ -29,20 +30,52 @@ BDEPEND=">=dev-util/cmake-3.16.5
 	x64-macos? ( ${ASM_DEPEND} )
 	x64-cygwin? ( ${ASM_DEPEND} )"
 
-DEPEND="${COMMON_DEPEND}"
-RDEPEND="${COMMON_DEPEND}"
+DEPEND="${COMMON_DEPEND}
+	java? ( >=virtual/jdk-1.8:* )"
 
-post_src_unpack() {
-	if [ ! -d "${S}" ]; then
-		mv ${WORKDIR}/libjpeg-turbo* ${S} || die
-	fi
+RDEPEND="${COMMON_DEPEND}
+	java? ( >=virtual/jre-1.8:* )"
+
+MULTILIB_WRAPPED_HEADERS=( /usr/include/jconfig.h )
+
+src_prepare() {
+	local FILE
+	ln -snf ../debian/extra/*.c . || die
+
+	for FILE in ../debian/extra/*.c; do
+		FILE=${FILE##*/}
+		cat >> CMakeLists.txt <<EOF || die
+add_executable(${FILE%.c} ${FILE})
+install(TARGETS ${FILE%.c})
+EOF
+	done
+
+	for FILE in ../debian/extra/exifautotran; do
+		cat >> CMakeLists.txt <<EOF || die
+install(FILES \${CMAKE_CURRENT_SOURCE_DIR}/${FILE} DESTINATION \${CMAKE_INSTALL_BINDIR})
+EOF
+	done
+
+	for FILE in ../debian/extra/*.[0-9]*; do
+		cat >> CMakeLists.txt <<EOF || die
+install(FILES \${CMAKE_CURRENT_SOURCE_DIR}/${FILE} DESTINATION \${CMAKE_INSTALL_MANDIR}/man${FILE##*.})
+EOF
+	done
+
+	cmake_src_prepare
+	java-pkg-opt-2_src_prepare
 }
 
-src_configure() {
+multilib_src_configure() {
+	if multilib_is_native_abi && use java ; then
+		export JAVACFLAGS="$(java-pkg_javac-args)"
+		export JNI_CFLAGS="$(java-pkg_get-jni-cflags)"
+	fi
+
 	local mycmakeargs=(
 		-DCMAKE_INSTALL_DEFAULT_DOCDIR="${EPREFIX}/usr/share/doc/${PF}"
 		-DENABLE_STATIC="$(usex static-libs)"
-		-DWITH_JAVA=OFF
+		-DWITH_JAVA="$(multilib_native_usex java)"
 		-DWITH_MEM_SRCDST=ON
 	)
 
@@ -64,13 +97,29 @@ src_configure() {
 	cmake_src_configure
 }
 
-src_install() {
+multilib_src_install() {
 	cmake_src_install
+
+	if multilib_is_native_abi && use java ; then
+		rm -rf "${ED}"/usr/classes || die
+		java-pkg_dojar java/turbojpeg.jar
+	fi
+}
+
+multilib_src_install_all() {
 	find "${ED}" -type f -name '*.la' -delete || die
 
 	local -a DOCS=( README.md ChangeLog.md )
 	einstalldocs
 
+	newdoc "${WORKDIR}"/debian/changelog changelog.debian
+
 	docinto html
 	dodoc -r "${S}"/doc/html/.
+
+	if use java; then
+		docinto html/java
+		dodoc -r "${S}"/java/doc/.
+		newdoc "${S}"/java/README README.java
+	fi
 }
