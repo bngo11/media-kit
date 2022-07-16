@@ -25,7 +25,6 @@ bstr-0.2.17
 bumpalo-3.10.0
 bytemuck-1.10.0
 byteorder-1.4.3
-cast-0.2.7
 cast-0.3.0
 cc-1.0.73
 cexpr-0.6.0
@@ -40,7 +39,7 @@ color_quant-1.1.0
 console-0.14.1
 crc32fast-1.3.2
 criterion-0.3.6
-criterion-plot-0.4.4
+criterion-plot-0.4.5
 crossbeam-0.8.1
 crossbeam-channel-0.5.5
 crossbeam-deque-0.8.1
@@ -158,7 +157,7 @@ thiserror-impl-1.0.31
 time-0.1.44
 tinytemplate-1.2.1
 toml-0.5.9
-unicode-ident-1.0.1
+unicode-ident-1.0.2
 unicode-segmentation-1.9.0
 unicode-width-0.1.9
 vec_map-0.8.2

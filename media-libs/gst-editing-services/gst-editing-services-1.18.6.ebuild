@@ -8,7 +8,7 @@ inherit bash-completion-r1 gnome3 python-r1 meson
 
 DESCRIPTION="SDK for making video editors and more"
 HOMEPAGE="http://wiki.pitivi.org/wiki/GES"
-SRC_URI="https://gstreamer.freedesktop.org/src/gst-editing-services/gst-editing-services-1.18.6.tar.xz"
+SRC_URI="https://gstreamer.freedesktop.org/src/gst-editing-services/gst-editing-services-1.18.6.tar.xz -> gst-editing-services-1.18.6.tar.xz"
 
 LICENSE="LGPL-2+"
 SLOT="1.0"
