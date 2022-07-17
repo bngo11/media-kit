@@ -33,6 +33,10 @@ fi
 
 inherit autotools cmake desktop linux-info pax-utils python-single-r1 xdg
 
+PATCHES=(
+	"${FILESDIR}/${P}-fmt-9.patch"
+)
+
 DESCRIPTION="A free and open source media-player and entertainment hub"
 HOMEPAGE="https://kodi.tv/ https://kodi.wiki/"
 
@@ -131,7 +135,6 @@ COMMON_TARGET_DEPEND="${PYTHON_DEPS}
 	udev? ( virtual/udev )
 	vaapi? (
 		x11-libs/libva:=
-		!gles? ( x11-libs/libva[opengl] )
 		system-ffmpeg? ( media-video/ffmpeg[vaapi] )
 		vdpau? ( x11-libs/libva-vdpau-driver )
 		wayland? ( x11-libs/libva[wayland] )
