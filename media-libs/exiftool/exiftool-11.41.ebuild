@@ -1,23 +1,20 @@
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=6
 
 DIST_NAME=Image-ExifTool
 inherit perl-module
 
 DESCRIPTION="Read and write meta information in image, audio and video files"
-HOMEPAGE="https://${PN}.org/ https://${PN}.sourceforge.net https://github.com/exiftool/exiftool"
-SRC_URI="https://github.com/exiftool/exiftool/tarball/1e17485cbb372a502e5b9d052d01303db735e6fa -> exiftool-12.44-1e17485.tar.gz"
+HOMEPAGE="https://www.sno.phy.queensu.ca/~phil/exiftool/ ${HOMEPAGE}"
+SRC_URI="https://www.sno.phy.queensu.ca/~phil/exiftool/${DIST_P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="*"
+KEYWORDS="amd64 arm64 ppc ppc64 x86 ~x64-macos"
 IUSE="doc"
 
-post_src_unpack() {
-	if [ ! -d "${S}" ]; then
-		mv exiftool-exiftool* "${S}" || die
-	fi
-}
+SRC_TEST="do"
 
 src_install() {
 	perl-module_src_install
