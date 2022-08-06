@@ -4,7 +4,7 @@ EAPI=7
 
 DESCRIPTION="A community-driven collection of themes for spicetify"
 HOMEPAGE="https://github.com/morpheusthewhite/spicetify-themes"
-SRC_URI="https://github.com/morpheusthewhite/spicetify-themes/archive/5d3d42f913467f413be9b0159f5df5023adf89af.tar.gz -> spicetify-themes-20220804.tar.gz"
+SRC_URI="https://github.com/morpheusthewhite/spicetify-themes/archive/9a2fcb5a545da368e4bf1d8189f58d0f664f3115.tar.gz -> spicetify-themes-20220805.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
