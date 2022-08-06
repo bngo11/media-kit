@@ -2,6 +2,13 @@
 
 EAPI=7
 
+# 1. Please regularly check (even at the point of bumping) Fedora's packaging
+# for needed backports at https://src.fedoraproject.org/rpms/wireplumber/tree/rawhide
+#
+# 2. Keep an eye on git master (for both PipeWire and WirePlumber) as things
+# continue to move quickly. It's not uncommon for fixes to be made shortly
+# after releases.
+
 LUA_COMPAT=( lua5-{3,4} )
 
 inherit lua-single meson systemd
@@ -27,13 +34,14 @@ BDEPEND="
 	dev-libs/glib
 	dev-util/gdbus-codegen
 	dev-util/glib-utils
+	sys-devel/gettext
 "
 
 DEPEND="
-	>=dev-lua/lua-5.3
+	${LUA_DEPS}
 	>=dev-libs/glib-2.62
-	>=media-video/pipewire-0.3.43:=
-	virtual/libc
+	>=media-video/pipewire-0.3.53-r1:=
+	virtual/libintl
 	sys-auth/elogind
 "
 
@@ -47,7 +55,9 @@ RDEPEND="${DEPEND}
 DOCS=( {NEWS,README}.rst )
 
 PATCHES=(
-	"${FILESDIR}"/${P}-default-nodes-handle-nodes-without-Routes.patch
+	"${FILESDIR}"/${PN}-0.4.10-config-disable-sound-server-parts.patch # defer enabling sound server parts to media-video/pipewire
+	"${FILESDIR}"/${P}-alsa-lua-crash.patch
+	"${FILESDIR}"/${P}-dbus-reconnect-crash.patch
 )
 
 src_configure() {
@@ -66,6 +76,17 @@ src_configure() {
 	)
 
 	meson_src_configure
+}
+
+src_install() {
+	meson_src_install
+
+	# We copy the default config, so that Gentoo tools can pick up on any
+	# updates and /etc does not end up with stale overrides.
+	# If a reflinking CoW filesystem is used (e.g. Btrfs), then the files
+	# will not actually get stored twice until modified.
+	insinto /etc
+	doins -r "${ED}"/usr/share/wireplumber
 }
 
 pkg_postinst() {
