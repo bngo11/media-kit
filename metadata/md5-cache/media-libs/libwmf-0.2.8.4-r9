@@ -10,5 +10,5 @@ LICENSE=LGPL-2
 RDEPEND=app-text/ghostscript-gpl media-fonts/urw-fonts media-libs/freetype:2= media-libs/libpng:0= sys-libs/zlib:= x11-libs/gdk-pixbuf:2 virtual/jpeg:0= expat? ( dev-libs/expat ) !expat? ( dev-libs/libxml2:2= ) X? ( x11-libs/libX11 x11-libs/libXt x11-libs/libXpm )
 SLOT=0
 SRC_URI=mirror://sourceforge/project/wvware/libwmf/0.2.8.4/libwmf-0.2.8.4.tar.gz
-_eclasses_=autotools	1bf086cdd7356f5c9a4acd9727bd2065	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	gnome3-utils	0259c887eefdbd6cf22f54affbb612cc	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	xdg-utils	14d00d009167652b1fa363e55effe213
+_eclasses_=autotools	1bf086cdd7356f5c9a4acd9727bd2065	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	gnome3-utils	aab8fff805a024b22f3769cde0782faa	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	xdg-utils	14d00d009167652b1fa363e55effe213
 _md5_=35f24562d378c2c20a8b769579f8eac8
