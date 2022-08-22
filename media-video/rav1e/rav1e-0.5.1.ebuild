@@ -105,9 +105,9 @@ output_vt100-0.1.3
 paste-1.0.8
 peeking_take_while-0.1.2
 pkg-config-0.3.25
-plotters-0.3.2
+plotters-0.3.3
 plotters-backend-0.3.4
-plotters-svg-0.3.2
+plotters-svg-0.3.3
 png-0.16.8
 ppv-lite86-0.2.16
 predicates-2.1.1
@@ -136,10 +136,10 @@ same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.1.0
 semver-1.0.13
-serde-1.0.143
+serde-1.0.144
 serde_cbor-0.11.2
-serde_derive-1.0.143
-serde_json-1.0.83
+serde_derive-1.0.144
+serde_json-1.0.85
 shlex-1.1.0
 signal-hook-0.3.14
 signal-hook-registry-1.4.0
