@@ -9,7 +9,7 @@ async def generate(hub, **pkginfo):
 
 	for item in json_data:
 		try:
-			if item["prerelease"]:
+			if item["prerelease"] or item["draft"]:
 				continue
 
 			version = item["tag_name"].strip("v")

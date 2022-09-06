@@ -9,9 +9,9 @@ PLOCALE_BACKUP="en_US"
 
 inherit plocale qmake-utils toolchain-funcs xdg
 
-DESCRIPTION="{{ desc }}"
-HOMEPAGE="{{ homepage }}"
-SRC_URI="{{ artifacts[0].src_uri }}"
+DESCRIPTION="Free Media Player for Linux with YouTube support."
+HOMEPAGE="https://smplayer.info/"
+SRC_URI="https://github.com/smplayer-dev/smplayer/tarball/06363d7f3573dc4fc2159424ea9f4b80976ed123 -> smplayer-22.7.0-06363d7.tar.gz"
 
 LICENSE="GPL-2+ BSD-2"
 SLOT="0"
@@ -37,14 +37,16 @@ RDEPEND="${DEPEND}
 "
 
 PATCHES=(
-{%- for patch in patches %}
-	"${FILESDIR}"/${PN}-{{ patch }}
-{%- endfor %}
+	"${FILESDIR}"/${PN}-14.9.0.6966-unbundle-qtsingleapplication.patch
+	"${FILESDIR}"/${PN}-22.7.0-advertisement_crap.patch
+	"${FILESDIR}"/${PN}-18.2.0-jobserver.patch
+	"${FILESDIR}"/${PN}-18.3.0-disable-werror.patch
+	"${FILESDIR}"/${PN}-22.7.0-direct-user-to-emerge-smtube.patch
 )
 
 post_src_unpack() {
 	if [ ! -d "${S}" ]; then
-		mv "${WORKDIR}"/{{github_user}}-{{github_repo}}* "$S" || die
+		mv "${WORKDIR}"/smplayer-dev-smplayer* "$S" || die
 	fi
 }
 

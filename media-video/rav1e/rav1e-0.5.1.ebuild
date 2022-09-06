@@ -6,10 +6,10 @@ CRATES="
 addr2line-0.17.0
 adler-1.0.2
 adler32-1.2.0
-aho-corasick-0.7.18
+aho-corasick-0.7.19
 android_system_properties-0.1.5
 ansi_term-0.12.1
-anyhow-1.0.63
+anyhow-1.0.64
 aom-sys-0.3.1
 arbitrary-0.4.7
 arg_enum_proc_macro-0.3.2
@@ -88,7 +88,7 @@ memchr-2.5.0
 memoffset-0.6.5
 minimal-lexical-0.2.1
 miniz_oxide-0.3.7
-miniz_oxide-0.5.3
+miniz_oxide-0.5.4
 nasm-rs-0.2.4
 nom-7.1.1
 noop_proc_macro-0.3.0
@@ -99,10 +99,10 @@ num-rational-0.3.2
 num-traits-0.2.15
 num_cpus-1.13.1
 object-0.29.0
-once_cell-1.13.1
+once_cell-1.14.0
 oorandom-11.1.3
 output_vt100-0.1.3
-paste-1.0.8
+paste-1.0.9
 peeking_take_while-0.1.2
 pkg-config-0.3.25
 plotters-0.3.3
@@ -155,8 +155,8 @@ termcolor-1.1.3
 terminal_size-0.1.17
 termtree-0.2.4
 textwrap-0.11.0
-thiserror-1.0.32
-thiserror-impl-1.0.32
+thiserror-1.0.34
+thiserror-impl-1.0.34
 time-0.1.44
 tinytemplate-1.2.1
 toml-0.5.9
@@ -176,7 +176,7 @@ wasm-bindgen-macro-0.2.82
 wasm-bindgen-macro-support-0.2.82
 wasm-bindgen-shared-0.2.82
 web-sys-0.3.59
-which-4.2.5
+which-4.3.0
 winapi-0.3.9
 winapi-i686-pc-windows-gnu-0.4.0
 winapi-util-0.1.5

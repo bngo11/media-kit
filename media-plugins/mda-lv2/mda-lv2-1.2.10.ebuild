@@ -9,7 +9,7 @@ inherit python-any-r1 meson
 
 DESCRIPTION="LV2 port of the MDA plugins by Paul Kellett"
 HOMEPAGE="http://drobilla.net/software/mda-lv2/"
-SRC_URI="{{artifacts[0].src_uri}}"
+SRC_URI="https://gitlab.com/drobilla/mda-lv2/-/archive/v1.2.10/mda-lv2-v1.2.10.tar.gz -> mda-lv2-v1.2.10.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
