@@ -1,16 +1,16 @@
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
+GST_ORG_MODULE="gst-plugins-base"
 
-inherit flag-o-matic meson
+inherit flag-o-matic gstreamer-meson
 
 DESCRIPTION="Basepack of plugins for gstreamer"
 HOMEPAGE="https://gstreamer.freedesktop.org/"
-SRC_URI="https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-1.18.6.tar.xz -> gst-plugins-base-1.18.6.tar.xz"
 
 LICENSE="GPL-2+ LGPL-2+"
-KEYWORDS="*"
-SLOT="1.0"
+KEYWORDS="~alpha amd64 arm arm64 ~hppa ~ia64 ~mips ppc ppc64 ~riscv ~sparc x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
 
 # For OpenGL we have three separate concepts, with a list of possibilities in each:
 #  * opengl APIs - opengl and/or gles2; USE=opengl and USE=gles2 enable these accordingly; if neither is enabled, OpenGL helper library and elements are not built at all and all the other options aren't relevant
@@ -26,7 +26,7 @@ SLOT="1.0"
 #  and libpng/jpeg are required for gloverlay element;
 
 # Keep default IUSE options for relevant ones mirrored with gst-plugins-gtk and gst-plugins-bad
-IUSE="alsa +egl gbm gles2 +introspection ivorbis nls +ogg +opengl +orc +pango theora +vorbis wayland +X"
+IUSE="alsa +egl gbm gles2 +introspection ivorbis +ogg +opengl +orc +pango theora +vorbis wayland +X"
 GL_REQUIRED_USE="
 	|| ( gbm wayland X )
 	wayland? ( egl )
@@ -43,75 +43,71 @@ REQUIRED_USE="
 # Dependencies needed by opengl library and plugin (enabled via USE gles2 and/or opengl)
 # dmabuf automagic from libdrm headers (drm_fourcc.h) and EGL, so ensure it with USE=egl (platform independent header used only, thus no MULTILIB_USEDEP); provides dmabuf based upload/download/eglimage options
 GL_DEPS="
-	>=media-libs/mesa-9.0[egl?,gbm?,gles2?,wayland?]
+	>=media-libs/mesa-9.0[egl(+)?,gbm(+)?,gles2?,wayland?,${MULTILIB_USEDEP}]
 	egl? (
 		x11-libs/libdrm
 	)
 	gbm? (
-		>=dev-libs/libgudev-147
-		>=x11-libs/libdrm-2.4.55
+		>=dev-libs/libgudev-147[${MULTILIB_USEDEP}]
+		>=x11-libs/libdrm-2.4.55[${MULTILIB_USEDEP}]
 	)
 	wayland? (
-		dev-libs/wayland
+		dev-libs/wayland[${MULTILIB_USEDEP}]
+		>=dev-libs/wayland-protocols-1.15
 	)
 
-	>=media-libs/graphene-1.10.0
-	media-libs/libpng:0
-	virtual/jpeg:0
+	>=media-libs/graphene-1.4.0[${MULTILIB_USEDEP}]
+	media-libs/libpng:0[${MULTILIB_USEDEP}]
+	virtual/jpeg:0[${MULTILIB_USEDEP}]
 " # graphene for optional gltransformation and glvideoflip elements and more GLSL Uniforms support in glshader; libpng/jpeg for gloverlay element
+# >=media-libs/graphene-1.4.0[${MULTILIB_USEDEP}]
 
 RDEPEND="
 	app-text/iso-codes
-	>=dev-libs/glib-2.40.0:2
-	>=media-libs/gstreamer-${PV}:1.0[introspection?]
-	>=sys-libs/zlib-1.2.8-r1
-	alsa? ( >=media-libs/alsa-lib-1.0.27.2 )
+	>=dev-libs/glib-2.40.0:2[${MULTILIB_USEDEP}]
+	>=sys-libs/zlib-1.2.8-r1[${MULTILIB_USEDEP}]
+	alsa? ( >=media-libs/alsa-lib-1.0.27.2[${MULTILIB_USEDEP}] )
 	introspection? ( >=dev-libs/gobject-introspection-1.31.1:= )
-	ivorbis? ( >=media-libs/tremor-0_pre20130223 )
-	ogg? ( >=media-libs/libogg-1.3.0 )
-	orc? ( >=dev-lang/orc-0.4.24 )
-	pango? ( >=x11-libs/pango-1.36.3 )
-	theora? ( >=media-libs/libtheora-1.1.1[encode] )
-	vorbis? ( >=media-libs/libvorbis-1.3.3-r1 )
+	ivorbis? ( >=media-libs/tremor-0_pre20130223[${MULTILIB_USEDEP}] )
+	ogg? ( >=media-libs/libogg-1.3.0[${MULTILIB_USEDEP}] )
+	orc? ( >=dev-lang/orc-0.4.24[${MULTILIB_USEDEP}] )
+	pango? ( >=x11-libs/pango-1.36.3[${MULTILIB_USEDEP}] )
+	theora? ( >=media-libs/libtheora-1.1.1[encode,${MULTILIB_USEDEP}] )
+	vorbis? ( >=media-libs/libvorbis-1.3.3-r1[${MULTILIB_USEDEP}] )
 	X? (
-		>=x11-libs/libX11-1.6.2
-		>=x11-libs/libXext-1.3.2
-		>=x11-libs/libXv-1.0.10
+		>=x11-libs/libX11-1.6.2[${MULTILIB_USEDEP}]
+		>=x11-libs/libXext-1.3.2[${MULTILIB_USEDEP}]
+		>=x11-libs/libXv-1.0.10[${MULTILIB_USEDEP}]
 	)
 
 	gles2? ( ${GL_DEPS} )
 	opengl? ( ${GL_DEPS} )
 
-	!<media-libs/gst-plugins-bad-1.16.3:1.0
-	!<=media-plugins/gst-plugins-opus-1.16.3:1.0
-	!<=media-plugins/gst-plugins-cdparanoia-1.16.3:1.0
-	!<=media-plugins/gst-plugins-libvisual-1.16.3:1.0
+	!<media-libs/gst-plugins-bad-1.15.0:1.0
 "
 DEPEND="${RDEPEND}
 	dev-util/glib-utils
+	>=dev-util/gtk-doc-am-1.12
 	X? ( x11-base/xorg-proto )
-	app-arch/xz-utils
-	>=sys-apps/sed-4
-	virtual/pkgconfig
-	nls? ( >=sys-devel/gettext-0.17 )
 "
 
-src_prepare() {
-	# Disable GL tests for now; prone to fail with EGL_NOT_INITIALIZED, etc
-	sed -i -e '/^@USE_GL_TRUE@/d' tests/check/Makefile.in
-	default
-}
+DOCS="AUTHORS NEWS README RELEASE"
 
-src_configure() {
+# Fixes backported to 1.18.x, to be removed in 1.18.5
+PATCHES=(
+	"${FILESDIR}/gst-plugins-base-1.18.4_meson-0.58.0.patch"
+	"${FILESDIR}/gst-plugins-base-1.18.4_wayland_registry_remove.patch"
+)
+
+multilib_src_configure() {
 	filter-flags -mno-sse -mno-sse2 -mno-sse4.1 #610340
-	local gl_api=""
-	local gl_platform=""
-	local gl_winsys=""
 
+	# opus: split to media-plugins/gst-plugins-opus
+	GST_PLUGINS_NOAUTO="alsa ogg pango theora vorbis x11 xshm xvideo"
 	local emesonargs=(
+		-Dtools=enabled
+
 		$(meson_feature alsa)
-		$(meson_feature introspection)
-		$(meson_feature ivorbis tremor)
 		$(meson_feature ogg)
 		$(meson_feature orc)
 		$(meson_feature pango)
@@ -120,56 +116,37 @@ src_configure() {
 		$(meson_feature X x11)
 		$(meson_feature X xshm)
 		$(meson_feature X xvideo)
-		$(meson_feature X x11)
-		-Diso-codes=enabled
-		-Dexamples=disabled
 	)
 
-	if use opengl; then
-		gl_api="opengl"
-	fi
-
-	if use gles2; then
-		gl_api="$gl_api,gles2"
-	fi
-
-	if use egl; then
-		gl_platform="egl"
-	fi
-
-	if use opengl && use X; then
-		gl_platform="$gl_platform,glx"
-	fi
-
-	# FIXME: Automagic gbm and x11 wsi
 	if use opengl || use gles2; then
-		gl_winsys="x11,wayland"
+		# because meson doesn't likes extraneous commas
+		local gl_api=( $(use opengl && echo opengl) $(use gles2 && echo gles2) )
+		local gl_platform=( $(use X && echo glx) $(use egl && echo egl) )
+		local gl_winsys=(
+			$(use X && echo x11)
+			$(use wayland && echo wayland)
+			$(use egl && echo egl)
+			$(use gbm && echo gbm)
+		)
 
 		emesonargs+=(
 			-Dgl=enabled
 			-Dgl-graphene=enabled
-			-Dgl-jpeg=enabled
-			-Dgl-png=enabled
+			-Dgl_api=$(IFS=, ; echo "${gl_api[*]}")
+			-Dgl_platform=$(IFS=, ; echo "${gl_platform[*]}")
+			-Dgl_winsys=$(IFS=, ; echo "${gl_winsys[*]}")
 		)
 	else
 		emesonargs+=(
 			-Dgl=disabled
-			-Dgl-graphene=disabled
-			-Dgl-jpeg=disabled
-			-Dgl-png=disabled
+			-Dgl_api=
+			-Dgl_platform=
+			-Dgl_winsys=
 		)
 	fi
 
-	emesonargs+=(
-		-Dgl_api=$gl_api
-		-Dgl_platform=$gl_platform
-		-Dgl_winsys=$gl_winsys
-	)
+	# Workaround EGL/eglplatform.h being built with X11 present
+	use X || export CFLAGS="${CFLAGS} -DEGL_NO_X11"
 
-	meson_src_configure
-}
-
-src_test() {
-	unset GSETTINGS_BACKEND
-	emake check
+	gstreamer_multilib_src_configure
 }
