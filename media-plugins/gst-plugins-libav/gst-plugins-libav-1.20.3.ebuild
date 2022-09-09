@@ -8,7 +8,7 @@ MY_PN="gst-libav"
 
 DESCRIPTION="FFmpeg based gstreamer plugin"
 HOMEPAGE="https://gstreamer.freedesktop.org/modules/gst-libav.html"
-SRC_URI="https://gstreamer.freedesktop.org -> gstreamer.freedesktop.org"
+SRC_URI="https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-1.20.3.tar.xz -> gst-libav-1.20.3.tar.xz"
 
 LICENSE="LGPL-2+"
 SLOT="1.0"

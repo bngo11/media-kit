@@ -2,14 +2,10 @@
 
 import json
 
-GSTREAMER_GITLAB_ID = 1357
 LIBNICE_GITLAB_ID = 163
 
 async def generate(hub, **pkginfo):
-	if "gitlab_id" in pkginfo:
-		gitlab_id = pkginfo["gitlab_id"]
-	else:
-		gitlab_id = GSTREAMER_GITLAB_ID
+	gitlab_id = pkginfo["gitlab_id"]
 
 	if "pkgname" in pkginfo:
 		name = pkginfo["pkgname"]
@@ -39,7 +35,7 @@ async def generate(hub, **pkginfo):
 		if "template" not in pkginfo:
 			pkginfo["template"] = "gst-plugins.tmpl"
 
-		if gitlab_id in [GSTREAMER_GITLAB_ID, LIBNICE_GITLAB_ID]:
+		if pkginfo["metapkg"]:
 			url = "https://gstreamer.freedesktop.org"
 		else:
 			url = f"https://gstreamer.freedesktop.org/src/{name}/{name}-{version}.tar.xz"

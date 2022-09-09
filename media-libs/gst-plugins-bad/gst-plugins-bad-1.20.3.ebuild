@@ -96,7 +96,7 @@ src_configure() {
 		$(meson_feature wayland)
 		$(meson_feature X x11)
 		-Dexamples=disabled
-		-Dgst_player_tests=false
+		-Dgst_play_tests=false
 		-Dshm=enabled
 		-Dipcpipeline=enabled
 	)
