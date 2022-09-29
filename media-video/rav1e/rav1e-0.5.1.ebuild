@@ -45,9 +45,9 @@ criterion-plot-0.4.5
 crossbeam-0.8.2
 crossbeam-channel-0.5.6
 crossbeam-deque-0.8.2
-crossbeam-epoch-0.9.10
+crossbeam-epoch-0.9.11
 crossbeam-queue-0.3.6
-crossbeam-utils-0.8.11
+crossbeam-utils-0.8.12
 csv-1.1.6
 csv-core-0.1.10
 ctor-0.1.23
