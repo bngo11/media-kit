@@ -80,7 +80,7 @@ js-sys-0.3.60
 lab-0.11.0
 lazy_static-1.4.0
 lazycell-1.3.0
-libc-0.2.133
+libc-0.2.134
 libfuzzer-sys-0.3.5
 libloading-0.7.3
 log-0.4.17
@@ -144,7 +144,7 @@ shlex-1.1.0
 signal-hook-0.3.14
 signal-hook-registry-1.4.0
 simd_helpers-0.1.0
-smallvec-1.9.0
+smallvec-1.10.0
 strsim-0.8.0
 strum-0.21.0
 strum_macros-0.21.1
