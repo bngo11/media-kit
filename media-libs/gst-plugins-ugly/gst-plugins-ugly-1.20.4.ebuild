@@ -6,7 +6,7 @@ inherit meson
 
 DESCRIPTION="Basepack of plugins for gstreamer"
 HOMEPAGE="https://gstreamer.freedesktop.org/"
-SRC_URI="https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.20.3.tar.xz -> gst-plugins-ugly-1.20.3.tar.xz"
+SRC_URI="https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.20.4.tar.xz -> gst-plugins-ugly-1.20.4.tar.xz"
 
 LICENSE="LGPL-2+" # some split plugins are LGPL but combining with a GPL library
 KEYWORDS="*"
