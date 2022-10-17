@@ -52,10 +52,10 @@ crossbeam-utils-0.8.12
 csv-1.1.6
 csv-core-0.1.10
 ctor-0.1.23
-cxx-1.0.78
-cxx-build-1.0.78
-cxxbridge-flags-1.0.78
-cxxbridge-macro-1.0.78
+cxx-1.0.79
+cxx-build-1.0.79
+cxxbridge-flags-1.0.79
+cxxbridge-macro-1.0.79
 dav1d-sys-0.3.5
 deflate-0.8.6
 diff-0.1.13
@@ -74,7 +74,7 @@ heck-0.4.0
 hermit-abi-0.1.19
 humantime-2.1.0
 iana-time-zone-0.1.51
-iana-time-zone-haiku-0.1.0
+iana-time-zone-haiku-0.1.1
 image-0.23.14
 interpolate_name-0.2.3
 itertools-0.8.2
@@ -121,7 +121,7 @@ predicates-2.1.1
 predicates-core-1.0.3
 predicates-tree-1.0.5
 pretty_assertions-0.7.2
-proc-macro2-1.0.46
+proc-macro2-1.0.47
 quote-1.0.21
 rand-0.8.5
 rand_chacha-0.3.1
