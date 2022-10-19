@@ -99,6 +99,7 @@ src_configure() {
 		-Dgst_play_tests=false
 		-Dshm=enabled
 		-Dipcpipeline=enabled
+		-Dgpl=enabled
 	)
 
 	if use opengl || use gles2; then
