@@ -9,12 +9,12 @@ adler32-1.2.0
 aho-corasick-0.7.19
 android_system_properties-0.1.5
 ansi_term-0.12.1
-anyhow-1.0.65
+anyhow-1.0.66
 aom-sys-0.3.1
 arbitrary-0.4.7
 arg_enum_proc_macro-0.3.2
 arrayvec-0.7.2
-assert_cmd-2.0.4
+assert_cmd-2.0.5
 atty-0.2.14
 autocfg-1.1.0
 av-metrics-0.7.2
@@ -30,7 +30,7 @@ cast-0.3.0
 cc-1.0.73
 cexpr-0.6.0
 cfg-expr-0.7.4
-cfg-expr-0.10.3
+cfg-expr-0.11.0
 cfg-if-1.0.0
 chrono-0.4.22
 clang-sys-1.4.0
@@ -65,7 +65,7 @@ either-1.8.0
 encode_unicode-0.3.6
 env_logger-0.9.1
 fern-0.6.1
-getrandom-0.2.7
+getrandom-0.2.8
 gimli-0.26.2
 glob-0.3.0
 half-1.8.2
@@ -147,7 +147,7 @@ semver-1.0.14
 serde-1.0.145
 serde_cbor-0.11.2
 serde_derive-1.0.145
-serde_json-1.0.86
+serde_json-1.0.87
 shlex-1.1.0
 signal-hook-0.3.14
 signal-hook-registry-1.4.0
@@ -156,9 +156,9 @@ smallvec-1.10.0
 strsim-0.8.0
 strum-0.21.0
 strum_macros-0.21.1
-syn-1.0.102
+syn-1.0.103
 system-deps-3.1.2
-system-deps-6.0.2
+system-deps-6.0.3
 termcolor-1.1.3
 terminal_size-0.1.17
 termtree-0.2.4
