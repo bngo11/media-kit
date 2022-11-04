@@ -9,7 +9,7 @@ inherit meson python-any-r1
 
 DESCRIPTION="Reusable library for GPU-accelerated image processing primitives"
 HOMEPAGE="https://code.videolan.org/videolan/libplacebo"
-SRC_URI="https://api.github.com/repos/haasn/libplacebo/tarball/refs/tags/v5.229.0 -> libplacebo-5.229.0.tar.gz"
+SRC_URI="https://direct.funtoo.org/5f/ec/b3/5fecb319563d0d583574eb3683f881571752390e8153595be9ecb44fc4eff47cb8387b52f02f838f3336e0450e02e03a7762dc12f2d8310126fadbb93a8cf799 -> libplacebo-5.229.1-with-submodules.tar.xz"
 
 LICENSE="LGPL-2.1+"
 SLOT="0/$(ver_cut 2)" # libplacebo.so version
@@ -18,6 +18,7 @@ IUSE="glslang lcms +opengl +shaderc +vulkan"
 
 REQUIRED_USE="vulkan? ( || ( glslang shaderc ) )"
 RESTRICT="test"
+S=${WORKDIR}/libplacebo
 
 RDEPEND="glslang? ( dev-util/glslang )
 	lcms? ( media-libs/lcms:2 )
@@ -35,8 +36,11 @@ BDEPEND="virtual/pkgconfig
 		$(python_gen_any_dep 'dev-python/mako[${PYTHON_USEDEP}]')
 	)"
 
+#src_unpack() {
+#	cd ${WORKDIR} && tar xf ${DISTDIR}/${A} || die
+#}
+
 post_src_unpack() {
-	mv "${WORKDIR}"/haasn-libplacebo-* "${S}" || die
 	sed -i "s:\(#include <vulkan/vulkan.h>\):\1\n#include <vulkan/vulkan_metal.h>:" "${S}"/src/include/${PN}/vulkan.h || die
 }
 
