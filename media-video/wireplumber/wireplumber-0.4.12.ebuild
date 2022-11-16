@@ -33,7 +33,6 @@ RESTRICT="!test? ( test )"
 BDEPEND="
 	dev-libs/glib
 	dev-util/gdbus-codegen
-	dev-util/glib-utils
 	sys-devel/gettext
 "
 
