@@ -2,17 +2,16 @@
 
 EAPI=7
 
-inherit flag-o-matic
-
-SRC_URI="https://dev-www.libreoffice.org/src/libcdr/${P}.tar.xz"
-KEYWORDS="amd64 ~arm ~arm64 ~hppa ppc ppc64 ~sparc x86"
-
 DESCRIPTION="Library parsing the Corel cdr documents"
 HOMEPAGE="https://wiki.documentfoundation.org/DLP/Libraries/libcdr"
+SRC_URI="https://dev-www.libreoffice.org/src/libcdr/libcdr-0.1.7.tar.xz -> libcdr-0.1.7.tar.xz"
+KEYWORDS="*"
 
 LICENSE="MPL-2.0"
 SLOT="0"
-IUSE="doc static-libs test"
+IUSE="doc test"
+
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	dev-libs/icu:=
@@ -36,12 +35,9 @@ src_prepare() {
 }
 
 src_configure() {
-	# bug 619448
-	append-cxxflags -std=c++14
-
 	local myeconfargs=(
+		--disable-static
 		$(use_with doc docs)
-		$(use_enable static-libs static)
 		$(use_enable test tests)
 	)
 	econf "${myeconfargs[@]}"

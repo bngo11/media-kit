@@ -1,29 +1,30 @@
 #!/usr/bin/env python3
 
-import json
+from packaging import version
+
+def get_release(releases_data):
+	return None if not releases_data else sorted(releases_data, key=lambda x: version.parse(x["name"])).pop()
 
 async def generate(hub, **pkginfo):
-	json_data = await hub.pkgtools.fetch.get_page("https://api.github.com/repos/AOMediaCodec/libavif/tags", is_json=True)
-	version = None
+	github_user = "AOMediaCodec"
+	github_repo = pkginfo['name']
+	
+	json_list = await hub.pkgtools.fetch.get_page(
+		f"https://api.github.com/repos/{github_user}/{github_repo}/tags", is_json=True
+	)
 
-	for item in json_data:
-		try:
-			version = item['name'].strip('v')
-			list(map(int, version.split(".")))
-			break
-
-		except (IndexError, ValueError, KeyError):
-			continue
-
-	if version:
-		url = f"https://github.com/AOMediaCodec/libavif/archive/v{version}.tar.gz"
-		final_name = f"libavif-{version}.tar.gz"
-		ebuild = hub.pkgtools.ebuild.BreezyBuild(
-			**pkginfo,
-			version=version,
-			artifacts=[hub.pkgtools.ebuild.Artifact(url=url, final_name=final_name)]
-		)
-
-		ebuild.push()
-
-# vim: ts=4 sw=4 noet
+	latest_release = get_release(json_list)
+	if latest_release is None:
+		raise hub.pkgtools.ebuild.BreezyError(f"Can't find a suitable release of {github_repo}")
+	version = latest_release['name'].lstrip("v")
+	url = latest_release["tarball_url"]
+	final_name = f"{github_repo}-{version}.tar.gz"
+	src_artifact = hub.pkgtools.ebuild.Artifact(url=url, final_name=final_name)
+	ebuild = hub.pkgtools.ebuild.BreezyBuild(
+		**pkginfo,
+		version=version,
+		github_user=github_user,
+		github_repo=github_repo,
+		artifacts=[src_artifact]
+	)
+	ebuild.push()

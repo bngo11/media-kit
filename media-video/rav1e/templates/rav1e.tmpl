@@ -15,7 +15,7 @@ SRC_URI="
 KEYWORDS="*"
 
 DESCRIPTION="The fastest and safest AV1 encoder"
-HOMEPAGE="https://github.com/xiph/rav1e"
+HOMEPAGE="https://github.com/{{github_user}}/{{github_repo}}"
 RESTRICT=""
 LICENSE="BSD-2 Apache-2.0 MIT Unlicense"
 SLOT="0"
@@ -32,7 +32,7 @@ src_unpack() {
 	default
 	cargo_src_unpack
 	rm -rf ${S}
-	mv ${WORKDIR}/xiph-rav1e-* ${S} || die
+	mv ${WORKDIR}/{{github_user}}-{{github_repo}}-* ${S} || die
 }
 
 src_compile() {

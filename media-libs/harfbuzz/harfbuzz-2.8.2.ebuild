@@ -15,7 +15,7 @@ KEYWORDS="next"
 LICENSE="Old-MIT ISC icu"
 SLOT="0/0.9.18" # 0.9.18 introduced the harfbuzz-icu split; bug #472416
 
-IUSE="+cairo debug doc +glib +graphite icu +introspection test +truetype"
+IUSE="+cairo debug doc +glib +graphite icu +introspection static-libs test +truetype"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="introspection? ( glib )"
 
@@ -78,7 +78,9 @@ multilib_src_configure() {
 		-Dcairo="$(meson_multilib_native_feature cairo)"
 		-Dcoretext="disabled"
 		-Ddocs="$(meson_multilib_native_feature doc)"
+		-Dfontconfig="disabled" #609300
 		-Dintrospection="$(meson_multilib_native_feature introspection)"
+		-Dstatic="$(usex static-libs true false)"
 		$(meson_feature glib)
 		$(meson_feature graphite)
 		$(meson_feature icu)

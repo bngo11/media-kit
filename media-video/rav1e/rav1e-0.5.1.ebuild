@@ -10,29 +10,31 @@ aho-corasick-0.7.19
 android_system_properties-0.1.5
 ansi_term-0.12.1
 anyhow-1.0.66
-aom-sys-0.3.1
+aom-sys-0.3.2
 arbitrary-0.4.7
 arg_enum_proc_macro-0.3.2
 arrayvec-0.7.2
-assert_cmd-2.0.5
+assert_cmd-2.0.6
 atty-0.2.14
 autocfg-1.1.0
 av-metrics-0.7.2
 backtrace-0.3.66
 bindgen-0.59.2
+bindgen-0.61.0
 bitflags-1.3.2
 bitstream-io-1.5.0
 bstr-0.2.17
+bstr-1.0.1
 bumpalo-3.11.1
-bytemuck-1.12.2
+bytemuck-1.12.3
 byteorder-1.4.3
 cast-0.3.0
-cc-1.0.74
+cc-1.0.76
 cexpr-0.6.0
 cfg-expr-0.7.4
 cfg-expr-0.11.0
 cfg-if-1.0.0
-chrono-0.4.22
+chrono-0.4.23
 clang-sys-1.4.0
 clap-2.34.0
 cmake-0.1.49
@@ -52,10 +54,10 @@ crossbeam-utils-0.8.12
 csv-1.1.6
 csv-core-0.1.10
 ctor-0.1.26
-cxx-1.0.80
-cxx-build-1.0.80
-cxxbridge-flags-1.0.80
-cxxbridge-macro-1.0.80
+cxx-1.0.81
+cxx-build-1.0.81
+cxxbridge-flags-1.0.81
+cxxbridge-macro-1.0.81
 dav1d-sys-0.3.5
 deflate-0.8.6
 diff-0.1.13
@@ -63,7 +65,7 @@ difflib-0.4.0
 doc-comment-0.3.3
 either-1.8.0
 encode_unicode-0.3.6
-env_logger-0.9.1
+env_logger-0.9.3
 fern-0.6.1
 getrandom-0.2.8
 gimli-0.26.2
@@ -88,7 +90,7 @@ lazy_static-1.4.0
 lazycell-1.3.0
 libc-0.2.137
 libfuzzer-sys-0.3.5
-libloading-0.7.3
+libloading-0.7.4
 link-cplusplus-1.0.7
 log-0.4.17
 memchr-2.5.0
@@ -116,10 +118,10 @@ plotters-0.3.4
 plotters-backend-0.3.4
 plotters-svg-0.3.3
 png-0.16.8
-ppv-lite86-0.2.16
-predicates-2.1.1
-predicates-core-1.0.3
-predicates-tree-1.0.5
+ppv-lite86-0.2.17
+predicates-2.1.3
+predicates-core-1.0.5
+predicates-tree-1.0.7
 pretty_assertions-0.7.2
 proc-macro2-1.0.47
 quote-1.0.21
@@ -128,9 +130,9 @@ rand_chacha-0.3.1
 rand_core-0.6.4
 rayon-1.5.3
 rayon-core-1.9.3
-regex-1.6.0
+regex-1.7.0
 regex-automata-0.1.10
-regex-syntax-0.6.27
+regex-syntax-0.6.28
 rust_hawktracer-0.7.0
 rust_hawktracer_normal_macro-0.4.1
 rust_hawktracer_proc_macro-0.4.1
@@ -161,7 +163,7 @@ system-deps-3.1.2
 system-deps-6.0.3
 termcolor-1.1.3
 terminal_size-0.1.17
-termtree-0.2.4
+termtree-0.4.0
 textwrap-0.11.0
 thiserror-1.0.37
 thiserror-impl-1.0.37
@@ -173,7 +175,7 @@ unicode-segmentation-1.10.0
 unicode-width-0.1.10
 vec_map-0.8.2
 version-compare-0.0.11
-version-compare-0.1.0
+version-compare-0.1.1
 wait-timeout-0.2.0
 walkdir-2.3.2
 wasi-0.10.0+wasi-snapshot-preview1
@@ -202,7 +204,7 @@ SRC_URI="
 KEYWORDS="*"
 
 DESCRIPTION="The fastest and safest AV1 encoder"
-HOMEPAGE="https://github.com/xiph/rav1e"
+HOMEPAGE="https://github.com//"
 RESTRICT=""
 LICENSE="BSD-2 Apache-2.0 MIT Unlicense"
 SLOT="0"
@@ -219,7 +221,7 @@ src_unpack() {
 	default
 	cargo_src_unpack
 	rm -rf ${S}
-	mv ${WORKDIR}/xiph-rav1e-* ${S} || die
+	mv ${WORKDIR}/--* ${S} || die
 }
 
 src_compile() {

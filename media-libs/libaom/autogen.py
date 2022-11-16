@@ -1,31 +1,43 @@
 #!/usr/bin/env python3
 
-import json
+from bs4 import BeautifulSoup
+from packaging import version
+
+# We are going to parse the release tags directly from the website since they don't 
+# appear to have a usable rest api.
+# The tags we are interested in all look like this:
+# <a href="/aom/+/refs/tags/v3.1.2">v3.1.2</a>
+async def get_version(hub):
+	page = await hub.pkgtools.fetch.get_page("https://aomedia.googlesource.com/aom/+refs")
+	tag_list = []
+	for a in BeautifulSoup(page, features='html.parser').find_all('a', href=True):
+		if a['href'].startswith("/aom/+/refs/tags/"):
+			tag_text = a.get_text()
+			# Drop any tags that start with 'research' or contain 'rc'. We only want normal versions.
+			if "research" in tag_text or "rc" in tag_text:
+				continue
+			else:
+				tag_list.append(tag_text)
+				
+	# Sort the list and return the first one which should be the latest version
+	return None if not tag_list else  sorted(tag_list, key=lambda x: version.parse(x)).pop()
+	
+	
+
 
 async def generate(hub, **pkginfo):
-	json_data = await hub.pkgtools.fetch.get_page("https://gitlab.com/api/v4/projects/21349575/repository/tags", is_json=True)
-	version = None
-
-	for item in json_data:
-		try:
-			version = item['name'].strip('v')
-			list(map(int, version.split(".")))
-			break
-
-		except (IndexError, ValueError, KeyError):
-			continue
-
-	if version:
-		url = f"https://storage.googleapis.com/aom-releases/libaom-{version}.tar.gz"
-		final_name = f"libaom-{version}.tar.gz"
-		slot = version.split(".")[0]
-		ebuild = hub.pkgtools.ebuild.BreezyBuild(
-			**pkginfo,
-			version=version,
-			slot=slot,
-			artifacts=[hub.pkgtools.ebuild.Artifact(url=url, final_name=final_name)]
-		)
-
-		ebuild.push()
-
-# vim: ts=4 sw=4 noet
+	version = await get_version(hub)
+	if version is None:
+		raise hub.pkgtools.ebuild.BreezyError(f"Can't find a suitable release of {pkginfor['name']}")
+	version = version.lstrip("v")
+	slot = version.split(".")[0]
+	url = f"https://storage.googleapis.com/aom-releases/{pkginfo['name']}-{version}.tar.gz"
+	src_artifact = hub.pkgtools.ebuild.Artifact(url=url)
+	ebuild = hub.pkgtools.ebuild.BreezyBuild(
+		**pkginfo,
+		version=version,
+		slot=slot,
+		artifacts=[src_artifact]
+	)
+	ebuild.push()
+	

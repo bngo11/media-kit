@@ -21,7 +21,7 @@ REQUIRED_USE="
 "
 
 BDEPEND="
-	dev-lang/yasm
+	dev-lang/yasm 
 	doc? ( app-doc/doxygen )
 "
 
