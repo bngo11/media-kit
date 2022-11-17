@@ -20,7 +20,6 @@ DEPEND="${RDEPEND}"
 BDEPEND="
 	doc? ( dev-util/gtk-doc )
 	dev-util/gdbus-codegen
-	dev-util/glib-utils
 	virtual/pkgconfig
 "
 

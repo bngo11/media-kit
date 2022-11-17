@@ -73,7 +73,6 @@ RDEPEND="
 "
 
 DEPEND="${RDEPEND}
-	dev-util/glib-utils
 	app-arch/xz-utils
 	>=sys-apps/sed-4
 	virtual/pkgconfig

@@ -88,7 +88,6 @@ RDEPEND="
 	!<=media-plugins/gst-plugins-libvisual-1.16.3:1.0
 "
 DEPEND="${RDEPEND}
-	dev-util/glib-utils
 	X? ( x11-base/xorg-proto )
 	app-arch/xz-utils
 	>=sys-apps/sed-4

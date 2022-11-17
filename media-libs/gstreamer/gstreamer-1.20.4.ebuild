@@ -25,7 +25,6 @@ RDEPEND="
 "
 
 DEPEND="${RDEPEND}
-	dev-util/glib-utils
 	sys-devel/bison
 	sys-devel/flex
 	virtual/pkgconfig

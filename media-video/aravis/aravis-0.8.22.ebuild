@@ -19,7 +19,6 @@ GST_DEPEND="
 	media-libs/gst-plugins-base:1.0
 "
 BDEPEND="
-	dev-util/glib-utils
 	virtual/pkgconfig
 	gtk-doc? (
 		dev-util/gtk-doc

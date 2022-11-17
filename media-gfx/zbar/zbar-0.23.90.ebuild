@@ -73,7 +73,6 @@ BDEPEND="
 	app-text/xmlto
 	sys-devel/gettext
 	virtual/pkgconfig
-	gtk? ( dev-util/glib-utils )
 	nls? (
 		sys-devel/gettext
 		virtual/libiconv
