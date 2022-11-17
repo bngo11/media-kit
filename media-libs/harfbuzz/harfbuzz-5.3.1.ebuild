@@ -10,10 +10,13 @@ DESCRIPTION="An OpenType text shaping engine"
 HOMEPAGE="https://www.freedesktop.org/wiki/Software/HarfBuzz"
 
 SRC_URI="https://github.com/${PN}/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	SRC_URI="https://github.com/harfbuzz/harfbuzz/releases/download/${PV}/${P}.tar.xz"
 KEYWORDS="next"
 
 LICENSE="Old-MIT ISC icu"
-SLOT="0/0.9.18" # 0.9.18 introduced the harfbuzz-icu split; bug #472416
+# 0.9.18 introduced the harfbuzz-icu split; bug #472416
+# 3.0.0 dropped some unstable APIs; bug #813705
+SLOT="0/4.0.0"
 
 IUSE="+cairo debug doc +glib +graphite icu +introspection test +truetype"
 RESTRICT="!test? ( test )"
@@ -36,6 +39,10 @@ BDEPEND="
 	doc? ( dev-util/gtk-doc )
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-meson-freetype-icu.patch
+)
+
 pkg_setup() {
 	python-any-r1_pkg_setup
 	if ! use debug ; then
@@ -48,13 +55,17 @@ src_prepare() {
 
 	xdg_environment_reset
 
+	# bug #726120
 	sed -i \
-		-e 's:tests/macos.tests::' \
-		test/shaping/data/in-house/Makefile.sources \
-		|| die # bug 726120
+		-e '/tests\/macos\.tests/d' \
+		test/shape/data/in-house/Makefile.sources \
+		|| die
 
 	# bug 618772
 	append-cxxflags -std=c++14
+
+	# bug #790359
+	filter-flags -fexceptions -fthreadsafe-statics
 
 	# bug 762415
 	local pyscript
@@ -67,11 +78,12 @@ src_configure() {
 	# harfbuzz-gobject only used for instrospection, bug #535852
 	local emesonargs=(
 		-Dcoretext="disabled"
+		-Dchafa="disabled"
 		$(meson_feature cairo)
 		$(meson_feature doc docs)
 		$(meson_feature introspection)
 		$(meson_feature glib)
-		$(meson_feature graphite)
+		$(meson_feature graphite graphite2)
 		$(meson_feature icu)
 		$(meson_feature introspection gobject)
 		$(meson_feature test tests)
