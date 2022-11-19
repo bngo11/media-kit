@@ -128,8 +128,8 @@ quote-1.0.21
 rand-0.8.5
 rand_chacha-0.3.1
 rand_core-0.6.4
-rayon-1.5.3
-rayon-core-1.9.3
+rayon-1.6.0
+rayon-core-1.10.1
 regex-1.7.0
 regex-automata-0.1.10
 regex-syntax-0.6.28
