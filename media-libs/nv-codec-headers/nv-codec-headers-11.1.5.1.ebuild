@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="amd64"
 IUSE=""
 
-RDEPEND=">=x11-drivers/nvidia-drivers-470.57.02"
+# RDEPEND=">=x11-drivers/nvidia-drivers-470.57.02"
 
 src_unpack() {
 	unpack ${A}
