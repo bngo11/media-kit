@@ -48,9 +48,9 @@ criterion-plot-0.4.5
 crossbeam-0.8.2
 crossbeam-channel-0.5.6
 crossbeam-deque-0.8.2
-crossbeam-epoch-0.9.11
-crossbeam-queue-0.3.6
-crossbeam-utils-0.8.12
+crossbeam-epoch-0.9.13
+crossbeam-queue-0.3.8
+crossbeam-utils-0.8.14
 csv-1.1.6
 csv-core-0.1.10
 ctor-0.1.26
@@ -94,7 +94,7 @@ libloading-0.7.4
 link-cplusplus-1.0.7
 log-0.4.17
 memchr-2.5.0
-memoffset-0.6.5
+memoffset-0.7.1
 minimal-lexical-0.2.1
 miniz_oxide-0.3.7
 miniz_oxide-0.5.4
@@ -149,7 +149,7 @@ semver-1.0.14
 serde-1.0.147
 serde_cbor-0.11.2
 serde_derive-1.0.147
-serde_json-1.0.88
+serde_json-1.0.89
 shlex-1.1.0
 signal-hook-0.3.14
 signal-hook-registry-1.4.0
