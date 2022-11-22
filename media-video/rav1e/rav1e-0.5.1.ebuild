@@ -6,7 +6,7 @@ CRATES="
 addr2line-0.17.0
 adler-1.0.2
 adler32-1.2.0
-aho-corasick-0.7.19
+aho-corasick-0.7.20
 android_system_properties-0.1.5
 ansi_term-0.12.1
 anyhow-1.0.66
@@ -48,9 +48,9 @@ criterion-plot-0.4.5
 crossbeam-0.8.2
 crossbeam-channel-0.5.6
 crossbeam-deque-0.8.2
-crossbeam-epoch-0.9.12
-crossbeam-queue-0.3.7
-crossbeam-utils-0.8.13
+crossbeam-epoch-0.9.11
+crossbeam-queue-0.3.6
+crossbeam-utils-0.8.12
 csv-1.1.6
 csv-core-0.1.10
 ctor-0.1.26
@@ -94,7 +94,7 @@ libloading-0.7.4
 link-cplusplus-1.0.7
 log-0.4.17
 memchr-2.5.0
-memoffset-0.7.1
+memoffset-0.6.5
 minimal-lexical-0.2.1
 miniz_oxide-0.3.7
 miniz_oxide-0.5.4

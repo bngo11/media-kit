@@ -1,16 +1,16 @@
-BDEPEND=virtual/pkgconfig vulkan? ( || ( dev-lang/python:3.8[xml] dev-lang/python:3.9[xml] dev-lang/python:3.7[xml] dev-lang/python:3.10[xml] ) || ( ( dev-lang/python:3.8[xml] dev-python/mako[python_targets_python3_8(-),python_single_target_python3_8(+)] ) ( dev-lang/python:3.9[xml] dev-python/mako[python_targets_python3_9(-),python_single_target_python3_9(+)] ) ( dev-lang/python:3.7[xml] dev-python/mako[python_targets_python3_7(-),python_single_target_python3_7(+)] ) ( dev-lang/python:3.10[xml] dev-python/mako[python_targets_python3_10(-),python_single_target_python3_10(+)] ) ) ) >=dev-util/meson-0.48.2 >=dev-util/ninja-1.7.2
+BDEPEND=|| ( ( dev-lang/python:3.8[xml] dev-python/jinja[python_targets_python3_8(-),python_single_target_python3_8(+)] ) ( dev-lang/python:3.9[xml] dev-python/jinja[python_targets_python3_9(-),python_single_target_python3_9(+)] ) ( dev-lang/python:3.7[xml] dev-python/jinja[python_targets_python3_7(-),python_single_target_python3_7(+)] ) ( dev-lang/python:3.10[xml] dev-python/jinja[python_targets_python3_10(-),python_single_target_python3_10(+)] ) ) virtual/pkgconfig >=dev-util/meson-0.48.2 >=dev-util/ninja-1.7.2
 DEFINED_PHASES=compile configure install setup test
-DEPEND=glslang? ( dev-util/glslang ) lcms? ( media-libs/lcms:2 ) opengl? ( media-libs/libepoxy ) shaderc? ( >=media-libs/shaderc-2017.2 ) vulkan? ( dev-util/vulkan-headers media-libs/vulkan-loader )
+DEPEND=lcms? ( media-libs/lcms:2 ) opengl? ( media-libs/libglvnd ) shaderc? ( media-libs/shaderc ) !shaderc? ( glslang? ( dev-util/glslang:= ) ) unwind? ( llvm-libunwind? ( sys-libs/llvm-libunwind ) !llvm-libunwind? ( sys-libs/libunwind:= ) ) vulkan? ( media-libs/vulkan-loader ) dev-util/vulkan-headers
 DESCRIPTION=Reusable library for GPU-accelerated image processing primitives
 EAPI=7
 HOMEPAGE=https://code.videolan.org/videolan/libplacebo
-IUSE=glslang lcms +opengl +shaderc +vulkan
+IUSE=glslang lcms llvm-libunwind +opengl +shaderc test unwind +vulkan
 KEYWORDS=*
-LICENSE=LGPL-2.1+
-RDEPEND=glslang? ( dev-util/glslang ) lcms? ( media-libs/lcms:2 ) opengl? ( media-libs/libepoxy ) shaderc? ( >=media-libs/shaderc-2017.2 ) vulkan? ( dev-util/vulkan-headers media-libs/vulkan-loader )
+LICENSE=LGPL-2.1+ opengl? ( MIT )
+RDEPEND=lcms? ( media-libs/lcms:2 ) opengl? ( media-libs/libglvnd ) shaderc? ( media-libs/shaderc ) !shaderc? ( glslang? ( dev-util/glslang:= ) ) unwind? ( llvm-libunwind? ( sys-libs/llvm-libunwind ) !llvm-libunwind? ( sys-libs/libunwind:= ) ) vulkan? ( media-libs/vulkan-loader )
 REQUIRED_USE=vulkan? ( || ( glslang shaderc ) )
-RESTRICT=test
+RESTRICT=!test? ( test )
 SLOT=0/229
-SRC_URI=https://direct.funtoo.org/6a/d8/5b/6ad85b7336d91c6698728f0d0cfca2d14528d8d5e22cc37daf9d9e06e9463c28a9fedea16e56f481540d10d004e19dd5e567ba69a53ade766ade62297ac4c890 -> libplacebo-5.229.1-with-submodules.tar.xz
+SRC_URI=https://code.videolan.org/videolan/libplacebo/-/archive/v5.229.1/libplacebo-v5.229.1.tar.gz -> libplacebo-v5.229.1.tar.gz
 _eclasses_=eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	meson	2fbe03e3b496f82fd941bcdb9d351c91	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	132cbb376048d079b5a012f5467c4e7f	python-any-r1	54a3178500786b0a7ede4a23b7f2a6ad	python-utils-r1	32393cac272daca4c136cc44e6005b67	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
-_md5_=2c2b68a3d7022ed36acde351199f4e2f
+_md5_=22309e1c0a1b2f9ab242d15ff763b508

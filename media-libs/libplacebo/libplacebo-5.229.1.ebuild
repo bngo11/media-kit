@@ -9,59 +9,59 @@ inherit meson python-any-r1
 
 DESCRIPTION="Reusable library for GPU-accelerated image processing primitives"
 HOMEPAGE="https://code.videolan.org/videolan/libplacebo"
-SRC_URI="https://direct.funtoo.org/6a/d8/5b/6ad85b7336d91c6698728f0d0cfca2d14528d8d5e22cc37daf9d9e06e9463c28a9fedea16e56f481540d10d004e19dd5e567ba69a53ade766ade62297ac4c890 -> libplacebo-5.229.1-with-submodules.tar.xz"
-
-LICENSE="LGPL-2.1+"
-SLOT="0/$(ver_cut 2)" # libplacebo.so version
+SRC_URI="https://code.videolan.org/videolan/libplacebo/-/archive/v5.229.1/libplacebo-v5.229.1.tar.gz -> libplacebo-v5.229.1.tar.gz"
+S="${WORKDIR}/${PN}-v${PV}"
 KEYWORDS="*"
-IUSE="glslang lcms +opengl +shaderc +vulkan"
 
+LICENSE="LGPL-2.1+ opengl? ( MIT )"
+SLOT="0/$(ver_cut 2)" # soname
+IUSE="glslang lcms llvm-libunwind +opengl +shaderc test unwind +vulkan"
+RESTRICT="!test? ( test )"
 REQUIRED_USE="vulkan? ( || ( glslang shaderc ) )"
-RESTRICT="test"
-S=${WORKDIR}/libplacebo
 
-RDEPEND="glslang? ( dev-util/glslang )
+# libglvnd is used with dlopen() through glad (inc. egl/gles)
+RDEPEND="
 	lcms? ( media-libs/lcms:2 )
-	opengl? ( media-libs/libepoxy )
-	shaderc? ( >=media-libs/shaderc-2017.2 )
-	vulkan? (
-		dev-util/vulkan-headers
-		media-libs/vulkan-loader
-	)"
-DEPEND="${RDEPEND}"
+	opengl? ( media-libs/libglvnd )
+	shaderc? ( media-libs/shaderc )
+	!shaderc? ( glslang? ( dev-util/glslang:= ) )
+	unwind? (
+		llvm-libunwind? ( sys-libs/llvm-libunwind )
+		!llvm-libunwind? ( sys-libs/libunwind:= )
+	)
+	vulkan? ( media-libs/vulkan-loader )"
+# vulkan-headers is required even with USE=-vulkan (bug #882065)
+DEPEND="
+	${RDEPEND}
+	dev-util/vulkan-headers"
+BDEPEND="
+	$(python_gen_any_dep 'dev-python/jinja[${PYTHON_USEDEP}]')
+	virtual/pkgconfig"
 
-BDEPEND="virtual/pkgconfig
-	vulkan? (
-		${PYTHON_DEPS}
-		$(python_gen_any_dep 'dev-python/mako[${PYTHON_USEDEP}]')
-	)"
-
-#src_unpack() {
-#	cd ${WORKDIR} && tar xf ${DISTDIR}/${A} || die
-#}
-
-post_src_unpack() {
-	sed -i "s:\(#include <vulkan/vulkan.h>\):\1\n#include <vulkan/vulkan_metal.h>:" "${S}"/src/include/${PN}/vulkan.h || die
-}
+PATCHES=(
+	"${FILESDIR}"/${PN}-5.229.1-llvm-libunwind.patch
+	"${FILESDIR}"/${PN}-5.229.1-python-executable.patch
+	"${FILESDIR}"/${PN}-5.229.1-shared-glslang.patch
+)
 
 python_check_deps() {
-	has_version -b "dev-python/mako[${PYTHON_USEDEP}]"
-}
-
-pkg_setup() {
-	use vulkan && python-any-r1_pkg_setup
+	python_has_version "dev-python/jinja[${PYTHON_USEDEP}]"
 }
 
 src_configure() {
 	local emesonargs=(
-		$(meson_feature glslang)
+		-Ddemos=false #851927
+		$(meson_use test tests)
 		$(meson_feature lcms)
 		$(meson_feature opengl)
+		$(meson_feature opengl gl-proc-addr)
 		$(meson_feature shaderc)
+		$(usex shaderc -Dglslang=disabled $(meson_feature glslang))
+		$(meson_feature unwind)
 		$(meson_feature vulkan)
-		-Dtests=false
-		# hard-code path from dev-util/vulkan-headers
-		-Dvulkan-registry=/usr/share/vulkan/registry/vk.xml
+		$(meson_feature vulkan vk-proc-addr)
+		-Dvulkan-registry="${ESYSROOT}"/usr/share/vulkan/registry/vk.xml
 	)
+
 	meson_src_configure
 }
