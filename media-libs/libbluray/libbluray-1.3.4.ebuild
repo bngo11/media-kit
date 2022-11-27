@@ -6,7 +6,7 @@ inherit autotools java-pkg-opt-2 flag-o-matic
 
 DESCRIPTION="Blu-ray playback libraries"
 HOMEPAGE="https://www.videolan.org/developers/libbluray.html"
-SRC_URI="https://code.videolan.org/videolan/libbluray/-/archive/1.3.3/libbluray-1.3.3.tar.gz -> libbluray-1.3.3.tar.gz"
+SRC_URI="https://code.videolan.org/videolan/libbluray/-/archive/1.3.4/libbluray-1.3.4.tar.gz -> libbluray-1.3.4.tar.gz"
 KEYWORDS="*"
 
 LICENSE="LGPL-2.1"
