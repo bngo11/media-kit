@@ -94,10 +94,6 @@ PDEPEND=">=media-video/wireplumber-0.4.11"
 DOCS=( {README,INSTALL}.md NEWS )
 
 PATCHES=(
-	"${FILESDIR}/0001-pulse-server-also-advance-read-pointer-in-underrun.patch"
-	"${FILESDIR}/0002-audioadapter-perform-setup-again-after-a-PortConfig.patch"
-	"${FILESDIR}/0003-acp-do-probing-in-44100-Hz-again.patch"
-	"${FILESDIR}/0004-alsa-force-playback-start-when-buffer-is-full.patch"
 )
 
 # limitsdfile related code taken from =sys-auth/realtime-base-0.1
