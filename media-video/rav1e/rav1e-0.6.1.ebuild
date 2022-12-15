@@ -3,7 +3,7 @@
 EAPI=7
 
 CRATES="
-addr2line-0.17.0
+addr2line-0.19.0
 adler-1.0.2
 aho-corasick-0.7.20
 android_system_properties-0.1.5
@@ -18,7 +18,7 @@ atty-0.2.14
 autocfg-1.1.0
 av-metrics-0.9.0
 av1-grain-0.2.2
-backtrace-0.3.66
+backtrace-0.3.67
 bindgen-0.61.0
 bitflags-1.3.2
 bitstream-io-1.6.0
@@ -29,7 +29,7 @@ bytemuck-1.12.3
 byteorder-1.4.3
 cargo-lock-8.0.3
 cast-0.3.0
-cc-1.0.77
+cc-1.0.78
 cexpr-0.6.0
 cfg-expr-0.11.0
 cfg-if-1.0.0
@@ -77,7 +77,7 @@ fern-0.6.1
 flate2-1.0.25
 form_urlencoded-1.1.0
 getrandom-0.2.8
-gimli-0.26.2
+gimli-0.27.0
 git2-0.15.0
 glob-0.3.0
 half-1.8.2
@@ -107,13 +107,12 @@ libgit2-sys-0.14.0+1.5.0
 libloading-0.7.4
 libz-sys-1.1.8
 link-cplusplus-1.0.7
-linux-raw-sys-0.1.3
+linux-raw-sys-0.1.4
 log-0.4.17
 maybe-rayon-0.1.0
 memchr-2.5.0
 memoffset-0.7.1
 minimal-lexical-0.2.1
-miniz_oxide-0.5.4
 miniz_oxide-0.6.2
 nasm-rs-0.2.4
 new_debug_unreachable-1.0.4
@@ -125,12 +124,12 @@ num-integer-0.1.45
 num-rational-0.4.1
 num-traits-0.2.15
 num_cpus-1.14.0
-object-0.29.0
+object-0.30.0
 once_cell-1.16.0
 oorandom-11.1.3
 os_str_bytes-6.4.1
 output_vt100-0.1.3
-paste-1.0.9
+paste-1.0.10
 peeking_take_while-0.1.2
 percent-encoding-2.2.0
 pkg-config-0.3.26
@@ -152,7 +151,7 @@ quote-1.0.21
 rand-0.8.5
 rand_chacha-0.3.1
 rand_core-0.6.4
-rayon-1.6.0
+rayon-1.6.1
 rayon-core-1.10.1
 regex-1.7.0
 regex-automata-0.1.10
@@ -171,9 +170,9 @@ scan_fmt-0.2.6
 scopeguard-1.1.0
 scratch-1.0.2
 semver-1.0.14
-serde-1.0.149
+serde-1.0.150
 serde-big-array-0.4.1
-serde_derive-1.0.149
+serde_derive-1.0.150
 serde_json-1.0.89
 shlex-1.1.0
 signal-hook-0.3.14
@@ -192,7 +191,7 @@ thiserror-impl-1.0.37
 tinytemplate-1.2.1
 tinyvec-1.6.0
 tinyvec_macros-0.1.0
-toml-0.5.9
+toml-0.5.10
 unicode-bidi-0.3.8
 unicode-ident-1.0.5
 unicode-normalization-0.1.22
