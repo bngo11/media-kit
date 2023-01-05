@@ -1,0 +1,14 @@
+BDEPEND=dev-lang/perl:=
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=dev-lang/perl:=
+DESCRIPTION=Read and write meta information in image, audio and video files
+EAPI=7
+HOMEPAGE=https://exiftool.org/ https://exiftool.sourceforge.net https://github.com/exiftool/exiftool
+IUSE=doc
+KEYWORDS=*
+LICENSE=|| ( Artistic GPL-1+ )
+RDEPEND=dev-lang/perl:=
+SLOT=0
+SRC_URI=https://github.com/exiftool/exiftool/tarball/19d09138d8ad75d0221435fb7a16a415625a53e5 -> exiftool-12.53-19d0913.tar.gz
+_eclasses_=multiprocessing	cac3169468f893670dac3e7cb940e045	perl-functions	d0d18687b96ee3d2307b88eefdd1735b	perl-module	768f1dfc0a27ff40f1ece5cb8c22714a
+_md5_=96539a69467244b7247c667347b0eefb

@@ -22,3 +22,4 @@ src_configure() {
 
 	cmake_src_configure
 }
+
