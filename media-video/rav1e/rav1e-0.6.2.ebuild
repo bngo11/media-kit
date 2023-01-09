@@ -71,7 +71,7 @@ form_urlencoded-1.1.0
 getrandom-0.2.8
 gimli-0.27.0
 git2-0.15.0
-glob-0.3.0
+glob-0.3.1
 half-1.8.2
 hashbrown-0.12.3
 heck-0.4.0

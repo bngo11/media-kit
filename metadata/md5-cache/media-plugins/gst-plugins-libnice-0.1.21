@@ -1,11 +1,11 @@
 DEFINED_PHASES=-
-DEPEND=>=net-libs/libnice-0.1.19:0=[gstreamer] media-libs/gstreamer:1.0 media-libs/gst-plugins-base-0.1:1.0 >=virtual/pkgconfig-0-r1
+DEPEND=>=net-libs/libnice-0.1.21:0=[gstreamer] media-libs/gstreamer:1.0 media-libs/gst-plugins-base-0.1:1.0 >=virtual/pkgconfig-0-r1
 DESCRIPTION=GStreamer plugin for ICE (RFC 5245) support
 EAPI=7
 HOMEPAGE=https://nice.freedesktop.org/wiki/
 KEYWORDS=*
 LICENSE=|| ( MPL-1.1 LGPL-2.1 )
-RDEPEND=>=net-libs/libnice-0.1.19:0=[gstreamer] media-libs/gstreamer:1.0 media-libs/gst-plugins-base-0.1:1.0
+RDEPEND=>=net-libs/libnice-0.1.21:0=[gstreamer] media-libs/gstreamer:1.0 media-libs/gst-plugins-base-0.1:1.0
 SLOT=1.0
 SRC_URI=https://nice.freedesktop.org/releases/.tar.gz
 _md5_=6abf86c0d747db93b7ab64c43f689e48
