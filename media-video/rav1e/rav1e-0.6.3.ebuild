@@ -105,7 +105,7 @@ minimal-lexical-0.2.1
 miniz_oxide-0.6.2
 nasm-rs-0.2.4
 new_debug_unreachable-1.0.4
-nom-7.1.2
+nom-7.1.3
 noop_proc_macro-0.3.0
 num-bigint-0.4.3
 num-derive-0.3.3
@@ -169,7 +169,7 @@ simd_helpers-0.1.0
 smallvec-1.10.0
 syn-1.0.107
 system-deps-6.0.3
-termcolor-1.1.3
+termcolor-1.2.0
 terminal_size-0.2.3
 termtree-0.4.0
 textwrap-0.16.0
