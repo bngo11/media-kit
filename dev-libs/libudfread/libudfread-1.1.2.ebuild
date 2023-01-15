@@ -2,12 +2,14 @@
 
 EAPI=7
 
-inherit autotools multilib-minimal
+inherit autotools
+
+SRC_URI="https://code.videolan.org/videolan/libudfread/-/archive/${PV}/${P}.tar.gz"
+KEYWORDS="*"
+
 
 DESCRIPTION="Library for reading UDF from raw devices and image files"
 HOMEPAGE="https://code.videolan.org/videolan/libudfread/"
-SRC_URI="https://code.videolan.org/videolan/libudfread/-/archive/1.1.2/libudfread-1.1.2.tar.gz -> libudfread-1.1.2.tar.gz"
-KEYWORDS="*"
 
 LICENSE="LGPL-2.1+"
 SLOT="0"
@@ -18,11 +20,8 @@ src_prepare() {
 	eautoreconf
 }
 
-multilib_src_configure() {
-	ECONF_SOURCE="${S}" econf
-}
-
-multilib_src_install_all() {
+src_install() {
+	default
 	find "${D}" -name '*.la' -delete || die
 	if ! use static-libs ; then
 		find "${D}" -name '*.a' -delete || die

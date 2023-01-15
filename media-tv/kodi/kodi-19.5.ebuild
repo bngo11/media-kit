@@ -1,4 +1,3 @@
-# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -10,31 +9,27 @@ LIBDVDNAV_VERSION="6.0.0-Leia-Alpha-3"
 FFMPEG_VERSION="4.3.2"
 CODENAME="Matrix"
 FFMPEG_KODI_VERSION="19.1"
-PYTHON_COMPAT=( python3_{8,9,10} )
+PYTHON_COMPAT=( python3_8+ )
 SRC_URI="https://github.com/xbmc/libdvdcss/archive/${LIBDVDCSS_VERSION}.tar.gz -> libdvdcss-${LIBDVDCSS_VERSION}.tar.gz
 	https://github.com/xbmc/libdvdread/archive/${LIBDVDREAD_VERSION}.tar.gz -> libdvdread-${LIBDVDREAD_VERSION}.tar.gz
 	https://github.com/xbmc/libdvdnav/archive/${LIBDVDNAV_VERSION}.tar.gz -> libdvdnav-${LIBDVDNAV_VERSION}.tar.gz
 	!system-ffmpeg? ( https://github.com/xbmc/FFmpeg/archive/${FFMPEG_VERSION}-${CODENAME}-${FFMPEG_KODI_VERSION}.tar.gz -> ffmpeg-${PN}-${FFMPEG_VERSION}-${CODENAME}-${FFMPEG_KODI_VERSION}.tar.gz )"
-if [[ ${PV} == *9999 ]] ; then
-	EGIT_REPO_URI="https://github.com/xbmc/xbmc.git"
-	EGIT_BRANCH="Matrix"
-	inherit git-r3
-else
-	MY_PV=${PV/_p/_r}
-	MY_PV=${MY_PV/_alpha/a}
-	MY_PV=${MY_PV/_beta/b}
-	MY_PV=${MY_PV/_rc/RC}
-	MY_PV="${MY_PV}-${CODENAME}"
-	MY_P="${PN}-${MY_PV}"
-	SRC_URI+=" https://github.com/xbmc/xbmc/archive/${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
-	KEYWORDS="~amd64 ~arm ~arm64 ~x86"
-	S=${WORKDIR}/xbmc-${MY_PV}
-fi
+MY_PV=${PV/_p/_r}
+MY_PV=${MY_PV/_alpha/a}
+MY_PV=${MY_PV/_beta/b}
+MY_PV=${MY_PV/_rc/RC}
+MY_PV="${MY_PV}-${CODENAME}"
+MY_P="${PN}-${MY_PV}"
+SRC_URI+=" https://github.com/xbmc/xbmc/archive/${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
+KEYWORDS="*"
+S=${WORKDIR}/xbmc-${MY_PV}
 
-inherit autotools cmake desktop linux-info pax-utils python-single-r1 xdg
+
+inherit autotools cmake desktop libtool linux-info pax-utils python-single-r1 xdg
 
 PATCHES=(
-	"${FILESDIR}/${P}-fmt-9.patch"
+	"${FILESDIR}/${PN}-19.4-atomic.patch"
+	"${FILESDIR}/${PN}-19.4-dav1d-1.0.0.patch"
 )
 
 DESCRIPTION="A free and open source media-player and entertainment hub"
@@ -45,7 +40,7 @@ SLOT="0"
 # use flag is called libusb so that it doesn't fool people in thinking that
 # it is _required_ for USB support. Otherwise they'll disable udev and
 # that's going to be worse.
-IUSE="airplay alsa bluetooth bluray caps cec +css dav1d dbus eventclients gbm gles lcms libusb lirc mariadb mysql nfs +optical power-control pulseaudio raspberry-pi samba +system-ffmpeg test udf udev udisks upnp upower vaapi vdpau wayland webserver +X +xslt zeroconf"
+IUSE="airplay alsa bluetooth bluray caps cec +css dav1d dbus eventclients gbm gles lcms libusb lirc mariadb mysql nfs +optical power-control pulseaudio raspberry-pi samba +system-ffmpeg udf udev udisks upnp upower vaapi vdpau wayland webserver +X +xslt zeroconf"
 IUSE="${IUSE} cpu_flags_x86_sse cpu_flags_x86_sse2 cpu_flags_x86_sse3 cpu_flags_x86_sse4_1 cpu_flags_x86_sse4_2 cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_arm_neon"
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
@@ -63,11 +58,10 @@ REQUIRED_USE="
 	)
 	zeroconf? ( dbus )
 "
-RESTRICT="!test? ( test )"
 
 COMMON_DEPEND="
 	>=dev-libs/lzo-2.04
-	>=dev-libs/flatbuffers-1.12.0:=
+	>=dev-libs/flatbuffers-1.11.0:=
 	>=media-libs/libjpeg-turbo-2.0.4:=
 	>=media-libs/libpng-1.6.26:0=
 "
@@ -117,7 +111,7 @@ COMMON_TARGET_DEPEND="${PYTHON_DEPS}
 	)
 	!system-ffmpeg? (
 		app-arch/bzip2
-		dav1d? ( media-libs/dav1d )
+		dav1d? ( media-libs/dav1d:= )
 	)
 	mysql? ( dev-db/mysql-connector-c:= )
 	mariadb? ( dev-db/mariadb-connector-c:= )
@@ -134,11 +128,10 @@ COMMON_TARGET_DEPEND="${PYTHON_DEPS}
 	udf? ( >=dev-libs/libudfread-1.0.0 )
 	udev? ( virtual/udev )
 	vaapi? (
-		x11-libs/libva:=
+		media-libs/libva:=
 		system-ffmpeg? ( media-video/ffmpeg[vaapi] )
-		vdpau? ( x11-libs/libva-vdpau-driver )
-		wayland? ( x11-libs/libva[wayland] )
-		X? ( x11-libs/libva[X] )
+		wayland? ( media-libs/libva[wayland] )
+		X? ( media-libs/libva[X] )
 	)
 	virtual/libiconv
 	vdpau? (
@@ -175,13 +168,11 @@ RDEPEND="${COMMON_DEPEND} ${COMMON_TARGET_DEPEND}
 "
 DEPEND="${COMMON_DEPEND} ${COMMON_TARGET_DEPEND}
 	dev-libs/rapidjson
-	test? ( >=dev-cpp/gtest-1.10.0 )
 "
 BDEPEND="${COMMON_DEPEND}
 	dev-lang/swig
 	dev-util/cmake
 	media-libs/giflib
-	>=dev-libs/flatbuffers-1.11.0
 	>=media-libs/libjpeg-turbo-2.0.4:=
 	>=media-libs/libpng-1.6.26:0=
 	virtual/pkgconfig
@@ -208,6 +199,11 @@ src_unpack() {
 }
 
 src_prepare() {
+	# https://bugs.gentoo.org/885419
+	if has_version ">=media-libs/mesa-22.3.0"; then
+		PATCHES+=( "${FILESDIR}/${PN}-19.4-fix-mesa-22.3.0-build.patch" )
+	fi
+
 	cmake_src_prepare
 
 	# avoid long delays when powerkit isn't running #348580
@@ -293,7 +289,7 @@ src_configure() {
 		-DENABLE_PULSEAUDIO=$(usex pulseaudio)
 		-DENABLE_SMBCLIENT=$(usex samba)
 		-DENABLE_SNDIO=OFF
-		-DENABLE_TESTING=$(usex test)
+		-DENABLE_TESTING=OFF
 		-DENABLE_UDEV=$(usex udev)
 		-DENABLE_UDFREAD=$(usex udf)
 		-DENABLE_UPNP=$(usex upnp)
@@ -329,17 +325,6 @@ src_configure() {
 
 src_compile() {
 	cmake_src_compile all
-}
-
-src_test() {
-	local myctestargs=(
-		# Known failing, unreliable test
-		# bug #743938
-		-E "(TestCPUInfo.GetCPUFrequency)"
-	)
-
-	# see https://github.com/xbmc/xbmc/issues/17860#issuecomment-630120213
-	KODI_HOME="${BUILD_DIR}" cmake_build check
 }
 
 src_install() {

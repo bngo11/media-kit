@@ -2,16 +2,17 @@
 
 EAPI=7
 
-inherit autotools java-pkg-opt-2 flag-o-matic
+SRC_URI="https://downloads.videolan.org/pub/videolan/libbluray/${PV}/${P}.tar.bz2"
+KEYWORDS="*"
+
+inherit autotools java-pkg-opt-2
 
 DESCRIPTION="Blu-ray playback libraries"
 HOMEPAGE="https://www.videolan.org/developers/libbluray.html"
-SRC_URI="{{artifacts[0].src_uri}}"
-KEYWORDS="*"
 
 LICENSE="LGPL-2.1"
 SLOT="0/2"
-IUSE="aacs bdplus +fontconfig java static-libs +truetype utils +xml"
+IUSE="aacs bdplus +fontconfig java +truetype utils +xml"
 
 RDEPEND="
 	dev-libs/libudfread
@@ -42,19 +43,20 @@ DOCS=( ChangeLog README.md )
 
 src_prepare() {
 	default
+
 	eautoreconf
 }
 
 src_configure() {
-	use java || unset JDK_HOME # Bug #621992.
+	# bug #621992
+	use java || unset JDK_HOME
 
-	ECONF_SOURCE="${S}" econf \
+	econf \
 		--disable-optimizations \
 		$(use_enable utils examples) \
 		$(use_enable java bdjava-jar) \
 		$(use_with fontconfig) \
 		$(use_with truetype freetype) \
-		$(use_enable static-libs static) \
 		$(use_with xml libxml2)
 }
 
@@ -65,9 +67,9 @@ src_install() {
 		find .libs/ -type f -executable ! -name "${PN}.*" \
 			 $(use java || echo '! -name bdj_test') -exec dobin {} +
 
-	use java &&
-		java-pkg_regjar "${ED}"/usr/share/${PN}/lib/*.jar
+	use java && java-pkg_regjar "${ED}"/usr/share/${PN}/lib/*.jar
 
 	einstalldocs
+
 	find "${ED}" -name '*.la' -delete || die
 }

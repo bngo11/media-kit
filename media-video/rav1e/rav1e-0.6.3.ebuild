@@ -12,7 +12,7 @@ aom-sys-0.3.2
 arbitrary-0.4.7
 arg_enum_proc_macro-0.3.2
 arrayvec-0.7.2
-assert_cmd-2.0.7
+assert_cmd-2.0.8
 atty-0.2.14
 autocfg-1.1.0
 av-metrics-0.9.0
@@ -37,14 +37,14 @@ ciborium-io-0.2.0
 ciborium-ll-0.2.0
 clang-sys-1.4.0
 clap-3.2.23
-clap-4.0.32
-clap_complete-4.0.7
-clap_derive-4.0.21
+clap-4.1.1
+clap_complete-4.1.0
+clap_derive-4.1.0
 clap_lex-0.2.4
-clap_lex-0.3.0
+clap_lex-0.3.1
 cmake-0.1.49
 color_quant-1.1.0
-console-0.15.4
+console-0.15.5
 const_fn_assert-0.1.2
 crc32fast-1.3.2
 criterion-0.4.0
@@ -81,7 +81,7 @@ idna-0.3.0
 image-0.24.5
 indexmap-1.9.2
 interpolate_name-0.2.3
-io-lifetimes-1.0.3
+io-lifetimes-1.0.4
 is-terminal-0.4.2
 itertools-0.8.2
 itertools-0.10.5
@@ -93,7 +93,7 @@ lazy_static-1.4.0
 lazycell-1.3.0
 libc-0.2.139
 libfuzzer-sys-0.3.5
-libgit2-sys-0.14.0+1.5.0
+libgit2-sys-0.14.1+1.5.0
 libloading-0.7.4
 libz-sys-1.1.8
 linux-raw-sys-0.1.4
@@ -113,7 +113,7 @@ num-integer-0.1.45
 num-rational-0.4.1
 num-traits-0.2.15
 num_cpus-1.15.0
-object-0.30.1
+object-0.30.2
 once_cell-1.17.0
 oorandom-11.1.3
 os_str_bytes-6.4.1
@@ -142,7 +142,7 @@ rand_chacha-0.3.1
 rand_core-0.6.4
 rayon-1.6.1
 rayon-core-1.10.1
-regex-1.7.0
+regex-1.7.1
 regex-automata-0.1.10
 regex-syntax-0.6.28
 rust_hawktracer-0.7.0
@@ -184,7 +184,7 @@ unicode-ident-1.0.6
 unicode-normalization-0.1.22
 unicode-width-0.1.10
 url-2.3.1
-v_frame-0.3.1
+v_frame-0.3.3
 vcpkg-0.2.15
 version-compare-0.1.1
 version_check-0.9.4
@@ -203,13 +203,13 @@ winapi-i686-pc-windows-gnu-0.4.0
 winapi-util-0.1.5
 winapi-x86_64-pc-windows-gnu-0.4.0
 windows-sys-0.42.0
-windows_aarch64_gnullvm-0.42.0
-windows_aarch64_msvc-0.42.0
-windows_i686_gnu-0.42.0
-windows_i686_msvc-0.42.0
-windows_x86_64_gnu-0.42.0
-windows_x86_64_gnullvm-0.42.0
-windows_x86_64_msvc-0.42.0
+windows_aarch64_gnullvm-0.42.1
+windows_aarch64_msvc-0.42.1
+windows_i686_gnu-0.42.1
+windows_i686_msvc-0.42.1
+windows_x86_64_gnu-0.42.1
+windows_x86_64_gnullvm-0.42.1
+windows_x86_64_msvc-0.42.1
 y4m-0.7.0
 yansi-0.5.1
 
@@ -218,7 +218,7 @@ yansi-0.5.1
 inherit cargo
 
 SRC_URI="
-	https://api.github.com/repos/xiph/rav1e/tarball/v0.6.2 -> rav1e-0.6.2.tar.gz
+	https://api.github.com/repos/xiph/rav1e/tarball/v0.6.3 -> rav1e-0.6.3.tar.gz
 	$(cargo_crate_uris ${CRATES})
 "
 KEYWORDS="*"
