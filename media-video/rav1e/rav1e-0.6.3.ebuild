@@ -23,8 +23,8 @@ bitflags-1.3.2
 bitstream-io-1.6.0
 bstr-1.1.0
 built-0.5.2
-bumpalo-3.11.1
-bytemuck-1.12.3
+bumpalo-3.12.0
+bytemuck-1.13.0
 byteorder-1.4.3
 cargo-lock-8.0.3
 cast-0.3.0
@@ -93,7 +93,7 @@ lazy_static-1.4.0
 lazycell-1.3.0
 libc-0.2.139
 libfuzzer-sys-0.3.5
-libgit2-sys-0.14.1+1.5.0
+libgit2-sys-0.14.2+1.5.1
 libloading-0.7.4
 libz-sys-1.1.8
 linux-raw-sys-0.1.4
@@ -133,7 +133,7 @@ predicates-tree-1.0.7
 pretty_assertions-1.3.0
 proc-macro-error-1.0.4
 proc-macro-error-attr-1.0.4
-proc-macro2-1.0.49
+proc-macro2-1.0.50
 quickcheck-1.0.3
 quickcheck_macros-1.0.0
 quote-1.0.23
@@ -152,7 +152,7 @@ rust_hawktracer_sys-0.4.2
 rustc-demangle-0.1.21
 rustc-hash-1.1.0
 rustc_version-0.4.0
-rustix-0.36.6
+rustix-0.36.7
 ryu-1.0.12
 same-file-1.0.6
 scan_fmt-0.2.6
@@ -178,8 +178,8 @@ thiserror-impl-1.0.38
 tinytemplate-1.2.1
 tinyvec-1.6.0
 tinyvec_macros-0.1.0
-toml-0.5.10
-unicode-bidi-0.3.8
+toml-0.5.11
+unicode-bidi-0.3.10
 unicode-ident-1.0.6
 unicode-normalization-0.1.22
 unicode-width-0.1.10
@@ -197,7 +197,7 @@ wasm-bindgen-macro-0.2.83
 wasm-bindgen-macro-support-0.2.83
 wasm-bindgen-shared-0.2.83
 web-sys-0.3.60
-which-4.3.0
+which-4.4.0
 winapi-0.3.9
 winapi-i686-pc-windows-gnu-0.4.0
 winapi-util-0.1.5
