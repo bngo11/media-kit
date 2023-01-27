@@ -74,23 +74,23 @@ S="${WORKDIR}/${MY_PN}-${PV}"
 src_configure() {
 	local myconf=()
 	if use opengl || use gles2; then
-		myconf+=( -Dwith_egl=yes )
+		myconf+=( -Degl=enabled )
 	else
-		myconf+=( -Dwith_egl=no )
+		myconf+=( -Degl=disabled )
 	fi
 
 	if use opengl && use X; then
-		myconf+=( -Dwith_glx=yes )
+		myconf+=( -Dglx=enabled )
 	else
-		myconf+=( -Dwith_glx=no )
+		myconf+=( -Dglx=disabled )
 	fi
 
 	local emesonargs=(
 		-Dexamples=disabled
-		-Dwith_drm=$(usex drm yes no)
-		-Dwith_x11=$(usex X yes no)
-		-Dwith_wayland=$(usex wayland yes no)
-		-Dwith_encoders=yes
+		$(meson_feature drm)
+		$(meson_feature X x11)
+		$(meson_feature wayland)
+		-Dencoders=enabled
 		"${myconf[@]}"
 	)
 
