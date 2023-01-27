@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DEPEND=>=dev-libs/libxml2-2.9.1-r4 >=media-libs/gst-plugins-bad-1.22:1.0=
+DESCRIPTION=MPEG-DASH plugin for GStreamer
+EAPI=7
+KEYWORDS=*
+RDEPEND=>=dev-libs/libxml2-2.9.1-r4 >=media-libs/gst-plugins-bad-1.22:1.0=
+SLOT=1.0
+_md5_=2a44a1f3df025ffb79bbb8d22f514604

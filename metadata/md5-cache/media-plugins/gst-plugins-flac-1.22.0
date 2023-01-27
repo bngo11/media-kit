@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DEPEND=>=media-libs/flac-1.2.1-r5 >=media-libs/gst-plugins-good-1.22:1.0=
+DESCRIPTION=FLAC encoder/decoder/tagger plugin for GStreamer
+EAPI=7
+KEYWORDS=*
+RDEPEND=>=media-libs/flac-1.2.1-r5 >=media-libs/gst-plugins-good-1.22:1.0=
+SLOT=1.0
+_md5_=2c4b74dbd5548c75e3e9aa2d62c0ba34

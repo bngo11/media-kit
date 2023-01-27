@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DEPEND=media-libs/chromaprint >=media-libs/gst-plugins-bad-1.22:1.0=
+DESCRIPTION=Calculate Chromaprint fingerprint from audio files for GStreamer
+EAPI=7
+KEYWORDS=*
+RDEPEND=media-libs/chromaprint >=media-libs/gst-plugins-bad-1.22:1.0=
+SLOT=1.0
+_md5_=d52db44d20628b941e7faf09f17c79fc

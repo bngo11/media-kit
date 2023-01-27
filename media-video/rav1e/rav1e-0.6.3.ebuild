@@ -37,8 +37,8 @@ ciborium-io-0.2.0
 ciborium-ll-0.2.0
 clang-sys-1.4.0
 clap-3.2.23
-clap-4.1.1
-clap_complete-4.1.0
+clap-4.1.4
+clap_complete-4.1.1
 clap_derive-4.1.0
 clap_lex-0.2.4
 clap_lex-0.3.1
@@ -60,7 +60,7 @@ dav1d-sys-0.7.0
 diff-0.1.13
 difflib-0.4.0
 doc-comment-0.3.3
-either-1.8.0
+either-1.8.1
 encode_unicode-0.3.6
 env_logger-0.8.4
 errno-0.2.8
@@ -69,7 +69,7 @@ fern-0.6.1
 flate2-1.0.25
 form_urlencoded-1.1.0
 getrandom-0.2.8
-gimli-0.27.0
+gimli-0.27.1
 git2-0.15.0
 glob-0.3.1
 half-1.8.2
@@ -113,7 +113,7 @@ num-integer-0.1.45
 num-rational-0.4.1
 num-traits-0.2.15
 num_cpus-1.15.0
-object-0.30.2
+object-0.30.3
 once_cell-1.17.0
 oorandom-11.1.3
 os_str_bytes-6.4.1
@@ -141,7 +141,7 @@ rand-0.8.5
 rand_chacha-0.3.1
 rand_core-0.6.4
 rayon-1.6.1
-rayon-core-1.10.1
+rayon-core-1.10.2
 regex-1.7.1
 regex-automata-0.1.10
 regex-syntax-0.6.28
