@@ -2,7 +2,7 @@
 
 EAPI=7
 
-inherit multilib-minimal
+inherit libtool
 
 KEYWORDS="*"
 SRC_URI="mirror://sourceforge/opencore-amr/${P}.tar.gz"
@@ -19,18 +19,20 @@ PATCHES=( "${FILESDIR}"/${P}-always_inline.patch )
 
 src_prepare() {
 	default
-	[[ ${PV} == *9999* ]] && eautoreconf
+
+	elibtoolize
 }
 
-multilib_src_configure() {
+src_configure() {
 	local myeconfargs=(
 		--disable-static
 		$(use_enable examples example)
 	)
-	ECONF_SOURCE=${S} econf "${myeconfargs[@]}"
+	econf "${myeconfargs[@]}"
 }
 
-multilib_src_install_all() {
+src_install() {
+	default
 	einstalldocs
 
 	if use examples; then
