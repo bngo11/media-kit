@@ -20,7 +20,8 @@ pkill -u "${USER}" -x pipewire\|wireplumber 1>/dev/null 2>&1
 # however ALSA (with pipewire-alsa), JACK (with jack-sdk) and PW API using
 # clients will still have access to audio and may end up clashing with
 # non-PW apps over HW control (most notably, /usr/bin/pulseaudio daemon).
-/usr/bin/pipewire -c pipewire-pulse.conf &
+# /usr/bin/pipewire -c pipewire-pulse.conf &
+/usr/bin/pipewire-pulse &
 
 # Hack for bug #822498
 sleep 1
