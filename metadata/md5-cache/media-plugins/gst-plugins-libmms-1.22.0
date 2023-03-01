@@ -1,8 +1,0 @@
-DEFINED_PHASES=-
-DEPEND=>=media-libs/libmms-0.6.2-r1 >=media-libs/gst-plugins-bad-1.22:1.0=
-DESCRIPTION=Microsoft Multi Media Server source plugin for GStreamer
-EAPI=7
-KEYWORDS=*
-RDEPEND=>=media-libs/libmms-0.6.2-r1 >=media-libs/gst-plugins-bad-1.22:1.0=
-SLOT=1.0
-_md5_=c3703f5500e489455bf79f62d469a578

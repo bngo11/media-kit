@@ -1,8 +1,0 @@
-DEFINED_PHASES=-
-DEPEND=>=x11-libs/cairo-1.10[glib] >=media-libs/gst-plugins-good-1.22:1.0=
-DESCRIPTION=Video overlay plugin based on cairo for GStreamer
-EAPI=7
-KEYWORDS=*
-RDEPEND=>=x11-libs/cairo-1.10[glib] >=media-libs/gst-plugins-good-1.22:1.0=
-SLOT=1.0
-_md5_=06ea66a7c5893064c983fd487ae1760a
