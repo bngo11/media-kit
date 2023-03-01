@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DEPEND=>=media-video/mjpegtools-2.1.0-r1 >=media-libs/gst-plugins-bad-1.22:1.0=
+DESCRIPTION=MPEG/DVD/SVCD/VCD video/audio multiplexing plugin for GStreamer
+EAPI=7
+KEYWORDS=*
+RDEPEND=>=media-video/mjpegtools-2.1.0-r1 >=media-libs/gst-plugins-bad-1.22:1.0=
+SLOT=1.0
+_md5_=86efd866568774a8cc11faec089e6363

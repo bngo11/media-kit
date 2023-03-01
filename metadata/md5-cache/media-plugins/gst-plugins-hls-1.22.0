@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DEPEND=dev-libs/nettle:0= >=media-libs/gst-plugins-bad-1.22:1.0=
+DESCRIPTION=HTTP live streaming plugin for GStreamer
+EAPI=7
+KEYWORDS=*
+RDEPEND=dev-libs/nettle:0= >=media-libs/gst-plugins-bad-1.22:1.0=
+SLOT=1.0
+_md5_=5f956644cca9a1670e37c5fa84545a13

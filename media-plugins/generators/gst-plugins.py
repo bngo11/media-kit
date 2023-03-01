@@ -16,20 +16,23 @@ async def generate(hub, **pkginfo):
 	json_list = json.loads(json_data)
 	version = None
 
-	if "version" in pkginfo:
-		version = pkginfo["version"]
-	else:
-		for release in json_list:
-			try:
-				version = release["name"]
-				list(map(int, version.split(".")))
-				if int(version.split('.')[1]) % 2 == 0 or gitlab_id == LIBNICE_GITLAB_ID:
+	for release in json_list:
+		try:
+			version = release["name"]
+			list(map(int, version.split(".")))
+			if gitlab_id == LIBNICE_GITLAB_ID:
+				break
+			elif int(version.split('.')[1]) % 2 == 0:
+				if "latest_ver" not in pkginfo:
 					break
+				else:
+					if float(".".join(version.split(".")[:2])) >= float(pkginfo["latest_ver"]):
+						break
 
-			except (KeyError, IndexError, ValueError):
-				continue
-		else:
-			version = None
+		except (KeyError, IndexError, ValueError):
+			continue
+	else:
+		version = None
 
 	if version:
 		if "template" not in pkginfo:

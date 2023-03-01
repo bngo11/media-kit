@@ -8,20 +8,21 @@ async def generate(hub, **pkginfo):
 	json_list = json.loads(json_data)
 	version = None
 
-	if "version" not in pkginfo:
-		for release in json_list:
-			try:
-				version = release["name"]
-				list(map(int, version.split(".")))
-				if int(version.split('.')[1]) % 2 == 0:
+	for release in json_list:
+		try:
+			version = release["name"]
+			list(map(int, version.split(".")))
+			if int(version.split(".")[1]) % 2 == 0:
+				if "latest_ver" not in pkginfo:
 					break
+				else:
+					if float(".".join(version.split(".")[:2])) >= float(pkginfo["latest_ver"]):
+						break
 
-			except (KeyError, IndexError, ValueError):
-				continue
-		else:
-			version = None
+		except (KeyError, IndexError, ValueError):
+			continue
 	else:
-		version = pkginfo["version"]
+		version = None
 
 	if version:
 		name = pkginfo["name"]
