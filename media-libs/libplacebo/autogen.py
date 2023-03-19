@@ -2,6 +2,7 @@
 
 import json
 import os
+from packaging.version import Version
 
 async def generate(hub, **pkginfo):
 	json_data = await hub.pkgtools.fetch.get_page(f"https://code.videolan.org/api/v4/projects/380/repository/tags", is_json=True)
