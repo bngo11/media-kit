@@ -136,7 +136,7 @@ predicates-tree-1.0.9
 pretty_assertions-1.3.0
 proc-macro-error-1.0.4
 proc-macro-error-attr-1.0.4
-proc-macro2-1.0.52
+proc-macro2-1.0.53
 quickcheck-1.0.3
 quickcheck_macros-1.0.0
 quote-1.0.26
@@ -145,9 +145,9 @@ rand_chacha-0.3.1
 rand_core-0.6.4
 rayon-1.7.0
 rayon-core-1.11.0
-regex-1.7.1
+regex-1.7.2
 regex-automata-0.1.10
-regex-syntax-0.6.28
+regex-syntax-0.6.29
 rust_hawktracer-0.7.0
 rust_hawktracer_normal_macro-0.4.1
 rust_hawktracer_proc_macro-0.4.1
@@ -171,7 +171,7 @@ signal-hook-registry-1.4.1
 simd_helpers-0.1.0
 smallvec-1.10.0
 syn-1.0.109
-syn-2.0.3
+syn-2.0.6
 system-deps-6.0.3
 termcolor-1.2.0
 terminal_size-0.2.5
@@ -183,7 +183,7 @@ tinytemplate-1.2.1
 tinyvec-1.6.0
 tinyvec_macros-0.1.1
 toml-0.5.11
-unicode-bidi-0.3.12
+unicode-bidi-0.3.13
 unicode-ident-1.0.8
 unicode-normalization-0.1.22
 unicode-width-0.1.10
