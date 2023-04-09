@@ -20,7 +20,6 @@ openmp postscript readline spell svg2 test visio wpg X"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 BDEPEND="
-	dev-util/glib-utils
 	>=dev-util/intltool-0.40
 	>=sys-devel/gettext-0.17
 	virtual/pkgconfig
