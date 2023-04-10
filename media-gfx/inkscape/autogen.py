@@ -1,28 +1,35 @@
 #!/usr/bin/env python3
 
-from bs4 import BeautifulSoup
-from packaging.version import Version
-import os
-import re
-
-regex = r'(\d+(?:\.\d+)+[a-z]*(?:\d*))'
-
+import json
 
 async def generate(hub, **pkginfo):
-    base_url = "https://inkscape.org/"
-    download_url = base_url + "release/all/source/archive/"
-    html = await hub.pkgtools.fetch.get_page(download_url)
-    soup = BeautifulSoup(html, features='html.parser').find_all('a', href=True)
+	json_data = await hub.pkgtools.fetch.get_page("https://gitlab.com/api/v4/projects/3472737/releases", is_json=True)
+	version = None
+	commit = None
+	date = None
 
-    tarballs = [a.get('href') for a in soup if '.tar.' in a.contents[0] and not a.contents[0].endswith('sig')]
-    versions = [(Version(re.findall(regex, a)[0]), a) for a in tarballs if re.findall(regex, a)]
-    latest = max([v for v in versions if not v[0].is_prerelease])
+	for item in json_data:
+		try:
+			commit = item["commit"]["id"][:10]
+			date = item["commit"]["created_at"].split("T")[0]
+			version = ".".join(item["tag_name"].split("_")[1:])
+			list(map(int, version.split(".")))
+			break
 
-    artifact = hub.pkgtools.ebuild.Artifact(url=base_url+latest[1])
+		except (KeyError, IndexError, ValueError):
+			continue
+	else:
+		version = None
 
-    ebuild = hub.pkgtools.ebuild.BreezyBuild(
-        **pkginfo,
-        version=latest[0],
-        artifacts=[artifact],
-    )
-    ebuild.push()
+	if version:
+		final_name = f"inkscape-{version}.tar.xz"
+		url = f"https://media.inkscape.org/dl/resources/file/{final_name}"
+		ebuild = hub.pkgtools.ebuild.BreezyBuild(
+			**pkginfo,
+			version=version,
+			srcdir=f"inkscape-{version}_{date}_{commit}",
+			artifacts=[hub.pkgtools.ebuild.Artifact(url=url, final_name=final_name)]
+		)
+		ebuild.push()
+
+# vim: ts=4 sw=4 noet
