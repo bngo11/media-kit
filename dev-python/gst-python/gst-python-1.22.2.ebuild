@@ -8,7 +8,7 @@ inherit ltprune python-r1 xdg-utils meson
 
 DESCRIPTION="A Python Interface to GStreamer"
 HOMEPAGE="https://gstreamer.freedesktop.org/"
-SRC_URI="https://gstreamer.freedesktop.org/src/gst-python/gst-python-1.22.1.tar.xz -> gst-python-1.22.1.tar.xz"
+SRC_URI="https://gstreamer.freedesktop.org/src/gst-python/gst-python-1.22.2.tar.xz -> gst-python-1.22.2.tar.xz"
 
 LICENSE="LGPL-2+"
 SLOT="1.0"

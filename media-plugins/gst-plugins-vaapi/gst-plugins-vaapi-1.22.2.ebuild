@@ -7,7 +7,7 @@ inherit meson
 MY_PN="gstreamer-vaapi"
 DESCRIPTION="Hardware accelerated video decoding through VA-API plugin for GStreamer"
 HOMEPAGE="https://cgit.freedesktop.org/gstreamer/gstreamer-vaapi"
-SRC_URI="https://gstreamer.freedesktop.org/src/gstreamer-vaapi/gstreamer-vaapi-1.22.1.tar.xz -> gstreamer-vaapi-1.22.1.tar.xz"
+SRC_URI="https://gstreamer.freedesktop.org/src/gstreamer-vaapi/gstreamer-vaapi-1.22.2.tar.xz -> gstreamer-vaapi-1.22.2.tar.xz"
 
 LICENSE="LGPL-2.1+"
 SLOT="1.0"

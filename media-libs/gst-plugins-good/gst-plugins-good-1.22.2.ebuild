@@ -6,7 +6,7 @@ inherit flag-o-matic meson
 
 DESCRIPTION="Basepack of plugins for GStreamer"
 HOMEPAGE="https://gstreamer.freedesktop.org/"
-SRC_URI="https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.22.1.tar.xz -> gst-plugins-good-1.22.1.tar.xz"
+SRC_URI="https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.22.2.tar.xz -> gst-plugins-good-1.22.2.tar.xz"
 
 LICENSE="LGPL-2.1+"
 KEYWORDS="*"
