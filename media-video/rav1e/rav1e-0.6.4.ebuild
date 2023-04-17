@@ -154,7 +154,7 @@ rust_hawktracer-0.7.0
 rust_hawktracer_normal_macro-0.4.1
 rust_hawktracer_proc_macro-0.4.1
 rust_hawktracer_sys-0.4.2
-rustc-demangle-0.1.22
+rustc-demangle-0.1.23
 rustc-hash-1.1.0
 rustc_version-0.4.0
 rustix-0.37.11
@@ -166,7 +166,7 @@ semver-1.0.17
 serde-1.0.160
 serde-big-array-0.4.1
 serde_derive-1.0.160
-serde_json-1.0.95
+serde_json-1.0.96
 serde_spanned-0.6.1
 shlex-1.1.0
 signal-hook-0.3.15
@@ -175,7 +175,7 @@ simd-adler32-0.3.5
 simd_helpers-0.1.0
 smallvec-1.10.0
 syn-1.0.109
-syn-2.0.14
+syn-2.0.15
 system-deps-6.0.4
 termcolor-1.2.0
 terminal_size-0.2.6
