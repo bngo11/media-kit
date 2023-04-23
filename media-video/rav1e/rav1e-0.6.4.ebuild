@@ -15,7 +15,7 @@ arrayvec-0.7.2
 assert_cmd-2.0.8
 atty-0.2.14
 autocfg-1.1.0
-av-metrics-0.9.0
+av-metrics-0.9.1
 av1-grain-0.2.2
 backtrace-0.3.67
 bindgen-0.61.0
@@ -99,7 +99,7 @@ libfuzzer-sys-0.3.5
 libgit2-sys-0.14.2+1.5.1
 libloading-0.7.4
 libz-sys-1.1.8
-linux-raw-sys-0.3.3
+linux-raw-sys-0.3.4
 log-0.4.17
 maybe-rayon-0.1.1
 memchr-2.5.0
@@ -157,7 +157,7 @@ rust_hawktracer_sys-0.4.2
 rustc-demangle-0.1.23
 rustc-hash-1.1.0
 rustc_version-0.4.0
-rustix-0.37.13
+rustix-0.37.14
 ryu-1.0.13
 same-file-1.0.6
 scan_fmt-0.2.6
