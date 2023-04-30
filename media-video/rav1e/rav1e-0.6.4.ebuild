@@ -7,7 +7,7 @@ addr2line-0.19.0
 adler-1.0.2
 aho-corasick-1.0.1
 anes-0.1.6
-anyhow-1.0.70
+anyhow-1.0.71
 aom-sys-0.3.2
 arbitrary-0.4.7
 arg_enum_proc_macro-0.3.2
@@ -157,7 +157,7 @@ rust_hawktracer_sys-0.4.2
 rustc-demangle-0.1.23
 rustc-hash-1.1.0
 rustc_version-0.4.0
-rustix-0.37.15
+rustix-0.37.18
 ryu-1.0.13
 same-file-1.0.6
 scan_fmt-0.2.6
