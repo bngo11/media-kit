@@ -3,7 +3,7 @@
 import json
 
 async def generate(hub, **pkginfo):
-	json_data = await hub.pkgtools.fetch.get_page("https://api.github.com/repos/freedesktop/libreoffice-libcdr/tags", is_json=True)
+	json_data = await hub.pkgtools.fetch.get_page("https://api.github.com/repos/libreoffice/libcdr/tags", is_json=True)
 	version = None
 
 	for item in json_data:
