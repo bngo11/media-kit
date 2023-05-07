@@ -45,7 +45,7 @@ clap_lex-0.3.0
 cmake-0.1.50
 color_quant-1.1.0
 console-0.15.5
-const_fn_assert-0.1.2
+const_fn_assert-0.1.2+deprecated
 crc32fast-1.3.2
 criterion-0.4.0
 criterion-plot-0.5.0
