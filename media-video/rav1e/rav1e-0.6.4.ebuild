@@ -94,12 +94,12 @@ js-sys-0.3.61
 lab-0.11.0
 lazy_static-1.4.0
 lazycell-1.3.0
-libc-0.2.142
+libc-0.2.143
 libfuzzer-sys-0.3.5
 libgit2-sys-0.14.2+1.5.1
 libloading-0.7.4
 libz-sys-1.1.9
-linux-raw-sys-0.3.6
+linux-raw-sys-0.3.7
 log-0.4.17
 maybe-rayon-0.1.1
 memchr-2.5.0
@@ -126,7 +126,7 @@ output_vt100-0.1.3
 paste-1.0.12
 peeking_take_while-0.1.2
 percent-encoding-2.2.0
-pkg-config-0.3.26
+pkg-config-0.3.27
 plotters-0.3.4
 plotters-backend-0.3.4
 plotters-svg-0.3.3
@@ -157,15 +157,15 @@ rust_hawktracer_sys-0.4.2
 rustc-demangle-0.1.23
 rustc-hash-1.1.0
 rustc_version-0.4.0
-rustix-0.37.18
+rustix-0.37.19
 ryu-1.0.13
 same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.1.0
 semver-1.0.17
-serde-1.0.160
+serde-1.0.162
 serde-big-array-0.4.1
-serde_derive-1.0.160
+serde_derive-1.0.162
 serde_json-1.0.96
 serde_spanned-0.6.1
 shlex-1.1.0
@@ -231,7 +231,7 @@ windows_x86_64_gnullvm-0.42.2
 windows_x86_64_gnullvm-0.48.0
 windows_x86_64_msvc-0.42.2
 windows_x86_64_msvc-0.48.0
-winnow-0.4.4
+winnow-0.4.6
 y4m-0.7.0
 yansi-0.5.1
 
