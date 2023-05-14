@@ -23,7 +23,7 @@ bitflags-1.3.2
 bitstream-io-1.6.0
 bstr-1.4.0
 built-0.5.2
-bumpalo-3.12.1
+bumpalo-3.12.2
 bytemuck-1.13.1
 byteorder-1.4.3
 cargo-lock-8.0.3
@@ -162,9 +162,9 @@ same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.1.0
 semver-1.0.17
-serde-1.0.162
+serde-1.0.163
 serde-big-array-0.4.1
-serde_derive-1.0.162
+serde_derive-1.0.163
 serde_json-1.0.96
 serde_spanned-0.6.1
 shlex-1.1.0
