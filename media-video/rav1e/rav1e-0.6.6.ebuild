@@ -11,7 +11,7 @@ anyhow-1.0.71
 aom-sys-0.3.2
 arbitrary-0.4.7
 arg_enum_proc_macro-0.3.2
-arrayvec-0.7.3
+arrayvec-0.7.4
 assert_cmd-2.0.8
 atty-0.2.14
 autocfg-1.1.0
@@ -30,7 +30,7 @@ cargo-lock-8.0.3
 cast-0.3.0
 cc-1.0.79
 cexpr-0.6.0
-cfg-expr-0.15.2
+cfg-expr-0.15.3
 cfg-if-1.0.0
 ciborium-0.2.1
 ciborium-io-0.2.1
@@ -70,7 +70,7 @@ flate2-1.0.26
 float-cmp-0.9.0
 form_urlencoded-1.2.0
 getrandom-0.2.10
-gimli-0.27.2
+gimli-0.27.3
 git2-0.15.0
 glob-0.3.1
 half-1.8.2
@@ -126,9 +126,9 @@ paste-1.0.12
 peeking_take_while-0.1.2
 percent-encoding-2.3.0
 pkg-config-0.3.27
-plotters-0.3.4
-plotters-backend-0.3.4
-plotters-svg-0.3.3
+plotters-0.3.5
+plotters-backend-0.3.5
+plotters-svg-0.3.5
 png-0.17.9
 ppv-lite86-0.2.17
 predicates-2.1.5
@@ -165,7 +165,7 @@ semver-1.0.17
 serde-1.0.164
 serde-big-array-0.4.1
 serde_derive-1.0.164
-serde_json-1.0.96
+serde_json-1.0.97
 serde_spanned-0.6.2
 shlex-1.1.0
 signal-hook-0.3.15
@@ -175,8 +175,8 @@ simd_helpers-0.1.0
 smallvec-1.10.0
 syn-1.0.109
 syn-2.0.18
-system-deps-6.1.0
-target-lexicon-0.12.7
+system-deps-6.1.1
+target-lexicon-0.12.8
 termcolor-1.2.0
 terminal_size-0.2.6
 termtree-0.4.1
