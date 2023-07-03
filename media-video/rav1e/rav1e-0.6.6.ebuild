@@ -87,7 +87,7 @@ io-lifetimes-1.0.11
 is-terminal-0.4.8
 itertools-0.8.2
 itertools-0.10.5
-itoa-1.0.7
+itoa-1.0.8
 jobserver-0.1.26
 js-sys-0.3.64
 lab-0.11.0
@@ -158,14 +158,14 @@ rustc-hash-1.1.0
 rustc_version-0.4.0
 rustix-0.37.22
 rustix-0.38.2
-ryu-1.0.13
+ryu-1.0.14
 same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.1.0
 semver-1.0.17
-serde-1.0.165
+serde-1.0.166
 serde-big-array-0.4.1
-serde_derive-1.0.165
+serde_derive-1.0.166
 serde_json-1.0.99
 serde_spanned-0.6.3
 shlex-1.1.0
@@ -192,7 +192,7 @@ toml-0.7.3
 toml_datetime-0.6.3
 toml_edit-0.19.8
 unicode-bidi-0.3.13
-unicode-ident-1.0.9
+unicode-ident-1.0.10
 unicode-normalization-0.1.22
 unicode-width-0.1.10
 url-2.4.0
