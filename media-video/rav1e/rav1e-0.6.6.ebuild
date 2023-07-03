@@ -122,7 +122,7 @@ once_cell-1.18.0
 oorandom-11.1.3
 os_str_bytes-6.5.1
 output_vt100-0.1.3
-paste-1.0.12
+paste-1.0.13
 peeking_take_while-0.1.2
 percent-encoding-2.3.0
 pkg-config-0.3.27
