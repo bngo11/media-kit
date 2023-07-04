@@ -78,7 +78,7 @@ half-1.8.2
 hashbrown-0.12.3
 heck-0.4.1
 hermit-abi-0.1.19
-hermit-abi-0.3.1
+hermit-abi-0.3.2
 idna-0.4.0
 image-0.24.6
 indexmap-1.9.3
@@ -166,7 +166,7 @@ semver-1.0.17
 serde-1.0.166
 serde-big-array-0.4.1
 serde_derive-1.0.166
-serde_json-1.0.99
+serde_json-1.0.100
 serde_spanned-0.6.3
 shlex-1.1.0
 signal-hook-0.3.15
@@ -182,8 +182,8 @@ termcolor-1.2.0
 terminal_size-0.2.6
 termtree-0.4.1
 textwrap-0.16.0
-thiserror-1.0.40
-thiserror-impl-1.0.40
+thiserror-1.0.41
+thiserror-impl-1.0.41
 tinytemplate-1.2.1
 tinyvec-1.6.0
 tinyvec_macros-0.1.1
