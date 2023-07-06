@@ -1,0 +1,17 @@
+--- a/Makefile	2023-07-04 23:04:02.466642144 -0500
++++ b/Makefile	2023-07-04 23:04:36.678911908 -0500
+@@ -85,12 +85,12 @@
+ .cxx.o:
+ 	$(CXX) $(QUIRC_CXXFLAGS) -o $@ -c $<
+ 
+-install: libquirc.a libquirc.so.$(LIB_VERSION) quirc-demo quirc-scanner
++install: libquirc.a libquirc.so.$(LIB_VERSION) quirc-scanner
+ 	install -o root -g root -m 0644 lib/quirc.h $(DESTDIR)$(PREFIX)/include
+ 	install -o root -g root -m 0644 libquirc.a $(DESTDIR)$(PREFIX)/lib
+ 	install -o root -g root -m 0755 libquirc.so.$(LIB_VERSION) \
+ 		$(DESTDIR)$(PREFIX)/lib
+-	install -o root -g root -m 0755 quirc-demo $(DESTDIR)$(PREFIX)/bin
++	# install -o root -g root -m 0755 quirc-demo $(DESTDIR)$(PREFIX)/bin
+ 	# install -o root -g root -m 0755 quirc-demo-opencv $(DESTDIR)$(PREFIX)/bin
+ 	install -o root -g root -m 0755 quirc-scanner $(DESTDIR)$(PREFIX)/bin
+ 

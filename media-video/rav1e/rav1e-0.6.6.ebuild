@@ -21,8 +21,8 @@ backtrace-0.3.68
 bindgen-0.61.0
 bitflags-1.3.2
 bitflags-2.3.3
-bitstream-io-1.6.0
-bstr-1.5.0
+bitstream-io-1.7.0
+bstr-1.6.0
 built-0.5.2
 bumpalo-3.13.0
 bytemuck-1.13.1
@@ -113,6 +113,7 @@ noop_proc_macro-0.3.0
 normalize-line-endings-0.3.0
 num-bigint-0.4.3
 num-derive-0.3.3
+num-derive-0.4.0
 num-integer-0.1.45
 num-rational-0.4.1
 num-traits-0.2.15
@@ -146,9 +147,9 @@ rand_chacha-0.3.1
 rand_core-0.6.4
 rayon-1.7.0
 rayon-core-1.11.0
-regex-1.8.4
-regex-automata-0.1.10
-regex-syntax-0.7.2
+regex-1.9.0
+regex-automata-0.3.0
+regex-syntax-0.7.3
 rust_hawktracer-0.7.0
 rust_hawktracer_normal_macro-0.4.1
 rust_hawktracer_proc_macro-0.4.1
@@ -156,8 +157,8 @@ rust_hawktracer_sys-0.4.2
 rustc-demangle-0.1.23
 rustc-hash-1.1.0
 rustc_version-0.4.0
-rustix-0.37.22
-rustix-0.38.2
+rustix-0.37.23
+rustix-0.38.3
 ryu-1.0.14
 same-file-1.0.6
 scan_fmt-0.2.6
@@ -173,7 +174,7 @@ signal-hook-0.3.15
 signal-hook-registry-1.4.1
 simd-adler32-0.3.5
 simd_helpers-0.1.0
-smallvec-1.10.0
+smallvec-1.11.0
 syn-1.0.109
 syn-2.0.23
 system-deps-6.1.1
@@ -196,7 +197,7 @@ unicode-ident-1.0.10
 unicode-normalization-0.1.22
 unicode-width-0.1.10
 url-2.4.0
-v_frame-0.3.4
+v_frame-0.3.5
 vcpkg-0.2.15
 version-compare-0.1.1
 version_check-0.9.4

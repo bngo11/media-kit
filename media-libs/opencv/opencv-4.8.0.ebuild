@@ -235,14 +235,6 @@ post_src_unpack() {
 src_prepare() {
 	cmake-utils_src_prepare
 
-	# remove bundled stuff
-	rm -rf 3rdparty || die "Removing 3rd party components failed"
-	sed -e '/add_subdirectory(.*3rdparty.*)/ d' \
-		-i CMakeLists.txt cmake/*cmake || die
-
-	sed -e '/ocv_install_3rdparty_licenses/d' \
-		-i cmake/OpenCVDetectOpenCL.cmake || die
-
 	if use examples; then
 		sed -i 's/\(opencv_dnn\)/\1\n  opencv_gapi/' samples/cpp/CMakeLists.txt  || die
 	fi
