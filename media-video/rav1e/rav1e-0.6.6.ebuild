@@ -55,7 +55,6 @@ crossbeam-deque-0.8.3
 crossbeam-epoch-0.9.15
 crossbeam-queue-0.3.8
 crossbeam-utils-0.8.16
-ctor-0.1.26
 dav1d-sys-0.7.1
 diff-0.1.13
 difflib-0.4.0
@@ -84,7 +83,7 @@ image-0.24.6
 indexmap-1.9.3
 interpolate_name-0.2.3
 io-lifetimes-1.0.11
-is-terminal-0.4.8
+is-terminal-0.4.9
 itertools-0.8.2
 itertools-0.10.5
 itoa-1.0.8
@@ -122,7 +121,6 @@ object-0.31.1
 once_cell-1.18.0
 oorandom-11.1.3
 os_str_bytes-6.5.1
-output_vt100-0.1.3
 paste-1.0.13
 peeking_take_while-0.1.2
 percent-encoding-2.3.0
@@ -135,7 +133,7 @@ ppv-lite86-0.2.17
 predicates-2.1.5
 predicates-core-1.0.5
 predicates-tree-1.0.7
-pretty_assertions-1.3.0
+pretty_assertions-1.4.0
 proc-macro-error-1.0.4
 proc-macro-error-attr-1.0.4
 proc-macro2-1.0.63
