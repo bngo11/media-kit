@@ -5,35 +5,13 @@ EAPI=7
 inherit go-module
 
 EGO_SUM=(
-	"github.com/davecgh/go-spew v1.1.0"
-	"github.com/davecgh/go-spew v1.1.0/go.mod"
-	"github.com/go-ini/ini v1.67.0"
-	"github.com/go-ini/ini v1.67.0/go.mod"
-	"github.com/mattn/go-colorable v0.1.13"
-	"github.com/mattn/go-colorable v0.1.13/go.mod"
-	"github.com/mattn/go-isatty v0.0.16"
-	"github.com/mattn/go-isatty v0.0.16/go.mod"
-	"github.com/pmezard/go-difflib v1.0.0"
-	"github.com/pmezard/go-difflib v1.0.0/go.mod"
-	"github.com/stretchr/objx v0.1.0/go.mod"
-	"github.com/stretchr/testify v1.7.1"
-	"github.com/stretchr/testify v1.7.1/go.mod"
-	"golang.org/x/net v0.11.0"
-	"golang.org/x/net v0.11.0/go.mod"
-	"golang.org/x/sys v0.0.0-20220811171246-fbc7d0a398ab/go.mod"
-	"golang.org/x/sys v0.9.0"
-	"golang.org/x/sys v0.9.0/go.mod"
-	"gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod"
-	"gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c"
-	"gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c/go.mod"
 )
 
 go-module_set_globals
 
 DESCRIPTION="Commandline tool to customize Spotify client."
 HOMEPAGE="https://github.com/khanhas/spicetify-cli"
-SRC_URI="https://github.com/spicetify/spicetify-cli/tarball/e6479de9d81d593677bc665082535891027a8ef2 -> spicetify-cli-2.20.3-e6479de.tar.gz
-https://direct.funtoo.org/d9/bf/c1/d9bfc176f34e881d7e3ed1f7a0650401f4ec9f06ab46a706b1691490ff7d69c67fe88117ca6df64c3794f7eb86bc8e2fe0591700a40c94921cf5108ad71d30f1 -> spicetify-cli-2.20.3-funtoo-go-bundle-0ebfa83b57fe4c09f63faab40f6cbf3c8ae67d54373b7600affb892be2792ecedb82af340f2cac3198451ec1659945e76f4fadc682ab4064953a112d1a32a946.tar.gz"
+SRC_URI="https://github.com/spicetify/spicetify-cli/tarball/e6479de9d81d593677bc665082535891027a8ef2 -> spicetify-cli-2.20.3-e6479de.tar.gz"
 
 LICENSE="Apache-2.0 BSD GPL-3 MIT"
 SLOT="0"
