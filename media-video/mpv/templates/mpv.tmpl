@@ -96,7 +96,7 @@ COMMON_DEPEND="
 	sdl? ( media-libs/libsdl2[sound,threads,video] )
 	sixel? ( media-libs/libsixel )
 	sndio? ( media-sound/sndio:= )
-	vaapi? ( media-libs/libva:=[X?,drm(+)?,wayland?] )
+	vaapi? ( x11-libs/libva:=[X?,drm(+)?,wayland?] )
 	vdpau? ( x11-libs/libvdpau )
 	vulkan? (
 		media-libs/shaderc
