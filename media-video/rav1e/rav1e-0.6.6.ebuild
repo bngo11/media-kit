@@ -89,7 +89,7 @@ io-lifetimes-1.0.11
 is-terminal-0.4.9
 itertools-0.8.2
 itertools-0.10.5
-itoa-1.0.8
+itoa-1.0.9
 jobserver-0.1.26
 js-sys-0.3.64
 lab-0.11.0
@@ -124,7 +124,7 @@ object-0.31.1
 once_cell-1.18.0
 oorandom-11.1.3
 os_str_bytes-6.5.1
-paste-1.0.13
+paste-1.0.14
 peeking_take_while-0.1.2
 percent-encoding-2.3.0
 pkg-config-0.3.27
@@ -160,15 +160,15 @@ rustc-hash-1.1.0
 rustc_version-0.4.0
 rustix-0.37.23
 rustix-0.38.4
-ryu-1.0.14
+ryu-1.0.15
 same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.1.0
-semver-1.0.17
+semver-1.0.18
 serde-1.0.171
 serde-big-array-0.4.1
 serde_derive-1.0.171
-serde_json-1.0.102
+serde_json-1.0.103
 serde_spanned-0.6.3
 shlex-1.1.0
 signal-hook-0.3.16
