@@ -12,8 +12,11 @@ async def generate(hub, **pkginfo):
 		try:
 			commit = item["commit"]["id"][:10]
 			date = item["commit"]["created_at"].split("T")[0]
-			version = ".".join(item["tag_name"].split("_")[1:])
-			list(map(int, version.split(".")))
+			version = item["tag_name"].split("_")[1:]
+			list(map(int, version))
+			if int(version[1]) % 2:
+				continue
+			version = ".".join(version)
 			break
 
 		except (KeyError, IndexError, ValueError):
