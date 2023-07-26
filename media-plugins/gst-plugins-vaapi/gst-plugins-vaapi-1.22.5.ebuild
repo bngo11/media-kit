@@ -2,16 +2,16 @@
 
 EAPI=7
 
-inherit gstreamer-meson
+inherit meson
 
 MY_PN="gstreamer-vaapi"
 DESCRIPTION="Hardware accelerated video decoding through VA-API plugin for GStreamer"
-HOMEPAGE="https://gitlab.freedesktop.org/gstreamer/gstreamer-vaapi"
-SRC_URI="https://gstreamer.freedesktop.org/src/${MY_PN}/${MY_PN}-${PV}.tar.xz"
+HOMEPAGE="https://cgit.freedesktop.org/gstreamer/gstreamer-vaapi"
+SRC_URI="https://gstreamer.freedesktop.org/src/gstreamer-vaapi/gstreamer-vaapi-1.22.5.tar.xz -> gstreamer-vaapi-1.22.5.tar.xz"
 
 LICENSE="LGPL-2.1+"
 SLOT="1.0"
-KEYWORDS="amd64 arm64 ppc64 ~riscv x86"
+KEYWORDS="*"
 IUSE="+drm +egl gles2 +opengl wayland +X" # Keep default enabled IUSE in sync with gst-plugins-base and libva
 
 # gst-vaapi configure is based around GL platform mainly, unlike gst-plugins-bad that goes by GL API mainly; for less surprises,
@@ -43,56 +43,63 @@ REQUIRED_USE="
 GST_REQ="${PV}"
 GL_DEPS="
 	>=media-libs/gst-plugins-base-${GST_REQ}:${SLOT}[egl?,gles2?,opengl?,wayland?,X?]
-	media-libs/mesa[gles2?,egl(+)?,X?,${MULTILIB_USEDEP}]
+	media-libs/mesa[gles2?,egl?]
 "
 RDEPEND="
-	>=dev-libs/glib-2.40:2[${MULTILIB_USEDEP}]
-	>=media-libs/gst-plugins-base-${GST_REQ}:${SLOT}[${MULTILIB_USEDEP}]
-	>=media-libs/gst-plugins-bad-${GST_REQ}:${SLOT}[${MULTILIB_USEDEP}]
-	>=x11-libs/libva-1.4.0:=[drm?,wayland?,X?,${MULTILIB_USEDEP}]
+	>=dev-libs/glib-2.40:2
+	>=media-libs/gstreamer-${GST_REQ}:${SLOT}
+	>=media-libs/gst-plugins-base-${GST_REQ}:${SLOT}
+	>=media-libs/gst-plugins-bad-${GST_REQ}:${SLOT}
+	>=x11-libs/libva-1.4.0:=[drm?,wayland?,X?]
 	drm? (
-		>=virtual/libudev-208:=[${MULTILIB_USEDEP}]
-		>=x11-libs/libdrm-2.4.46[${MULTILIB_USEDEP}]
+		>=virtual/libudev-208:=
+		>=x11-libs/libdrm-2.4.46
 	)
 	gles2? ( ${GL_DEPS} )
 	opengl? ( ${GL_DEPS} )
-	wayland? ( >=dev-libs/wayland-1.11.0[${MULTILIB_USEDEP}] )
+	wayland? ( >=dev-libs/wayland-1.0.6 )
 	X? (
-		>=x11-libs/libX11-1.6.2[${MULTILIB_USEDEP}]
-		>=x11-libs/libXrandr-1.4.2[${MULTILIB_USEDEP}]
-		x11-libs/libXrender[${MULTILIB_USEDEP}] )
+		>=x11-libs/libX11-1.6.2
+		>=x11-libs/libXrandr-1.4.2
+		x11-libs/libXrender )
 "
+
 DEPEND="${RDEPEND}
 	>=dev-util/gtk-doc-am-1.12
+	>=virtual/pkgconfig-0-r1
 "
 
 S="${WORKDIR}/${MY_PN}-${PV}"
 
-# FIXME: "Failed to create vaapipostproc element"
-RESTRICT="test"
-
-multilib_src_configure() {
-	local emesonargs=(
-		-Dwith_encoders=yes
-		-Dwith_drm=$(usex drm yes no)
-		-Dwith_x11=$(usex X yes no)
-		-Dwith_wayland=$(usex wayland yes no)
-	)
-
+src_configure() {
+	local myconf=()
 	if use opengl || use gles2; then
-		emesonargs+=( -Dwith_egl=$(usex egl yes no) )
+		myconf+=( -Degl=enabled )
 	else
-		emesonargs+=( -Dwith_egl=no )
+		myconf+=( -Degl=disabled )
 	fi
 
 	if use opengl && use X; then
-		emesonargs+=( -Dwith_glx=yes )
+		myconf+=( -Dglx=enabled )
 	else
-		emesonargs+=( -Dwith_glx=no )
+		myconf+=( -Dglx=disabled )
 	fi
 
-	# Workaround EGL/eglplatform.h being built with X11 present
-	use X || export CFLAGS="${CFLAGS} -DEGL_NO_X11"
+	local emesonargs=(
+		-Dexamples=disabled
+		$(meson_feature drm)
+		$(meson_feature X x11)
+		$(meson_feature wayland)
+		-Dencoders=enabled
+		"${myconf[@]}"
+	)
 
-	gstreamer_multilib_src_configure
+	meson_src_configure
+}
+
+src_install() {
+	meson_src_install
+
+	einstalldocs
+	find "${ED}" -name '*.la' -delete || die
 }
