@@ -29,7 +29,7 @@ bytemuck-1.13.1
 byteorder-1.4.3
 cargo-lock-8.0.3
 cast-0.3.0
-cc-1.0.79
+cc-1.0.80
 cexpr-0.6.0
 cfg-expr-0.15.4
 cfg-if-1.0.0
@@ -235,7 +235,7 @@ windows_x86_64_gnullvm-0.48.0
 windows_x86_64_msvc-0.42.2
 windows_x86_64_msvc-0.48.0
 winnow-0.4.1
-winnow-0.5.2
+winnow-0.5.3
 y4m-0.8.0
 yansi-0.5.1
 

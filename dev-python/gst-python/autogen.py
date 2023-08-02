@@ -5,13 +5,16 @@ import json
 async def generate(hub, **pkginfo):
 	json_data = await hub.pkgtools.fetch.get_page("https://gitlab.freedesktop.org/api/v4/projects/1357/repository/tags?per_page=100", is_json=True)
 	version = None
+	latest_ver = '1.22'
 
 	if "version" not in pkginfo:
 		for release in json_data:
 			try:
 				version = release["name"]
-				if int(version.split('.')[1]) % 2 == 0:
-					break
+				versplit = version.split('.')
+				if int(versplit[1]) % 2 == 0:
+					if versplit[:2] == latest_ver.split('.'):
+						break
 
 			except (KeyError, IndexError):
 				continue
