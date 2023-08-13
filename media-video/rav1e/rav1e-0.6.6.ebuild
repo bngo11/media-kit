@@ -5,7 +5,7 @@ EAPI=7
 CRATES="
 addr2line-0.20.0
 adler-1.0.2
-aho-corasick-1.0.2
+aho-corasick-1.0.3
 anes-0.1.6
 anyhow-1.0.72
 aom-sys-0.3.2
@@ -20,7 +20,7 @@ av1-grain-0.2.2
 backtrace-0.3.68
 bindgen-0.61.0
 bitflags-1.3.2
-bitflags-2.3.3
+bitflags-2.4.0
 bitstream-io-1.7.0
 bstr-1.6.0
 built-0.5.2
@@ -29,7 +29,7 @@ bytemuck-1.13.1
 byteorder-1.4.3
 cargo-lock-8.0.3
 cast-0.3.0
-cc-1.0.80
+cc-1.0.82
 cexpr-0.6.0
 cfg-expr-0.15.4
 cfg-if-1.0.0
@@ -81,7 +81,7 @@ heck-0.4.1
 hermit-abi-0.1.19
 hermit-abi-0.3.2
 idna-0.4.0
-image-0.24.6
+image-0.24.7
 indexmap-1.9.3
 indexmap-2.0.0
 interpolate_name-0.2.3
@@ -102,7 +102,7 @@ libloading-0.7.4
 libz-sys-1.1.12
 linux-raw-sys-0.3.8
 linux-raw-sys-0.4.5
-log-0.4.19
+log-0.4.20
 maybe-rayon-0.1.1
 memchr-2.5.0
 memoffset-0.9.0
@@ -148,8 +148,8 @@ rand_chacha-0.3.1
 rand_core-0.6.4
 rayon-1.7.0
 rayon-core-1.11.0
-regex-1.9.1
-regex-automata-0.3.4
+regex-1.9.3
+regex-automata-0.3.6
 regex-syntax-0.7.4
 rust_hawktracer-0.7.0
 rust_hawktracer_normal_macro-0.4.1
@@ -159,15 +159,15 @@ rustc-demangle-0.1.23
 rustc-hash-1.1.0
 rustc_version-0.4.0
 rustix-0.37.23
-rustix-0.38.4
+rustix-0.38.8
 ryu-1.0.15
 same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.2.0
 semver-1.0.18
-serde-1.0.180
+serde-1.0.183
 serde-big-array-0.4.1
-serde_derive-1.0.180
+serde_derive-1.0.183
 serde_json-1.0.104
 serde_spanned-0.6.3
 shlex-1.1.0
@@ -235,7 +235,7 @@ windows_x86_64_gnullvm-0.48.0
 windows_x86_64_msvc-0.42.2
 windows_x86_64_msvc-0.48.0
 winnow-0.4.1
-winnow-0.5.3
+winnow-0.5.10
 y4m-0.8.0
 yansi-0.5.1
 
