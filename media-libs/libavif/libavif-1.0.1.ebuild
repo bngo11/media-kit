@@ -6,7 +6,7 @@ inherit cmake gnome3-utils
 
 DESCRIPTION="Library for encoding and decoding .avif files"
 HOMEPAGE="https://github.com/AOMediaCodec/libavif"
-SRC_URI="https://api.github.com/repos/AOMediaCodec/libavif/tarball/refs/tags/v0.11.1 -> libavif-0.11.1.tar.gz"
+SRC_URI="https://api.github.com/repos/AOMediaCodec/libavif/tarball/refs/tags/v1.0.1 -> libavif-1.0.1.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
@@ -30,7 +30,7 @@ BDEPEND="virtual/pkgconfig"
 src_unpack() {
 	default
 	pushd "${WORKDIR}"
-	mv AOMediaCodec-libavif-* libavif-0.11.1
+	mv AOMediaCodec-libavif-* libavif-1.0.1
 	popd
 }
 
