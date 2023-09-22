@@ -2,7 +2,7 @@ EAPI="7"
 
 inherit flag-o-matic libtool perl-functions toolchain-funcs
 
-SRC_URI="{{artifacts[0].src_uri}}"
+SRC_URI="https://api.github.com/repos/ImageMagick/ImageMagick/tarball/7.1.1-17 -> imagemagick-7.1.1-17.tar.gz"
 KEYWORDS="*"
 
 DESCRIPTION="A collection of tools and libraries for many image formats"
@@ -70,7 +70,7 @@ DEPEND="${RDEPEND}
 
 
 post_src_unpack() {
-	mv "${WORKDIR}"/{{github_user}}-{{github_repo}}-* "${S}" || die
+	mv "${WORKDIR}"/ImageMagick-ImageMagick-* "${S}" || die
 }
 
 src_prepare() {
