@@ -76,7 +76,7 @@ git2-0.15.0
 glob-0.3.1
 half-1.8.2
 hashbrown-0.12.3
-hashbrown-0.14.0
+hashbrown-0.14.1
 heck-0.4.1
 hermit-abi-0.1.19
 hermit-abi-0.3.3
@@ -84,7 +84,7 @@ home-0.5.5
 idna-0.4.0
 image-0.24.7
 indexmap-1.9.3
-indexmap-2.0.1
+indexmap-2.0.2
 interpolate_name-0.2.4
 io-lifetimes-1.0.11
 is-terminal-0.4.9
@@ -158,8 +158,8 @@ rust_hawktracer_sys-0.4.2
 rustc-demangle-0.1.23
 rustc-hash-1.1.0
 rustc_version-0.4.0
-rustix-0.37.23
-rustix-0.38.14
+rustix-0.37.24
+rustix-0.38.15
 ryu-1.0.15
 same-file-1.0.6
 scan_fmt-0.2.6
