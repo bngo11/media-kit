@@ -26,7 +26,7 @@ bstr-1.6.2
 built-0.5.2
 bumpalo-3.14.0
 bytemuck-1.14.0
-byteorder-1.4.3
+byteorder-1.5.0
 cargo-lock-8.0.3
 cast-0.3.0
 cc-1.0.83
@@ -63,7 +63,7 @@ either-1.9.0
 encode_unicode-0.3.6
 env_logger-0.8.4
 equivalent-1.0.1
-errno-0.3.3
+errno-0.3.4
 errno-dragonfly-0.1.2
 fdeflate-0.3.0
 fern-0.6.2
@@ -96,7 +96,7 @@ js-sys-0.3.64
 lab-0.11.0
 lazy_static-1.4.0
 lazycell-1.3.0
-libc-0.2.148
+libc-0.2.149
 libfuzzer-sys-0.3.5
 libgit2-sys-0.14.2+1.5.1
 libloading-0.7.4
@@ -105,7 +105,7 @@ linux-raw-sys-0.3.8
 linux-raw-sys-0.4.8
 log-0.4.20
 maybe-rayon-0.1.1
-memchr-2.6.3
+memchr-2.6.4
 memoffset-0.9.0
 minimal-lexical-0.2.1
 miniz_oxide-0.7.1
@@ -139,7 +139,7 @@ predicates-tree-1.0.7
 pretty_assertions-1.4.0
 proc-macro-error-1.0.4
 proc-macro-error-attr-1.0.4
-proc-macro2-1.0.67
+proc-macro2-1.0.68
 quickcheck-1.0.3
 quickcheck_macros-1.0.0
 quote-1.0.33
@@ -159,7 +159,7 @@ rustc-demangle-0.1.23
 rustc-hash-1.1.0
 rustc_version-0.4.0
 rustix-0.37.24
-rustix-0.38.15
+rustix-0.38.17
 ryu-1.0.15
 same-file-1.0.6
 scan_fmt-0.2.6
@@ -177,8 +177,8 @@ simd-adler32-0.3.7
 simd_helpers-0.1.0
 smallvec-1.11.1
 syn-1.0.109
-syn-2.0.37
-system-deps-6.1.1
+syn-2.0.38
+system-deps-6.1.2
 target-lexicon-0.12.11
 termcolor-1.3.0
 terminal_size-0.2.6
@@ -190,9 +190,9 @@ tinytemplate-1.2.1
 tinyvec-1.6.0
 tinyvec_macros-0.1.1
 toml-0.5.11
-toml-0.7.8
+toml-0.8.2
 toml_datetime-0.6.3
-toml_edit-0.19.15
+toml_edit-0.20.2
 unicode-bidi-0.3.13
 unicode-ident-1.0.12
 unicode-normalization-0.1.22
@@ -235,7 +235,7 @@ windows_x86_64_gnullvm-0.48.5
 windows_x86_64_msvc-0.42.2
 windows_x86_64_msvc-0.48.5
 winnow-0.4.1
-winnow-0.5.15
+winnow-0.5.16
 y4m-0.8.0
 yansi-0.5.1
 
