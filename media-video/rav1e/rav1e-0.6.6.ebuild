@@ -5,7 +5,7 @@ EAPI=7
 CRATES="
 addr2line-0.21.0
 adler-1.0.2
-aho-corasick-1.1.1
+aho-corasick-1.1.2
 anes-0.1.6
 anyhow-1.0.75
 aom-sys-0.3.2
@@ -63,8 +63,7 @@ either-1.9.0
 encode_unicode-0.3.6
 env_logger-0.8.4
 equivalent-1.0.1
-errno-0.3.4
-errno-dragonfly-0.1.2
+errno-0.3.5
 fdeflate-0.3.0
 fern-0.6.2
 flate2-1.0.27
@@ -102,7 +101,7 @@ libgit2-sys-0.14.2+1.5.1
 libloading-0.7.4
 libz-sys-1.1.12
 linux-raw-sys-0.3.8
-linux-raw-sys-0.4.8
+linux-raw-sys-0.4.10
 log-0.4.20
 maybe-rayon-0.1.1
 memchr-2.6.4
@@ -116,10 +115,10 @@ noop_proc_macro-0.3.0
 normalize-line-endings-0.3.0
 num-bigint-0.4.4
 num-derive-0.3.3
-num-derive-0.4.0
+num-derive-0.4.1
 num-integer-0.1.45
 num-rational-0.4.1
-num-traits-0.2.16
+num-traits-0.2.17
 object-0.32.1
 once_cell-1.18.0
 oorandom-11.1.3
@@ -139,7 +138,7 @@ predicates-tree-1.0.7
 pretty_assertions-1.4.0
 proc-macro-error-1.0.4
 proc-macro-error-attr-1.0.4
-proc-macro2-1.0.68
+proc-macro2-1.0.69
 quickcheck-1.0.3
 quickcheck_macros-1.0.0
 quote-1.0.33
@@ -159,7 +158,7 @@ rustc-demangle-0.1.23
 rustc-hash-1.1.0
 rustc_version-0.4.0
 rustix-0.37.24
-rustix-0.38.17
+rustix-0.38.18
 ryu-1.0.15
 same-file-1.0.6
 scan_fmt-0.2.6
