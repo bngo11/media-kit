@@ -55,7 +55,7 @@ crossbeam-deque-0.8.3
 crossbeam-epoch-0.9.15
 crossbeam-queue-0.3.8
 crossbeam-utils-0.8.16
-dav1d-sys-0.7.1
+dav1d-sys-0.7.2
 diff-0.1.13
 difflib-0.4.0
 doc-comment-0.3.3
@@ -164,11 +164,11 @@ same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.2.0
 semver-1.0.20
-serde-1.0.189
+serde-1.0.190
 serde-big-array-0.4.1
-serde_derive-1.0.189
+serde_derive-1.0.190
 serde_json-1.0.107
-serde_spanned-0.6.3
+serde_spanned-0.6.4
 shlex-1.2.0
 signal-hook-0.3.17
 signal-hook-registry-1.4.1
@@ -189,9 +189,9 @@ tinytemplate-1.2.1
 tinyvec-1.6.0
 tinyvec_macros-0.1.1
 toml-0.5.11
-toml-0.8.2
-toml_datetime-0.6.3
-toml_edit-0.20.2
+toml-0.8.4
+toml_datetime-0.6.5
+toml_edit-0.20.4
 unicode-bidi-0.3.13
 unicode-ident-1.0.12
 unicode-normalization-0.1.22
