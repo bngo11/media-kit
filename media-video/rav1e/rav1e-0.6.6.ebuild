@@ -21,7 +21,7 @@ backtrace-0.3.69
 bindgen-0.61.0
 bitflags-1.3.2
 bitflags-2.4.1
-bitstream-io-1.7.0
+bitstream-io-1.8.0
 bstr-1.7.0
 built-0.5.2
 bumpalo-3.14.0
@@ -55,7 +55,7 @@ crossbeam-deque-0.8.3
 crossbeam-epoch-0.9.15
 crossbeam-queue-0.3.8
 crossbeam-utils-0.8.16
-dav1d-sys-0.7.2
+dav1d-sys-0.7.3
 diff-0.1.13
 difflib-0.4.0
 doc-comment-0.3.3
@@ -64,7 +64,7 @@ encode_unicode-0.3.6
 env_logger-0.8.4
 equivalent-1.0.1
 errno-0.3.5
-fdeflate-0.3.0
+fdeflate-0.3.1
 fern-0.6.2
 flate2-1.0.28
 float-cmp-0.9.0
@@ -83,7 +83,7 @@ home-0.5.5
 idna-0.4.0
 image-0.24.7
 indexmap-1.9.3
-indexmap-2.0.2
+indexmap-2.1.0
 interpolate_name-0.2.4
 io-lifetimes-1.0.11
 is-terminal-0.4.9
@@ -91,7 +91,7 @@ itertools-0.8.2
 itertools-0.10.5
 itoa-1.0.9
 jobserver-0.1.27
-js-sys-0.3.64
+js-sys-0.3.65
 lab-0.11.0
 lazy_static-1.4.0
 lazycell-1.3.0
@@ -157,8 +157,8 @@ rust_hawktracer_sys-0.4.2
 rustc-demangle-0.1.23
 rustc-hash-1.1.0
 rustc_version-0.4.0
-rustix-0.37.26
-rustix-0.38.20
+rustix-0.37.27
+rustix-0.38.21
 ryu-1.0.15
 same-file-1.0.6
 scan_fmt-0.2.6
@@ -167,7 +167,7 @@ semver-1.0.20
 serde-1.0.190
 serde-big-array-0.4.1
 serde_derive-1.0.190
-serde_json-1.0.107
+serde_json-1.0.108
 serde_spanned-0.6.4
 shlex-1.2.0
 signal-hook-0.3.17
@@ -177,7 +177,7 @@ simd_helpers-0.1.0
 smallvec-1.11.1
 syn-1.0.109
 syn-2.0.38
-system-deps-6.1.2
+system-deps-6.2.0
 target-lexicon-0.12.12
 termcolor-1.3.0
 terminal_size-0.2.6
@@ -189,9 +189,9 @@ tinytemplate-1.2.1
 tinyvec-1.6.0
 tinyvec_macros-0.1.1
 toml-0.5.11
-toml-0.8.5
+toml-0.8.6
 toml_datetime-0.6.5
-toml_edit-0.20.5
+toml_edit-0.20.7
 unicode-bidi-0.3.13
 unicode-ident-1.0.12
 unicode-normalization-0.1.22
@@ -204,12 +204,12 @@ version_check-0.9.4
 wait-timeout-0.2.0
 walkdir-2.4.0
 wasi-0.11.0+wasi-snapshot-preview1
-wasm-bindgen-0.2.87
-wasm-bindgen-backend-0.2.87
-wasm-bindgen-macro-0.2.87
-wasm-bindgen-macro-support-0.2.87
-wasm-bindgen-shared-0.2.87
-web-sys-0.3.64
+wasm-bindgen-0.2.88
+wasm-bindgen-backend-0.2.88
+wasm-bindgen-macro-0.2.88
+wasm-bindgen-macro-support-0.2.88
+wasm-bindgen-shared-0.2.88
+web-sys-0.3.65
 which-4.4.2
 winapi-0.3.9
 winapi-i686-pc-windows-gnu-0.4.0
@@ -234,7 +234,7 @@ windows_x86_64_gnullvm-0.48.5
 windows_x86_64_msvc-0.42.2
 windows_x86_64_msvc-0.48.5
 winnow-0.4.1
-winnow-0.5.17
+winnow-0.5.19
 y4m-0.8.0
 yansi-0.5.1
 
