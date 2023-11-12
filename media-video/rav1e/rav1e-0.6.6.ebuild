@@ -22,7 +22,7 @@ bindgen-0.61.0
 bitflags-1.3.2
 bitflags-2.4.1
 bitstream-io-1.8.0
-bstr-1.7.0
+bstr-1.8.0
 built-0.5.2
 bumpalo-3.14.0
 bytemuck-1.14.0
@@ -63,13 +63,13 @@ either-1.9.0
 encode_unicode-0.3.6
 env_logger-0.8.4
 equivalent-1.0.1
-errno-0.3.5
+errno-0.3.6
 fdeflate-0.3.1
 fern-0.6.2
 flate2-1.0.28
 float-cmp-0.9.0
 form_urlencoded-1.2.0
-getrandom-0.2.10
+getrandom-0.2.11
 gimli-0.28.0
 git2-0.15.0
 glob-0.3.1
@@ -101,7 +101,7 @@ libgit2-sys-0.14.2+1.5.1
 libloading-0.7.4
 libz-sys-1.1.12
 linux-raw-sys-0.3.8
-linux-raw-sys-0.4.10
+linux-raw-sys-0.4.11
 log-0.4.20
 maybe-rayon-0.1.1
 memchr-2.6.4
@@ -164,9 +164,9 @@ same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.2.0
 semver-1.0.20
-serde-1.0.190
+serde-1.0.192
 serde-big-array-0.4.1
-serde_derive-1.0.190
+serde_derive-1.0.192
 serde_json-1.0.108
 serde_spanned-0.6.4
 shlex-1.2.0
@@ -174,7 +174,7 @@ signal-hook-0.3.17
 signal-hook-registry-1.4.1
 simd-adler32-0.3.7
 simd_helpers-0.1.0
-smallvec-1.11.1
+smallvec-1.11.2
 syn-1.0.109
 syn-2.0.39
 system-deps-6.2.0
@@ -189,9 +189,9 @@ tinytemplate-1.2.1
 tinyvec-1.6.0
 tinyvec_macros-0.1.1
 toml-0.5.11
-toml-0.8.6
+toml-0.8.8
 toml_datetime-0.6.5
-toml_edit-0.20.7
+toml_edit-0.21.0
 unicode-bidi-0.3.13
 unicode-ident-1.0.12
 unicode-normalization-0.1.22
