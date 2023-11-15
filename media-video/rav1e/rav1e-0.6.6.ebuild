@@ -63,7 +63,7 @@ either-1.9.0
 encode_unicode-0.3.6
 env_logger-0.8.4
 equivalent-1.0.1
-errno-0.3.6
+errno-0.3.7
 fdeflate-0.3.1
 fern-0.6.2
 flate2-1.0.28
@@ -158,7 +158,7 @@ rustc-demangle-0.1.23
 rustc-hash-1.1.0
 rustc_version-0.4.0
 rustix-0.37.27
-rustix-0.38.21
+rustix-0.38.24
 ryu-1.0.15
 same-file-1.0.6
 scan_fmt-0.2.6
@@ -179,7 +179,7 @@ syn-1.0.109
 syn-2.0.39
 system-deps-6.2.0
 target-lexicon-0.12.12
-termcolor-1.3.0
+termcolor-1.4.0
 terminal_size-0.2.6
 termtree-0.4.1
 textwrap-0.16.0
