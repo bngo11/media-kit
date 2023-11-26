@@ -5,7 +5,7 @@ EAPI=7
 PYTHON_COMPAT=( python3+ )
 inherit edo flag-o-matic meson optfeature pax-utils python-single-r1 xdg
 
-SRC_URI="https://github.com/mpv-player/mpv/archive/v0.36.0.tar.gz -> mpv-0.36.0.tar.gz"
+SRC_URI="https://github.com/mpv-player/mpv/archive/v0.37.0.tar.gz -> mpv-0.37.0.tar.gz"
 KEYWORDS="*"
 
 DESCRIPTION="Media player for the command line"
