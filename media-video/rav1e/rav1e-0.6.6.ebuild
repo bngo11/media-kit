@@ -89,13 +89,13 @@ io-lifetimes-1.0.11
 is-terminal-0.4.9
 itertools-0.8.2
 itertools-0.10.5
-itoa-1.0.9
+itoa-1.0.10
 jobserver-0.1.27
 js-sys-0.3.66
 lab-0.11.0
 lazy_static-1.4.0
 lazycell-1.3.0
-libc-0.2.150
+libc-0.2.151
 libfuzzer-sys-0.3.5
 libgit2-sys-0.14.2+1.5.1
 libloading-0.7.4
@@ -120,7 +120,7 @@ num-integer-0.1.45
 num-rational-0.4.1
 num-traits-0.2.17
 object-0.32.1
-once_cell-1.18.0
+once_cell-1.19.0
 oorandom-11.1.3
 os_str_bytes-6.6.1
 paste-1.0.14
@@ -158,8 +158,8 @@ rustc-demangle-0.1.23
 rustc-hash-1.1.0
 rustc_version-0.4.0
 rustix-0.37.27
-rustix-0.38.26
-ryu-1.0.15
+rustix-0.38.28
+ryu-1.0.16
 same-file-1.0.6
 scan_fmt-0.2.6
 scopeguard-1.2.0
@@ -192,7 +192,7 @@ toml-0.5.11
 toml-0.8.8
 toml_datetime-0.6.5
 toml_edit-0.21.0
-unicode-bidi-0.3.13
+unicode-bidi-0.3.14
 unicode-ident-1.0.12
 unicode-normalization-0.1.22
 unicode-width-0.1.11
@@ -243,7 +243,7 @@ windows_x86_64_msvc-0.42.2
 windows_x86_64_msvc-0.48.5
 windows_x86_64_msvc-0.52.0
 winnow-0.4.1
-winnow-0.5.19
+winnow-0.5.26
 y4m-0.8.0
 yansi-0.5.1
 
