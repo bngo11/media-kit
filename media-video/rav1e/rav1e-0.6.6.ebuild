@@ -167,7 +167,7 @@ serde-1.0.193
 serde-big-array-0.4.1
 serde_derive-1.0.193
 serde_json-1.0.108
-serde_spanned-0.6.4
+serde_spanned-0.6.5
 shlex-1.2.0
 signal-hook-0.3.17
 signal-hook-registry-1.4.1
