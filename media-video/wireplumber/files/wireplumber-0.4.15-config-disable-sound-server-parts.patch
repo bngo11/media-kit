@@ -3,9 +3,6 @@ Author: Igor V. Kovalenko <igor.v.kovalenko@gmail.com>
 Date:   Sun May 15 18:19:03 2022 +0300
 
     config: Disable alsa and bluez monitors by default
-
-diff --git a/src/config/bluetooth.lua.d/50-bluez-config.lua b/src/config/bluetooth.lua.d/50-bluez-config.lua
-index d5727d3..938eae0 100644
 --- a/src/config/bluetooth.lua.d/50-bluez-config.lua
 +++ b/src/config/bluetooth.lua.d/50-bluez-config.lua
 @@ -1,4 +1,4 @@
@@ -13,9 +10,7 @@ index d5727d3..938eae0 100644
 +bluez_monitor.enabled = false
  
  bluez_monitor.properties = {
-   -- These features do not work on all headsets, so they are enabled
-diff --git a/src/config/main.lua.d/50-alsa-config.lua b/src/config/main.lua.d/50-alsa-config.lua
-index 3468333..d4c065b 100644
+   -- Enabled roles (default: [ a2dp_sink a2dp_source bap_sink bap_source hfp_hf hfp_ag ])
 --- a/src/config/main.lua.d/50-alsa-config.lua
 +++ b/src/config/main.lua.d/50-alsa-config.lua
 @@ -1,4 +1,4 @@
@@ -24,3 +19,6 @@ index 3468333..d4c065b 100644
  
  alsa_monitor.properties = {
    -- Create a JACK device. This is not enabled by default because
+-- 
+2.42.0
+

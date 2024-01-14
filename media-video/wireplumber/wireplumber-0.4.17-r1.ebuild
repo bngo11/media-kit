@@ -13,7 +13,7 @@ LUA_COMPAT=( lua5-{3,4} )
 
 inherit lua-single meson systemd
 
-SRC_URI="https://gitlab.freedesktop.org/pipewire/${PN}/-/archive/${PV}/${P}.tar.gz"
+SRC_URI="https://gitlab.freedesktop.org/pipewire/${PN}/-/archive/${PV}/${P}.tar.bz2"
 KEYWORDS="*"
 
 DESCRIPTION="Replacement for pipewire-media-session"
@@ -25,6 +25,8 @@ IUSE="test"
 
 REQUIRED_USE="
 	${LUA_REQUIRED_USE}
+	?? ( elogind systemd )
+	system-service? ( systemd )
 "
 
 RESTRICT="!test? ( test )"
@@ -34,12 +36,13 @@ BDEPEND="
 	dev-libs/glib
 	dev-util/gdbus-codegen
 	sys-devel/gettext
+	test? ( sys-apps/dbus )
 "
 
 DEPEND="
 	${LUA_DEPS}
 	>=dev-libs/glib-2.62
-	>=media-video/pipewire-0.3.53-r1:=
+	>=media-video/pipewire-0.3.68:=
 	virtual/libintl
 	sys-auth/elogind
 "
@@ -54,11 +57,14 @@ RDEPEND="${DEPEND}
 DOCS=( {NEWS,README}.rst )
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-0.4.10-config-disable-sound-server-parts.patch # defer enabling sound server parts to media-video/pipewire
+	"${FILESDIR}"/${PN}-0.4.15-config-disable-sound-server-parts.patch # defer enabling sound server parts to media-video/pipewire
 )
 
 src_configure() {
 	local emesonargs=(
+		-Ddaemon=true
+		-Dtools=true
+		-Dmodules=true
 		-Ddoc=disabled # Ebuild not wired up yet (Sphinx, Doxygen?)
 		-Dintrospection=disabled # Only used for Sphinx doc generation
 		-Dsystem-lua=true # We always unbundle everything we can
@@ -70,24 +76,14 @@ src_configure() {
 		-Dsystemd-system-unit-dir=None
 		-Dsystemd-user-unit-dir=None
 		$(meson_use test tests)
+		$(meson_use test dbus-tests)
 	)
 
 	meson_src_configure
 }
 
-src_install() {
-	meson_src_install
-
-	# We copy the default config, so that Gentoo tools can pick up on any
-	# updates and /etc does not end up with stale overrides.
-	# If a reflinking CoW filesystem is used (e.g. Btrfs), then the files
-	# will not actually get stored twice until modified.
-	insinto /etc
-	doins -r "${ED}"/usr/share/wireplumber
-}
-
 pkg_postinst() {
-	ewarn "Switch to WirePlumber will happen the next time gentoo-pipewire-launcher"
+	ewarn "Switch to WirePlumber will happen the next time pipewire-launcher"
 	ewarn "is started (a replacement for directly calling pipewire binary)."
 	ewarn
 	ewarn "Please ensure that ${EROOT}/etc/pipewire/pipewire.conf either does not exist"
