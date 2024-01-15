@@ -25,8 +25,6 @@ IUSE="test"
 
 REQUIRED_USE="
 	${LUA_REQUIRED_USE}
-	?? ( elogind systemd )
-	system-service? ( systemd )
 "
 
 RESTRICT="!test? ( test )"
