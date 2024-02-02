@@ -2,8 +2,9 @@
 
 EAPI=7
 
+LUA_COMPAT=( lua5-1 luajit )
 PYTHON_COMPAT=( python3+ )
-inherit edo flag-o-matic meson optfeature pax-utils python-single-r1 xdg
+inherit flag-o-matic lua-single meson optfeature pax-utils python-single-r1 xdg
 
 SRC_URI="https://github.com/mpv-player/mpv/archive/v0.37.0.tar.gz -> mpv-0.37.0.tar.gz"
 KEYWORDS="*"
@@ -16,37 +17,34 @@ SLOT="0" # soname
 IUSE="
 	+X +alsa aqua archive bluray cdda +cli coreaudio debug +drm dvb
 	dvd +egl gamepad +iconv jack javascript jpeg lcms libcaca +libmpv
-	+libplacebo mmal nvenc openal opengl pipewire pulseaudio
-	raspberry-pi rubberband sdl selinux sixel sndio test tools +uchardet
-	vaapi vdpau vulkan wayland +xv zimg zlib"
+	lua mmal nvenc openal opengl pipewire pulseaudio raspberry-pi
+	rubberband sdl selinux sixel sndio test tools +uchardet vaapi
+	vdpau vulkan wayland +xv zimg zlib"
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
 	|| ( cli libmpv )
 	egl? ( || ( X drm wayland ) )
-	libplacebo? ( || ( egl opengl vulkan ) )
+	lua? ( ${LUA_REQUIRED_USE} )
 	nvenc? ( || ( egl opengl vulkan ) )
 	opengl? ( || ( X aqua ) )
 	test? ( cli )
 	tools? ( cli )
 	uchardet? ( iconv )
-	vaapi? (
-		|| ( X egl libplacebo wayland )
-		wayland? ( drm )
-	)
+	vaapi? ( || ( X drm wayland ) )
 	vdpau? ( X )
-	vulkan? ( || ( X wayland ) libplacebo )
+	vulkan? ( || ( X wayland ) )
 	xv? ( X )"
 RESTRICT="!test? ( test )"
 
 # raspberry-pi: default to -bin given non-bin is known broken (bug #893422)
 COMMON_DEPEND="
 	media-libs/libass:=[fontconfig]
+	>=media-libs/libplacebo-6.338:=[opengl?,vulkan?]
 	media-video/ffmpeg:=[encode,threads,vaapi?,vdpau?]
 	X? (
 		x11-libs/libX11
 		x11-libs/libXScrnSaver
 		x11-libs/libXext
-		x11-libs/libXinerama
 		x11-libs/libXpresent
 		x11-libs/libXrandr
 		xv? ( x11-libs/libXv )
@@ -59,14 +57,17 @@ COMMON_DEPEND="
 		dev-libs/libcdio:=
 	)
 	drm? (
-		media-libs/mesa[gbm(+)]
 		x11-libs/libdrm
+		egl? ( media-libs/mesa[gbm(+)] )
 	)
 	dvd? (
 		media-libs/libdvdnav
 		media-libs/libdvdread:=
 	)
-	egl? ( media-libs/libglvnd )
+	egl? (
+		media-libs/libglvnd
+		media-libs/libplacebo[opengl]
+	)
 	gamepad? ( media-libs/libsdl2[joystick] )
 	iconv? (
 		virtual/libiconv
@@ -77,11 +78,7 @@ COMMON_DEPEND="
 	jpeg? ( media-libs/libjpeg-turbo:= )
 	lcms? ( media-libs/lcms:2 )
 	libcaca? ( media-libs/libcaca )
-	libplacebo? (
-		>=media-libs/libplacebo-4.202:=[opengl?,vulkan?]
-		<media-libs/libplacebo-6
-		egl? ( media-libs/libplacebo[opengl] )
-	)
+	lua? ( ${LUA_DEPS} )
 	openal? ( media-libs/openal )
 	opengl? ( media-libs/libglvnd[X?] )
 	pipewire? ( media-video/pipewire:= )
@@ -126,10 +123,11 @@ BDEPEND="
 	wayland? ( dev-util/wayland-scanner )"
 
 PATCHES=(
-	"${FILESDIR}"/${P}-yt-dlp-edl-fragments.patch
+	"${FILESDIR}"/${PN}-0.37.0-drm-fix.patch
 )
 
 pkg_setup() {
+	use lua && lua-single_pkg_setup
 	python-single-r1_pkg_setup
 }
 
@@ -173,7 +171,7 @@ src_configure() {
 		$(meson_feature javascript)
 		-Dlibavdevice=enabled
 		$(meson_feature lcms lcms2)
-		-Dlua=disabled
+		-Dlua=$(usex lua "${ELUA}" disabled)
 		$(meson_feature rubberband)
 		-Dsdl2=$(use gamepad || use sdl && echo enabled || echo disabled) #857156
 		$(meson_feature uchardet)
@@ -195,10 +193,8 @@ src_configure() {
 		$(meson_feature X x11)
 		$(meson_feature aqua cocoa)
 		$(meson_feature drm)
-		$(meson_feature drm gbm)
 		$(meson_feature jpeg)
 		$(meson_feature libcaca caca)
-		$(meson_feature libplacebo)
 		$(meson_feature mmal rpi-mmal)
 		$(meson_feature sdl sdl2-video)
 		$(meson_feature sixel)
@@ -209,6 +205,7 @@ src_configure() {
 			echo enabled || echo disabled)
 		$(meson_feature egl)
 		$(mpv_feature_multi egl X egl-x11)
+		$(mpv_feature_multi egl drm gbm) # gbm is only used by egl-drm
 		$(mpv_feature_multi egl drm egl-drm)
 		$(mpv_feature_multi egl wayland egl-wayland)
 		$(meson_feature libmpv plain-gl)
@@ -225,9 +222,8 @@ src_configure() {
 
 		$(meson_feature vaapi)
 		$(mpv_feature_multi vaapi X vaapi-x11)
-		$(mpv_feature_multi 'vaapi X' egl vaapi-x-egl)
-		$(mpv_feature_multi 'vaapi egl' drm vaapi-drm)
-		$(mpv_feature_multi 'vaapi egl' wayland vaapi-wayland)
+		$(mpv_feature_multi vaapi drm vaapi-drm)
+		$(mpv_feature_multi vaapi wayland vaapi-wayland)
 
 		$(meson_feature vdpau)
 		$(mpv_feature_multi vdpau opengl vdpau-gl-x11)
