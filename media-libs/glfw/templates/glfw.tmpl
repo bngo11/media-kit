@@ -52,8 +52,16 @@ src_unpack() {
 src_configure() {
 	local mycmakeargs=(
 		-DGLFW_BUILD_EXAMPLES=no
-		-DGLFW_USE_WAYLAND="$(usex wayland-only)"
 		-DBUILD_SHARED_LIBS=1
 	)
+
+	if use wayland-only; then
+		mycmakeargs+=( -DGLFW_BUILD_X11=OFF )
+		mycmakeargs+=( -DGLFW_BUILD_WAYLAND=ON )
+	else
+		mycmakeargs+=( -DGLFW_BUILD_X11=ON )
+		mycmakeargs+=( -DGLFW_BUILD_WAYLAND=ON )
+	fi
+
 	cmake_src_configure
 }
