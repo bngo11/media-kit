@@ -1,0 +1,9 @@
+DEFINED_PHASES=-
+DEPEND=>=media-libs/libv4l-0.9.5 >=media-libs/gst-plugins-base-1.24.0:1.0 udev? ( >=virtual/libgudev-208:= ) virtual/os-headers >=media-libs/gst-plugins-good-1.24:1.0=
+DESCRIPTION=V4L2 source/sink plugin for GStreamer
+EAPI=7
+IUSE=udev
+KEYWORDS=*
+RDEPEND=>=media-libs/libv4l-0.9.5 >=media-libs/gst-plugins-base-1.24.0:1.0 udev? ( >=virtual/libgudev-208:= ) virtual/os-headers >=media-libs/gst-plugins-good-1.24:1.0=
+SLOT=1.0
+_md5_=e3609b49a3b2711d45cbcb951b567f6f

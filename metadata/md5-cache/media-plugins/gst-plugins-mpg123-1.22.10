@@ -1,8 +1,0 @@
-DEFINED_PHASES=-
-DEPEND=>=media-sound/mpg123-1.23 >=media-libs/gst-plugins-good-1.22:1.0=
-DESCRIPTION=MP3 decoder plugin for GStreamer
-EAPI=7
-KEYWORDS=*
-RDEPEND=>=media-sound/mpg123-1.23 >=media-libs/gst-plugins-good-1.22:1.0=
-SLOT=1.0
-_md5_=c6e76fda239d4fa50f6884a21cc4fb66

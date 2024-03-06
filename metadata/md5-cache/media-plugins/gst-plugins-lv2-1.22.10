@@ -1,8 +1,0 @@
-DEFINED_PHASES=-
-DEPEND=>=media-libs/lv2-1.14.0-r1 >=media-libs/lilv-0.24.2-r2 >=media-libs/gst-plugins-bad-1.22:1.0=
-DESCRIPTION=Lv2 elements for Gstreamer
-EAPI=7
-KEYWORDS=*
-RDEPEND=>=media-libs/lv2-1.14.0-r1 >=media-libs/lilv-0.24.2-r2 >=media-libs/gst-plugins-bad-1.22:1.0=
-SLOT=1.0
-_md5_=06ea6f271de82abf29702b83a5daa577
