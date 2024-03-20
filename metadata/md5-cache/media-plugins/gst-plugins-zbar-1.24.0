@@ -1,8 +1,0 @@
-DEFINED_PHASES=-
-DEPEND=>=media-gfx/zbar-0.10_p20121015-r2 >=media-libs/gst-plugins-bad-1.24:1.0=
-DESCRIPTION=Bar codes detection in video streams for GStreamer
-EAPI=7
-KEYWORDS=*
-RDEPEND=>=media-gfx/zbar-0.10_p20121015-r2 >=media-libs/gst-plugins-bad-1.24:1.0=
-SLOT=1.0
-_md5_=8841dd35434e3ed2a1c48bd6ce80053b

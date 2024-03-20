@@ -10,11 +10,11 @@ inherit meson python-any-r1
 DESCRIPTION="Reusable library for GPU-accelerated image processing primitives"
 HOMEPAGE="https://code.videolan.org/videolan/libplacebo"
 SRC_URI="https://code.videolan.org/videolan/libplacebo/-/archive/v6.338.2/libplacebo-v6.338.2.tar.gz -> libplacebo-v6.338.2.tar.gz
-	https://github.com/Dav1dde/glad/archive/refs/tags/v2.0.5.tar.gz -> libplacebo-glad-2.0.5.tar.gz"
+	https://github.com/Dav1dde/glad/archive/refs/tags/v2.0.6.tar.gz -> libplacebo-glad-2.0.6.tar.gz"
 S="${WORKDIR}/${PN}-v${PV}"
 KEYWORDS="*"
 
-GLAD_PV=2.0.5
+GLAD_PV=2.0.6
 
 LICENSE="LGPL-2.1+ opengl? ( MIT )"
 SLOT="0/$(ver_cut 2)" # soname

@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DEPEND=>=media-libs/libmpeg2-0.5.1-r2 >=media-libs/gst-plugins-ugly-1.22:1.0=
+DESCRIPTION=MPEG2 decoder plugin for GStreamer
+EAPI=7
+KEYWORDS=*
+RDEPEND=>=media-libs/libmpeg2-0.5.1-r2 >=media-libs/gst-plugins-ugly-1.22:1.0=
+SLOT=1.0
+_md5_=553f58d81cfb55a2ca061475bdee91db

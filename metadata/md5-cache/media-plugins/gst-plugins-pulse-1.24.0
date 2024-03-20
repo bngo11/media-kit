@@ -1,8 +1,0 @@
-DEFINED_PHASES=-
-DEPEND=>=media-libs/gst-plugins-base-1.24.0:1.0 >=media-sound/pulseaudio-2.1-r1 >=media-libs/gst-plugins-good-1.24:1.0=
-DESCRIPTION=PulseAudio sound server plugin for GStreamer
-EAPI=7
-KEYWORDS=*
-RDEPEND=>=media-libs/gst-plugins-base-1.24.0:1.0 >=media-sound/pulseaudio-2.1-r1 >=media-libs/gst-plugins-good-1.24:1.0=
-SLOT=1.0
-_md5_=3b5c2582624b57b1856eead2cf3762e4

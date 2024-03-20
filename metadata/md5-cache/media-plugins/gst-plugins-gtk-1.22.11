@@ -1,0 +1,9 @@
+DEFINED_PHASES=-
+DEPEND=>=media-libs/gst-plugins-base-1.22.11:1.0[egl=,gles2=,opengl=,wayland=,X=] >=x11-libs/gtk+-3.24:3 gles2? ( >=x11-libs/gtk+-3.24:3[X?,wayland?] ) opengl? ( >=x11-libs/gtk+-3.24:3[X?,wayland?] ) >=media-libs/gst-plugins-good-1.22:1.0= !<media-libs/gst-plugins-bad-1.13.1:1.0
+DESCRIPTION=Video sink plugin for GStreamer that renders to a GtkWidget
+EAPI=7
+IUSE=+egl gles2 +opengl wayland +X
+KEYWORDS=*
+RDEPEND=>=media-libs/gst-plugins-base-1.22.11:1.0[egl=,gles2=,opengl=,wayland=,X=] >=x11-libs/gtk+-3.24:3 gles2? ( >=x11-libs/gtk+-3.24:3[X?,wayland?] ) opengl? ( >=x11-libs/gtk+-3.24:3[X?,wayland?] ) >=media-libs/gst-plugins-good-1.22:1.0= !<media-libs/gst-plugins-bad-1.13.1:1.0
+SLOT=1.0
+_md5_=b0fee444b4d693a13d6013f05e75b12d
