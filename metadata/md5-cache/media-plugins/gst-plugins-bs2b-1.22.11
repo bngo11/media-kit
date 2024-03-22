@@ -1,8 +1,0 @@
-DEFINED_PHASES=-
-DEPEND=media-libs/libbs2b >=media-libs/gst-plugins-bad-1.22:1.0=
-DESCRIPTION=bs2b elements for Gstreamer
-EAPI=7
-KEYWORDS=*
-RDEPEND=media-libs/libbs2b >=media-libs/gst-plugins-bad-1.22:1.0=
-SLOT=1.0
-_md5_=d0441f953712e9b63359d11033181400

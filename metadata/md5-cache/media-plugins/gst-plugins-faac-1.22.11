@@ -1,8 +1,0 @@
-DEFINED_PHASES=-
-DEPEND=>=media-libs/faac-1.28-r3 >=media-libs/gst-plugins-bad-1.22:1.0=
-DESCRIPTION=AAC audio encoder plugin for GStreamer
-EAPI=7
-KEYWORDS=*
-RDEPEND=>=media-libs/faac-1.28-r3 >=media-libs/gst-plugins-bad-1.22:1.0=
-SLOT=1.0
-_md5_=0befd349a8353934932eccd0b9366d21

@@ -1,8 +1,0 @@
-DEFINED_PHASES=-
-DEPEND=>=media-libs/libpng-1.6.10:0= >=media-libs/gst-plugins-good-1.22:1.0=
-DESCRIPTION=PNG image encoder/decoder plugin for GStreamer
-EAPI=7
-KEYWORDS=*
-RDEPEND=>=media-libs/libpng-1.6.10:0= >=media-libs/gst-plugins-good-1.22:1.0=
-SLOT=1.0
-_md5_=f78329e3cac601533742a5075c7c01bd
