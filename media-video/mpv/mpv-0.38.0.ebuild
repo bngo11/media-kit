@@ -6,7 +6,7 @@ LUA_COMPAT=( lua5-1 luajit )
 PYTHON_COMPAT=( python3+ )
 inherit flag-o-matic lua-single meson optfeature pax-utils python-single-r1 xdg
 
-SRC_URI="https://github.com/mpv-player/mpv/archive/v0.37.0.tar.gz -> mpv-0.37.0.tar.gz"
+SRC_URI="https://github.com/mpv-player/mpv/archive/v0.38.0.tar.gz -> mpv-0.38.0.tar.gz"
 KEYWORDS="*"
 
 DESCRIPTION="Media player for the command line"
