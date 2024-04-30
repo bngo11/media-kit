@@ -6,7 +6,7 @@ inherit flag-o-matic virtualx meson
 
 DESCRIPTION="Less plugins for GStreamer"
 HOMEPAGE="https://gstreamer.freedesktop.org/"
-SRC_URI="https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.24.2.tar.xz -> gst-plugins-bad-1.24.2.tar.xz"
+SRC_URI="https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.24.3.tar.xz -> gst-plugins-bad-1.24.3.tar.xz"
 
 LICENSE="LGPL-2"
 KEYWORDS="*"

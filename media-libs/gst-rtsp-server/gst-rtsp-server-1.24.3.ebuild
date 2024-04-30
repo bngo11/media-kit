@@ -6,7 +6,7 @@ inherit meson
 
 DESCRIPTION="A GStreamer based RTSP server"
 HOMEPAGE="https://gstreamer.freedesktop.org/modules/gst-rtsp-server.html"
-SRC_URI="https://gstreamer.freedesktop.org/src/gst-rtsp-server/gst-rtsp-server-1.24.2.tar.xz -> gst-rtsp-server-1.24.2.tar.xz"
+SRC_URI="https://gstreamer.freedesktop.org/src/gst-rtsp-server/gst-rtsp-server-1.24.3.tar.xz -> gst-rtsp-server-1.24.3.tar.xz"
 
 LICENSE="LGPL-2+"
 KEYWORDS="*"
