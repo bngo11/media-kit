@@ -48,9 +48,6 @@ src_configure() {
 		$(use_enable zlib)
 		$(use_enable zstd)
 		--disable-libdeflate #bug #930111
-		$(use_enable docs)
-		$(use_enable contrib)
-		$(use_enable tools)
 	)
 
 	ECONF_SOURCE="${S}" econf "${myeconfargs[@]}"
