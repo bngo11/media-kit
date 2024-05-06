@@ -2,7 +2,7 @@
 
 EAPI=7
 
-inherit autotools libtool multilib-minimal
+inherit autotools libtool
 
 DESCRIPTION="Tag Image File Format (TIFF) library"
 HOMEPAGE="http://libtiff.maptools.org"
@@ -14,20 +14,16 @@ KEYWORDS="*"
 IUSE="+cxx jbig jpeg lzma static-libs test webp zlib zstd"
 
 RDEPEND="
-	jbig? ( >=media-libs/jbigkit-2.1:=[${MULTILIB_USEDEP}] )
-	jpeg? ( >=virtual/jpeg-0-r2:0=[${MULTILIB_USEDEP}] )
-	lzma? ( >=app-arch/xz-utils-5.0.5-r1[${MULTILIB_USEDEP}] )
-	webp? ( media-libs/libwebp:=[${MULTILIB_USEDEP}] )
-	zlib? ( >=sys-libs/zlib-1.2.8-r1[${MULTILIB_USEDEP}] )
-	zstd? ( >=app-arch/zstd-1.3.7-r1:=[${MULTILIB_USEDEP}] )
+	jbig? ( >=media-libs/jbigkit-2.1:= )
+	jpeg? ( >=virtual/jpeg-0-r2:0= )
+	lzma? ( >=app-arch/xz-utils-5.0.5-r1 )
+	webp? ( media-libs/libwebp:= )
+	zlib? ( >=sys-libs/zlib-1.2.8-r1 )
+	zstd? ( >=app-arch/zstd-1.3.7-r1:= )
 "
 DEPEND="${RDEPEND}"
 
 REQUIRED_USE="test? ( jpeg )" #483132
-
-MULTILIB_WRAPPED_HEADERS=(
-	/usr/include/tiffconf.h
-)
 
 src_prepare() {
 	default
@@ -38,40 +34,30 @@ src_prepare() {
 	eautoreconf
 }
 
-multilib_src_configure() {
+src_configure() {
 	local myeconfargs=(
-		--without-x
+		--disable-sphinx
 		--with-docdir="${EPREFIX}"/usr/share/doc/${PF}
 		$(use_enable cxx)
 		$(use_enable jbig)
 		$(use_enable jpeg)
 		$(use_enable lzma)
 		$(use_enable static-libs static)
+		$(use_enable test tests)
 		$(use_enable webp)
 		$(use_enable zlib)
 		$(use_enable zstd)
+		--disable-libdeflate #bug #930111
+		$(use_enable docs)
+		$(use_enable contrib)
+		$(use_enable tools)
 	)
+
 	ECONF_SOURCE="${S}" econf "${myeconfargs[@]}"
-
-	# remove useless subdirs
-	if ! multilib_is_native_abi ; then
-		sed -i \
-			-e 's/ tools//' \
-			-e 's/ contrib//' \
-			-e 's/ man//' \
-			-e 's/ html//' \
-			Makefile || die
-	fi
 }
 
-multilib_src_test() {
-	if ! multilib_is_native_abi ; then
-		emake -C tools
-	fi
-	emake check
-}
-
-multilib_src_install_all() {
+src_install() {
+	default
 	find "${ED}" -type f -name '*.la' -delete || die
-	rm "${ED}"/usr/share/doc/${PF}/{COPYRIGHT,README*,RELEASE-DATE,TODO,VERSION} || die
+	rm "${ED}"/usr/share/doc/${PF}/{README*,RELEASE-DATE,TODO,VERSION} || die
 }
