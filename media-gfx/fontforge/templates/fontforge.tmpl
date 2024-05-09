@@ -62,13 +62,6 @@ post_src_unpack() {
 	fi
 }
 
-src_prepare() {
-	# warning -> error
-	sed -i "s:-q -n -W -b \(html -d doctrees.* sphinx-docs$\):-q -n -b \1:" doc/CMakeLists.txt
-	default
-	cmake_src_prepare
-}
-
 src_configure() {
 	local mycmakeargs=(
 		-DENABLE_DOCS=$(usex doc ON OFF)
