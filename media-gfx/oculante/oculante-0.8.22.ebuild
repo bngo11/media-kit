@@ -4,7 +4,7 @@ EAPI=7
 
 inherit cargo
 
-DESCRIPTION="A fast and simple image viewer / editor for many opering systems"
+DESCRIPTION="A fast and simple image viewer / editor for many operating systems"
 HOMEPAGE="https://github.com/woelper/oculante"
 SRC_URI="https://github.com/woelper/oculante/tarball/530d9414ce7381cc8dd8774dc044bad07e1ba1c7 -> oculante-0.8.22-530d941.tar.gz
 https://direct.funtoo.org/e3/e0/41/e3e041881170bacb603ffc3c9f76d59b1108e574901295ce03712a97c564815de0b0e1ea87106f1090720726ea96ec3e8abd77bc0af54dad6622324ebd688eff -> oculante-0.8.22-funtoo-crates-bundle-36851e79902f8182537f884197c25956a3119a0e43f8c32e7f85949008354f883a1dd8d0fd652bc64411aabe7d704251de4a15381db52f2e55fd3f0d8005d834.tar.gz"
