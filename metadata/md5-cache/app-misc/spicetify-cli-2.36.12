@@ -10,4 +10,4 @@ RESTRICT=strip
 SLOT=0
 SRC_URI=https://github.com/spicetify/spicetify-cli/tarball/a2bad240fb48039c57179b1695804be4c7c12b9d -> spicetify-cli-2.36.12-a2bad24.tar.gz https://direct.funtoo.org/d0/01/46/d00146db3da67d4ba43c00b79252953cd215a65db94f141059af73cb8bde81ff4e0444ddc26858365ffa333955f11204ac445aeb96095549aef969d7239d9eb8 -> spicetify-cli-2.36.12-funtoo-go-bundle-30a5e33d7eab22956fa8cc2f1033fff3fe2e8a9865e6d1b50ec7f1c095c679003306362f94e2b4bbadef2ec289185d1a595e3222796eb3fad085ca4291d1678e.tar.gz
 _eclasses_=go-module	cb10a443c46556a15ed035d7a99128e8	xdg-utils	14d00d009167652b1fa363e55effe213
-_md5_=409ddec4efeefcc128acef346a816af0
+_md5_=9abb675e861efcc158fd94c57f2bace5
