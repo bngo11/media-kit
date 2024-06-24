@@ -94,6 +94,7 @@ PDEPEND=">=media-video/wireplumber-0.4.11"
 DOCS=( {README,INSTALL}.md NEWS )
 
 PATCHES=(
+    "${FILESDIR}/${PN}-1.1.83-volume-plugin.patch"
 )
 
 # limitsdfile related code taken from =sys-auth/realtime-base-0.1
