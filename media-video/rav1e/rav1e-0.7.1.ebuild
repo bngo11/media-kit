@@ -7,7 +7,7 @@ inherit cargo
 DESCRIPTION="The fastest and safest AV1 encoder."
 HOMEPAGE="https://github.com/xiph/rav1e"
 SRC_URI="https://github.com/xiph/rav1e/tarball/a8d05d0c43826a465b60dbadd0ab7f1327d75371 -> rav1e-0.7.1-a8d05d0.tar.gz
-https://direct.funtoo.org/f5/80/b6/f580b61d1e181a5a5374e3b5f28cde5d2e9a6c40c08cbb5b8fd92483f7ff65545616ca7324e24250e700f4a0f4a59c440f919e35150743590ab9b8c84d775660 -> rav1e-0.7.1-funtoo-crates-bundle-0e9f3f59759fa1e499106fb9fcb5cc0910a86ee73d67c0337cfaec6f30e76b4a1528d7c3de11ddede38ce4452ac661530867ff877f4c0cc57cff1d5c03a9a75f.tar.gz"
+https://direct.funtoo.org/d9/ec/fe/d9ecfeceea1bb6873dc8da27d69b8da0d409cf4c639c12cd125ae46ba6352dce37848b7e1fd10641c908fea7ba394f8f1eaddd2ca57325e197180cd30fad7e07 -> rav1e-0.7.1-funtoo-crates-bundle-0e9f3f59759fa1e499106fb9fcb5cc0910a86ee73d67c0337cfaec6f30e76b4a1528d7c3de11ddede38ce4452ac661530867ff877f4c0cc57cff1d5c03a9a75f.tar.gz"
 
 RESTRICT=""
 LICENSE="BSD-2 Apache-2.0 MIT Unlicense"
