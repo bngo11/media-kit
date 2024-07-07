@@ -9,7 +9,7 @@ inherit meson python-any-r1
 
 DESCRIPTION="Reusable library for GPU-accelerated image processing primitives"
 HOMEPAGE="https://code.videolan.org/videolan/libplacebo"
-SRC_URI="https://code.videolan.org/videolan/libplacebo/-/archive/v6.338.2/libplacebo-v6.338.2.tar.gz -> libplacebo-v6.338.2.tar.gz
+SRC_URI="https://code.videolan.org/videolan/libplacebo/-/archive/v7.349.0/libplacebo-v7.349.0.tar.gz -> libplacebo-v7.349.0.tar.gz
 	https://github.com/Dav1dde/glad/archive/refs/tags/v2.0.6.tar.gz -> libplacebo-glad-2.0.6.tar.gz"
 S="${WORKDIR}/${PN}-v${PV}"
 KEYWORDS="*"
