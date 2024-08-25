@@ -12,12 +12,13 @@ MY_P="${PN}-${MY_PV}"
 
 DESCRIPTION="Jackdmp jack implemention for multi-processor machine"
 HOMEPAGE="https://jackaudio.org/"
-SRC_URI="https://github.com/jackaudio/jack2/archive/v${MY_PV}/v${MY_PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/jackaudio/jack2/archive/v${MY_PV}/v${MY_PV}.tar.gz -> ${P}.tar.gz
+		 https://dev.gentoo.org/~ionen/distfiles/${P}-python3.12.patch.xz"
 
 LICENSE="GPL-2"
 SLOT="2"
 KEYWORDS="*"
-IUSE="alsa +classic dbus doc ieee1394 libsamplerate metadata opus pam readline sndfile"
+IUSE="alsa +classic dbus doc ieee1394 libsamplerate metadata opus pam"
 
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
@@ -29,8 +30,6 @@ BDEPEND="
 "
 DEPEND="${PYTHON_DEPS}
 	media-libs/libsamplerate
-	media-libs/libsndfile
-	sys-libs/readline:0=
 	alsa? ( media-libs/alsa-lib )
 	dbus? (
 		dev-libs/expat
@@ -51,7 +50,7 @@ RDEPEND="${DEPEND}
 DOCS=( AUTHORS.rst ChangeLog.rst README.rst README_NETJACK2 )
 
 PATCHES=(
-	"${FILESDIR}/${PN}-1.9.14-fix-doc.patch"
+	"${WORKDIR}/${P}-python3.12.patch"
 )
 
 S="${WORKDIR}/${MY_P}"
@@ -74,9 +73,7 @@ src_configure() {
 		--iio=no
 		--opus=$(usex opus yes no)
 		--portaudio=no
-		--readline=$(usex readline yes no)
 		--samplerate=$(usex libsamplerate yes no)
-		--sndfile=$(usex sndfile yes no)
 		--winmme=no
 	)
 
