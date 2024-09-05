@@ -6,7 +6,7 @@ inherit meson xdg
 
 DESCRIPTION="Library for video acquisition using Genicam cameras"
 HOMEPAGE="https://github.com/AravisProject/aravis"
-SRC_URI="https://github.com/AravisProject/aravis/releases/download/0.8.31/aravis-0.8.31.tar.xz -> aravis-0.8.31.tar.xz"
+SRC_URI="https://github.com/AravisProject/aravis/releases/download/0.8.33/aravis-0.8.33.tar.xz -> aravis-0.8.33.tar.xz"
 KEYWORDS="*"
 
 LICENSE="LGPL-2+"
