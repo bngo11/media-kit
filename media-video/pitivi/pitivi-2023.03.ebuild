@@ -4,6 +4,7 @@ EAPI=7
 PYTHON_COMPAT=( python3_8+ )
 PYTHON_REQ_USE="sqlite"
 GNOME_ORG_PVP=$(ver_cut 1)
+DISTUTILS_USE_PEP517=meson-python
 
 inherit gnome.org meson python-single-r1 xdg
 
@@ -21,7 +22,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 # Do not forget to check pitivi/check.py for dependencies!!!
 # gsound, libav, libnotify and v4l are optional
-GST_VER="1.18.6"
+GST_VER="1.24.7"
 
 COMMON_DEPEND="
 	${PYTHON_DEPS}
@@ -60,7 +61,7 @@ RDEPEND="${COMMON_DEPEND}
 DEPEND="${RDEPEND}"
 BDEPEND="
 	app-text/yelp-tools
-	dev-python/setuptools
+	dev-python/setuptools[${PYTHON_USEDEP}]
 	>=dev-util/intltool-0.35.5
 	dev-util/itstool
 	sys-devel/gettext
