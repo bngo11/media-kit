@@ -37,7 +37,7 @@ RDEPEND="${COMMON_DEPEND}
 
 	>=dev-libs/gobject-introspection-1.68:=
 	dev-python/dbus-python[${PYTHON_USEDEP}]
-	>=dev-python/gst-python-${GST_VER}:1.0[${PYTHON_USEDEP}]
+	>=dev-python/gst-python-1.18.6:1.0[${PYTHON_USEDEP}]
 	dev-python/matplotlib[${PYTHON_USEDEP}]
 	dev-python/numpy[${PYTHON_USEDEP}]
 	>=dev-python/pygobject-3.40:3[${PYTHON_USEDEP}]
