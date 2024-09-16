@@ -33,7 +33,7 @@ else # Release
 fi
 FFMPEG_REVISION="${PV#*_p}"
 
-SLOT="0/${FFMPEG_SUBSLOT}"
+SLOT="0"
 LICENSE="
 	!gpl? ( LGPL-2.1 )
 	gpl? ( GPL-2 )
