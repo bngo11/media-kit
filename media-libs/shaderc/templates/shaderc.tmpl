@@ -16,7 +16,7 @@ KEYWORDS="*"
 IUSE="doc test"
 
 RDEPEND="
-	dev-util/glslang
+	dev-util/glslang:=
 	dev-util/spirv-tools
 "
 DEPEND="${RDEPEND}
