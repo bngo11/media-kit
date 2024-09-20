@@ -35,6 +35,8 @@ DEPEND="${RDEPEND}
 # AM_TEST_ENVIRONMENT setup.
 RESTRICT="test"
 
+PATCHES=( "${FILESDIR}/gst-editing-services-api-fix.patch" )
+
 src_configure() {
 	# gtk is only used for examples
 	local emesonargs=(
