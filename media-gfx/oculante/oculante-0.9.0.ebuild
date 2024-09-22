@@ -6,8 +6,8 @@ inherit cargo
 
 DESCRIPTION="A fast and simple image viewer / editor for many operating systems"
 HOMEPAGE="https://github.com/woelper/oculante"
-SRC_URI="https://github.com/woelper/oculante/tarball/899fa9d2abdd4717fe2c4e3255432cbb78713f08 -> oculante-0.8.23-899fa9d.tar.gz
-https://direct.funtoo.org/e7/f6/68/e7f668c05df9dbc86770001fbc3472563f13be87173ce17d77985eb3153326ca9cab295faf68f1b026bf0565111c4ec8fb64a71b76d712636f1f9803012fac96 -> oculante-0.8.23-funtoo-crates-bundle-de6b318effd32563dbb6288a7a6bba3e4343a0fb90683cd7bf06c2e2e68789aafb503743f002ebc26bf981864f6806a5dbbdf7cca66653300952c92bf15e283e.tar.gz"
+SRC_URI="https://github.com/woelper/oculante/tarball/9e95962f7c213f2c23154e5c59ee8b7998e0c2ac -> oculante-0.9.0-9e95962.tar.gz
+https://direct.funtoo.org/20/4a/f0/204af018f3c6f62ee8828b57c3d728e340ac89be470b09bd756db70b6aa42c92cabbd5bd07b086eb3ef5108f02cf1d7a68c080790ea34b3a9fc4da026a388135 -> oculante-0.9.0-funtoo-crates-bundle-f608ea25b009a6664c725a003a4611f849ccaf61ad981218920dd4ab240704e962a690c7997cd566e8b7688c6dfee42c2f89cedcca7077d2a7a76369cba9af1a.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
