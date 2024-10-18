@@ -97,10 +97,6 @@ DEPEND="${COMMON_DEPEND}
 RESTRICT="!test? ( test )"
 
 PATCHES=(
-	"${FILESDIR}"/inkscape-add-xmlmemory-include.patch
-	"${FILESDIR}"/inkscape-1.3.2-c++20.patch
-	"${FILESDIR}"/inkscape-1.3.2-gettype-enum.patch
-	"${FILESDIR}"/inkscape-1.3.2-unicode-marker.patch
 )
 
 pkg_pretend() {
