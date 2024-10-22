@@ -13,8 +13,7 @@ KEYWORDS="next"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
-IUSE="cdr dia exif graphicsmagick imagemagick inkjar jemalloc jpeg nls
-openmp postscript readline spell svg2 test visio wpg X"
+IUSE="cdr dia exif graphicsmagick imagemagick inkjar jpeg nls openmp postscript readline spell svg2 test visio wpg X"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
@@ -44,7 +43,6 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	media-libs/freetype:2
 	media-libs/lcms:2
 	media-libs/libpng:0=
-	net-libs/libsoup:2.4
 	sci-libs/gsl:=
 	>=x11-libs/pango-1.44
 	x11-libs/gtk+:3[X?]
@@ -54,8 +52,9 @@ COMMON_DEPEND="${PYTHON_DEPS}
 		dev-python/cachecontrol[${PYTHON_USEDEP}]
 		dev-python/cssselect[${PYTHON_USEDEP}]
 		dev-python/filelock[${PYTHON_USEDEP}]
+		dev-python/lockfile[${PYTHON_USEDEP}]
 		dev-python/lxml[${PYTHON_USEDEP}]
-		dev-python/pygobject[${PYTHON_USEDEP}]
+		dev-python/pillow[jpeg?,tiff,webp,${PYTHON_USEDEP}]
 		media-gfx/scour[${PYTHON_USEDEP}]
 	')
 	cdr? (
@@ -68,9 +67,9 @@ COMMON_DEPEND="${PYTHON_DEPS}
 		!graphicsmagick? ( media-gfx/imagemagick:=[cxx] )
 		graphicsmagick? ( media-gfx/graphicsmagick:=[cxx] )
 	)
-	jemalloc? ( dev-libs/jemalloc )
 	jpeg? ( media-libs/libjpeg-turbo:= )
 	readline? ( sys-libs/readline:= )
+	sourceview? ( x11-libs/gtksourceview:4 )
 	spell? ( app-text/gspell )
 	visio? (
 		app-text/libwpg:0.3
@@ -97,6 +96,7 @@ DEPEND="${COMMON_DEPEND}
 RESTRICT="!test? ( test )"
 
 PATCHES=(
+	"${FILESDIR}/inkscape-1.4.0-poppler-24.10.patch"
 )
 
 pkg_pretend() {
@@ -139,10 +139,11 @@ src_configure() {
 		-DWITH_GRAPHICS_MAGICK=$(usex graphicsmagick $(usex imagemagick)) # both must be enabled to use GraphicsMagick
 		-DWITH_GNU_READLINE=$(usex readline)
 		-DWITH_GSPELL=$(usex spell)
-		-DWITH_JEMALLOC=$(usex jemalloc)
+		-DWITH_JEMALLOC=OFF
 		-DENABLE_LCMS=ON
 		-DWITH_OPENMP=$(usex openmp)
 		-DBUILD_SHARED_LIBS=ON
+		-DWITH_GSOURCEVIEW=$(usex sourceview)
 		-DWITH_SVG2=$(usex svg2)
 		-DWITH_LIBVISIO=$(usex visio)
 		-DWITH_LIBWPG=$(usex wpg)
@@ -177,7 +178,4 @@ src_install() {
 	if [[ -e "${extdir}" ]] && [[ -n $(find "${extdir}" -mindepth 1) ]]; then
 		python_optimize "${ED}"/usr/share/${PN}/extensions
 	fi
-
-	# Empty directory causes sandbox issues, see Gentoo bug #761915
-	rm -r "${ED}/usr/share/inkscape/fonts" || die "Failed to remove fonts directory."
 }
