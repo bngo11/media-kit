@@ -36,6 +36,7 @@ src_prepare() {
 # from the libwepb sources https://chromium.googlesource.com/webm/libwebp
 src_configure() {
 	local mycmakeargs=(
+		-Dpreset=Release
 		-DBUILD_SHARED_LIBS=ON
 		-DBUILD_TESTING=OFF
 		-DENABLE_MULTITHREADING_SUPPORT=$(usex threads ON OFF)
