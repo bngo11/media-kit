@@ -4,7 +4,7 @@ EAPI=7
 
 inherit cmake
 
-SRC_URI="https://github.com/strukturag/libheif/releases/download/v1.19.3/libheif-1.19.3.tar.gz -> libheif-1.19.3.tar.gz"
+SRC_URI="https://github.com/strukturag/libheif/releases/download/v1.19.5/libheif-1.19.5.tar.gz -> libheif-1.19.5.tar.gz"
 KEYWORDS="*"
 
 DESCRIPTION="ISO/IEC 23008-12:2017 HEIF file format decoder and encoder"
