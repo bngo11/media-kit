@@ -97,9 +97,6 @@ src_install() {
 	local -a DOCS=( README.md ChangeLog.md )
 	einstalldocs
 
-	docinto html
-	dodoc -r "${S}"/doc/html/.
-
 	if use java; then
 		docinto html/java
 		dodoc -r "${S}"/java/doc/.
