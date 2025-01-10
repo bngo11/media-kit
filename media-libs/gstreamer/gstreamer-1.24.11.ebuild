@@ -6,7 +6,7 @@ inherit bash-completion-r1 pax-utils meson
 
 DESCRIPTION="Open source multimedia framework"
 HOMEPAGE="https://gstreamer.freedesktop.org/"
-SRC_URI="https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.24.10.tar.xz -> gstreamer-1.24.10.tar.xz"
+SRC_URI="https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.24.11.tar.xz -> gstreamer-1.24.11.tar.xz"
 
 LICENSE="LGPL-2+"
 SLOT="1.0"
