@@ -1,0 +1,56 @@
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=7
+
+inherit flag-o-matic
+
+SRC_URI="https://dev-www.libreoffice.org/src/libvisio/${P}.tar.xz"
+KEYWORDS="*"
+
+DESCRIPTION="Library parsing the file format of MS Visio documents"
+HOMEPAGE="https://wiki.documentfoundation.org/DLP/Libraries/libvisio"
+
+LICENSE="|| ( GPL-2+ LGPL-2.1 MPL-1.1 )"
+SLOT="0"
+IUSE="doc test tools"
+RESTRICT="!test? ( test )"
+
+RDEPEND="
+	dev-libs/icu:=
+	dev-libs/librevenge
+	dev-libs/libxml2
+"
+DEPEND="${RDEPEND}
+	dev-libs/boost
+	dev-util/gperf
+	dev-build/libtool
+	test? ( dev-util/cppunit )
+"
+BDEPEND="
+	dev-lang/perl
+	virtual/pkgconfig
+	doc? ( app-text/doxygen )
+"
+
+src_prepare() {
+	default
+	[[ -d m4 ]] || mkdir "m4" || die
+	[[ ${PV} == *9999* ]] && eautoreconf
+}
+
+src_configure() {
+	# bug 619688, 932496
+	append-cxxflags -std=c++17
+
+	local myeconfargs=(
+		$(use_with doc docs)
+		$(use_enable test tests)
+		$(use_enable tools)
+	)
+	econf "${myeconfargs[@]}"
+}
+
+src_install() {
+	default
+	find "${ED}" -name '*.la' -delete || die
+}
