@@ -13,7 +13,8 @@ async def generate(hub, **pkginfo):
 		try:
 			gst_version = release["name"]
 			list(map(int, gst_version.split(".")))
-			break
+			if int(gst_version.split(".")[1]) % 2 == 0:
+				break
 
 		except (KeyError, IndexError):
 			continue
