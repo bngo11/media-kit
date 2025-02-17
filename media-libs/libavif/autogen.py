@@ -1,30 +1,36 @@
 #!/usr/bin/env python3
 
-from metatools.version import generic
-
-def get_release(releases_data):
-	return None if not releases_data else sorted(releases_data, key=lambda x: generic.parse(x["name"])).pop()
+import json
 
 async def generate(hub, **pkginfo):
 	github_user = "AOMediaCodec"
-	github_repo = pkginfo['name']
-	
-	json_list = await hub.pkgtools.fetch.get_page(
-		f"https://api.github.com/repos/{github_user}/{github_repo}/tags", is_json=True
-	)
+	github_repo = pkginfo.get("name")
+	json_data = await hub.pkgtools.fetch.get_page(f"https://api.github.com/repos/{github_user}/{github_repo}/releases", is_json=True)
+	version = None
+	url = None
 
-	latest_release = get_release(json_list)
-	if latest_release is None:
-		raise hub.pkgtools.ebuild.BreezyError(f"Can't find a suitable release of {github_repo}")
-	version = latest_release['name'].lstrip("v")
-	url = latest_release["tarball_url"]
-	final_name = f"{github_repo}-{version}.tar.gz"
-	src_artifact = hub.pkgtools.ebuild.Artifact(url=url, final_name=final_name)
-	ebuild = hub.pkgtools.ebuild.BreezyBuild(
-		**pkginfo,
-		version=version,
-		github_user=github_user,
-		github_repo=github_repo,
-		artifacts=[src_artifact]
-	)
-	ebuild.push()
+	for item in json_data:
+		try:
+			if item["prerelease"] or item["draft"]:
+				continue
+
+			version = item["tag_name"].lstrip("v")
+			list(map(int, version.split(".")))
+			break
+
+		except (KeyError, IndexError, ValueError):
+			continue
+
+	if version:
+		final_name = f"{github_repo}-{version}.tar.gz"
+		url = f"https://api.github.com/repos/{github_user}/{github_repo}/tarball/refs/tags/v{version}"
+		ebuild = hub.pkgtools.ebuild.BreezyBuild(
+			**pkginfo,
+			version=version,
+			github_user=github_user,
+			github_repo=github_repo,
+			artifacts=[hub.pkgtools.ebuild.Artifact(url=url, final_name=final_name)]
+		)
+		ebuild.push()
+
+# vim: ts=4 sw=4 noet

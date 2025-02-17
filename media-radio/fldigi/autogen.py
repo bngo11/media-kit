@@ -1,35 +1,35 @@
 #!/usr/bin/env python3
 
-# this autogen generates 3 packages: fldigi, flmsg and flrig - as they are under same umbrella
-
 from bs4 import BeautifulSoup
-from metatools.version import generic
-import re
 
 async def generate(hub, **pkginfo):
+	base_url = "https://www.w1hkj.org/files/fldigi/"
+	html_data = await hub.pkgtools.fetch.get_page(f"{base_url}")
+	soup = BeautifulSoup(html_data, "html.parser")
+	links = soup.find_all("a")
+	version = None
 
-	project_name="fldigi"
-	subprojects = ["fldigi", "flmsg", "flrig"]
+	for link in links:
+		filename = link.get("href")
+		if filename and filename.endswith(".tar.gz"):
+			version = filename.rsplit("-", 1)[-1].rstrip(".tar.gz")
 
-	for subproject in subprojects:
-		subproject_name = subproject
-		pkginfo["name"] = subproject_name
-		sourceforge_url = f"https://sourceforge.net/projects/{project_name}/files/{subproject_name}"
-		sourceforge_soup = BeautifulSoup(
-				await hub.pkgtools.fetch.get_page(sourceforge_url), "lxml"
-		)
-		files_list = sourceforge_soup.find(id="files_list")
-		files = [i.span.text for i in files_list.tbody.find_all("tr",{'class' : 'file'})]
-		files = filter(lambda x: x.endswith(".tar.gz"), files) # filter upto source
-		versions = { generic.parse(re.search(r"\d+\.\d+(\.\d+)?", file).group()): file for file in files }
-		target_version = max(versions.keys())
-		target_file = versions[target_version]
-		src_url = f"https://downloads.sourceforge.net/{project_name}/{subproject_name}/{target_file}"
+			try:
+				list(map(int, version.split(".")))
+				break
+
+			except ValueError:
+				continue
+
+	if version:
+		url = f"{base_url}{filename}"
 		ebuild = hub.pkgtools.ebuild.BreezyBuild(
-				**pkginfo,
-				version=target_version,
-				artifacts=[hub.pkgtools.ebuild.Artifact(url=src_url)],
-				)
+			**pkginfo,
+			version=version,
+			artifacts=[hub.pkgtools.ebuild.Artifact(url=url, final_name=filename)],
+		)
+
 		ebuild.push()
+
 
 # vim: ts=4 sw=4 noet
