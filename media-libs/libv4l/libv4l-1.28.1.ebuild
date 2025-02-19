@@ -2,7 +2,7 @@
 
 EAPI=7
 
-inherit autotools linux-info
+inherit meson linux-info
 
 MY_P="v4l-utils-${PV}"
 
@@ -39,29 +39,19 @@ pkg_setup() {
 	linux-info_pkg_setup
 }
 
-src_prepare() {
-	default
-	eautoreconf
-}
-
 src_configure() {
-	# Hard disable the flags that apply only to the utils.
-	ECONF_SOURCE=${S} \
-	econf \
-		--disable-static \
-		$(use_enable dvb libdvbv5) \
-		--disable-qv4l2 \
-		--disable-qvidcap \
-		--disable-v4l-utils \
-		$(use_with jpeg)
-}
-
-src_compile() {
-	emake -C lib
+	local emesonargs=(
+		$(meson_feature dvb libdvbv5)
+		$(meson_feature jpeg)
+		-Dqv4l2=disabled
+		-Dqvidcap=disabled
+		-Dgconv=disabled
+	)
+	meson_src_configure
 }
 
 src_install() {
-	emake -j1 -C lib DESTDIR="${D}" install
+	meson_src_install
 	dodoc ChangeLog README.lib* TODO
 
 	# no static archives

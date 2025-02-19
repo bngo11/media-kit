@@ -15,8 +15,6 @@ async def generate(hub, **pkginfo):
 			final_name = f"{parts[-1]}.tar.xz"
 			version = parts[-1].rsplit("-", 1)[-1]
 
-			print(final_name)
-			print(version)
 			try:
 				list(map(int, version.split(".")))
 				break
