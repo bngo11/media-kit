@@ -1,8 +1,0 @@
-DEFINED_PHASES=-
-DEPEND=>=media-libs/libde265-0.9 >=media-libs/gst-plugins-bad-1.24:1.0=
-DESCRIPTION=H.265 decoder plugin for GStreamer
-EAPI=7
-KEYWORDS=*
-RDEPEND=>=media-libs/libde265-0.9 >=media-libs/gst-plugins-bad-1.24:1.0=
-SLOT=1.0
-_md5_=c63d2a0f9768eee80b4e896b85d1bf78

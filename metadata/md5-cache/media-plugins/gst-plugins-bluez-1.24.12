@@ -1,8 +1,0 @@
-DEFINED_PHASES=-
-DEPEND=>=net-wireless/bluez-5 >=media-libs/gst-plugins-bad-1.24:1.0= dev-util/gdbus-codegen
-DESCRIPTION=AVDTP source/sink and A2DP sink plugin for GStreamer
-EAPI=7
-KEYWORDS=*
-RDEPEND=>=net-wireless/bluez-5 >=media-libs/gst-plugins-bad-1.24:1.0= dev-util/gdbus-codegen
-SLOT=1.0
-_md5_=1ae0d2f71e03c7d96980ba585b53fe09
