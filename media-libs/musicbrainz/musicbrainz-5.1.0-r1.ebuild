@@ -25,7 +25,10 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}/lib${P}"
 
-PATCHES=( "${FILESDIR}/${P}-no-wildcards.patch" )
+PATCHES=(
+	"${FILESDIR}/${P}-no-wildcards.patch"
+	"${FILESDIR}/${P}-libxml2.patch"
+)
 
 src_prepare() {
 	use test || cmake_comment_add_subdirectory tests
@@ -33,6 +36,7 @@ src_prepare() {
 }
 
 src_configure() {
+	export CMAKE_POLICY_VERSION_MINIMUM=3.5
 	# bug 619668
 	append-cxxflags -std=c++14
 

@@ -19,7 +19,7 @@ IUSE="openexr test"
 RESTRICT="!test? ( test )"
 
 DEPEND="app-arch/brotli:=
-	>=dev-cpp/highway-1.0.0
+	>=dev-cpp/highway-1.0.7
 	media-libs/giflib:=
 	>=media-libs/lcms-2.13:2
 	media-libs/libjpeg-turbo:=
@@ -30,8 +30,6 @@ DEPEND="app-arch/brotli:=
 "
 RDEPEND="${DEPEND}"
 PATCHES=(
-	"${FILESDIR}/${PN}-0.8.2-backport-pr2596.patch"
-	"${FILESDIR}/${PN}-0.8.2-backport-pr2617.patch"
 )
 
 src_configure() {
