@@ -127,6 +127,7 @@ src_configure() {
 	append-flags -fno-strict-aliasing
 
 	local mycmakeargs=(
+		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 		# -DWITH_LPETOOL   # Compile with LPE Tool and experimental LPEs enabled
 		-DWITH_NLS=ON
 		-DENABLE_POPPLER=ON
