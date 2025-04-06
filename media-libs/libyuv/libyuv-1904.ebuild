@@ -1,0 +1,42 @@
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=7
+
+inherit cmake edo
+
+DESCRIPTION="Open source project that includes YUV scaling and conversion functionality."
+HOMEPAGE="https://chromium.googlesource.com/libyuv/libyuv"
+
+# to diff against upstream (apparently not stable):
+# https://chromium.googlesource.com/libyuv/libyuv.git/+archive/${commit}.tar.gz
+MYTAG="0.0.1904.20250204"
+SRC_URI="https://salsa.debian.org/debian/libyuv/-/archive/upstream/${MYTAG}/libyuv-upstream-${MYTAG}.tar.bz2 -> ${P}.tar.bz2"
+S="${WORKDIR}/libyuv-upstream-${MYTAG}"
+KEYWORDS="*"
+
+LICENSE="BSD"
+SLOT="0/${PV}"
+IUSE="test"
+RESTRICT="!test? ( test )"
+
+RDEPEND=">=media-libs/libjpeg-turbo-3.0.0"
+DEPEND="${RDEPEND}"
+BDEPEND="test? ( dev-cpp/gtest )"
+
+PATCHES=(
+	"${FILESDIR}/0001-fix-install-dirs.patch"
+	"${FILESDIR}/0002-disable-static-library.patch"
+	"${FILESDIR}/0003-disable-test-tools.patch"
+)
+
+src_configure() {
+	mycmakeargs=(
+		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+		-DUNIT_TEST=$(usex test)
+	)
+	cmake_src_configure
+}
+
+src_test() {
+	edo "${BUILD_DIR}"/libyuv_unittest
+}

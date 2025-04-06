@@ -17,6 +17,7 @@ REQUIRED_USE="|| ( aom dav1d )"
 
 DEPEND="
 	media-libs/libpng
+	media-libs/libyuv
 	sys-libs/zlib
 	virtual/jpeg
 	aom? ( >=media-libs/libaom-2.0.0:= )
