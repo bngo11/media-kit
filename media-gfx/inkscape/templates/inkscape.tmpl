@@ -36,7 +36,6 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	>=dev-libs/libsigc++-2.8:2
 	>=dev-libs/libxml2-2.7.4
 	>=dev-libs/libxslt-1.1.25
-	dev-libs/gdl:3
 	dev-libs/popt
 	media-gfx/potrace
 	media-libs/fontconfig
@@ -69,7 +68,7 @@ COMMON_DEPEND="${PYTHON_DEPS}
 	)
 	jpeg? ( media-libs/libjpeg-turbo:= )
 	readline? ( sys-libs/readline:= )
-	sourceview? ( x11-libs/gtksourceview:4 )
+	x11-libs/gtksourceview:4
 	spell? ( app-text/gspell )
 	visio? (
 		app-text/libwpg:0.3
@@ -97,6 +96,9 @@ RESTRICT="!test? ( test )"
 
 PATCHES=(
 	"${FILESDIR}/inkscape-1.4.0-poppler-24.10.patch"
+	"${FILESDIR}/inkscape-1.4.0-poppler-24.11.patch"
+	"${FILESDIR}/inkscape-1.4.0-poppler-24.12.patch"
+	"${FILESDIR}/inkscape-1.4.0-poppler-25.02.patch"
 )
 
 pkg_pretend() {
@@ -144,7 +146,7 @@ src_configure() {
 		-DENABLE_LCMS=ON
 		-DWITH_OPENMP=$(usex openmp)
 		-DBUILD_SHARED_LIBS=ON
-		-DWITH_GSOURCEVIEW=$(usex sourceview)
+		-DWITH_GSOURCEVIEW=ON
 		-DWITH_SVG2=$(usex svg2)
 		-DWITH_LIBVISIO=$(usex visio)
 		-DWITH_LIBWPG=$(usex wpg)
