@@ -23,6 +23,8 @@ EGO_SUM=(
 	"golang.org/x/sys v0.6.0/go.mod"
 	"golang.org/x/sys v0.32.0"
 	"golang.org/x/sys v0.32.0/go.mod"
+	"golang.org/x/text v0.24.0"
+	"golang.org/x/text v0.24.0/go.mod"
 	"gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod"
 	"gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c"
 	"gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c/go.mod"
@@ -32,14 +34,14 @@ go-module_set_globals
 
 DESCRIPTION="Commandline tool to customize Spotify client."
 HOMEPAGE="https://github.com/khanhas/spicetify-cli"
-SRC_URI="https://github.com/spicetify/spicetify-cli/tarball/0a9a7ff37379d572ef1082d4d94eb221c4ba7ba2 -> spicetify-cli-2.39.7-0a9a7ff.tar.gz
-https://direct.funtoo.org/36/00/f9/3600f995bbb72cd887a9bfa996551b4cb6259ce6b4d75c6e027311aac9abf531a59ac05b0f2104c8c97007d2c75a2420aac9916425af31279b0274256ebb5899 -> spicetify-cli-2.39.7-funtoo-go-bundle-c7ae9806c2e1ed4068207ae3efec8d23fb0591b18eacd11f6ed1b43f4588b3309293cf04ce4a5225a18cb04b10568a24af6532e32493bb3bcd68bf95a4fccd7c.tar.gz"
+SRC_URI="https://github.com/spicetify/spicetify-cli/tarball/52e085916fdae953b87e8d62201c69b99f34e386 -> spicetify-cli-2.40.0-52e0859.tar.gz
+https://direct.funtoo.org/56/ab/74/56ab7478eb657ee9d127284bf6769adf81ca1ff645ffb91a40917237cec3a8cb7c0cbc70c179c1d3ef18f53fc15ec83c6e7e3e86cd642060446bcdb5741edd7c -> spicetify-cli-2.40.0-funtoo-go-bundle-7c97c7d07e281378ba08be42082b014b8f990b645a74a88fdb7ad8bc8182b9734b14f4aab5378daabbde0df2f5c8bf418dd5c7f21b17050d4cc85ff22cb09410.tar.gz"
 
 LICENSE="Apache-2.0 BSD GPL-3 MIT"
 SLOT="0"
 KEYWORDS="*"
 IUSE="hook"
-S="${WORKDIR}/spicetify-cli-0a9a7ff"
+S="${WORKDIR}/spicetify-cli-52e0859"
 
 INSTALLDIR="/opt/${PN}"
 
