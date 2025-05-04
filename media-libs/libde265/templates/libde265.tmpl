@@ -77,14 +77,14 @@ multilib_src_install() {
 
 	if multilib_is_native_abi; then
 		# Remove useless, unready and test tools
-		rm "${ED}"/usr/bin/{tests,gen-enc-table,yuv-distortion} || die
+		rm -f "${ED}"/usr/bin/{tests,gen-enc-table,yuv-distortion} || die
 		if ! use tools; then
-			rm "${ED}"/usr/bin/{bjoentegaard,block-rate-estim,rd-curves} || die
-			rm "${ED}"/usr/bin/acceleration_speed || die
+			rm -f "${ED}"/usr/bin/{bjoentegaard,block-rate-estim,rd-curves} || die
+			rm -f "${ED}"/usr/bin/acceleration_speed || die
 		fi
 	else
 		# Remove all non-native binary tools
-		rm "${ED}"/usr/bin/* || die
+		rm -f "${ED}"/usr/bin/* || die
 	fi
 }
 
