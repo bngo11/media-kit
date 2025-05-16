@@ -95,10 +95,6 @@ DEPEND="${COMMON_DEPEND}
 RESTRICT="!test? ( test )"
 
 PATCHES=(
-	"${FILESDIR}/inkscape-1.4.0-poppler-24.10.patch"
-	"${FILESDIR}/inkscape-1.4.0-poppler-24.11.patch"
-	"${FILESDIR}/inkscape-1.4.0-poppler-24.12.patch"
-	"${FILESDIR}/inkscape-1.4.0-poppler-25.02.patch"
 )
 
 pkg_pretend() {
