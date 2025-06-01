@@ -1,0 +1,12 @@
+BDEPEND=amd64? ( >=dev-lang/nasm-2.15 ) capi? ( dev-util/cargo-c ) >=virtual/rust-1.37.0
+DEFINED_PHASES=compile configure install test unpack
+DESCRIPTION=The fastest and safest AV1 encoder.
+EAPI=7
+HOMEPAGE=https://github.com/xiph/rav1e
+IUSE=+capi debug
+KEYWORDS=*
+LICENSE=BSD-2 Apache-2.0 MIT Unlicense
+SLOT=0
+SRC_URI=https://github.com/xiph/rav1e/tarball/1fd67cd1b4a39f69303f28ed27c5d2d3833110c4 -> rav1e-0.8.0-1fd67cd.tar.gz https://direct.funtoo.org/6a/23/04/6a23048ac8b960e221c509fdb45889670141edb77a092a49df242dd1b080f8a1f1a3bd675ea64350db23c43d3661fc69cdc664b4fe8c3c9c791454961da5b9b1 -> rav1e-0.8.0-funtoo-crates-bundle-f6264f9d321b338740c9edb76f49e4beb00b1622540642e27bc5b52665b79e76310332007b8543c5704a6e793374fb24a36f0f45d078ff650afccc3899459ace.tar.gz
+_eclasses_=cargo	a3e90d3e6ca8541d967cff212149cffc	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=cfec1ccf621bbad5fbfef8550d807c0d
