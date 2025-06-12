@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DEPEND=>=media-libs/taglib-1.9.1 >=media-libs/gst-plugins-good-1.24:1.0=
+DESCRIPTION=ID3v2/APEv2 tagger plugin for GStreamer
+EAPI=7
+KEYWORDS=*
+RDEPEND=>=media-libs/taglib-1.9.1 >=media-libs/gst-plugins-good-1.24:1.0=
+SLOT=1.0
+_md5_=05c3079e815101ced24381ee2f23f70f

@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DEPEND=>=media-libs/libass-0.10.2:= >=media-libs/gst-plugins-bad-1.24:1.0=
+DESCRIPTION=ASS/SSA rendering with effects support plugin for GStreamer
+EAPI=7
+KEYWORDS=*
+RDEPEND=>=media-libs/libass-0.10.2:= >=media-libs/gst-plugins-bad-1.24:1.0=
+SLOT=1.0
+_md5_=795af6eb2bb18046ab76897461b1244f

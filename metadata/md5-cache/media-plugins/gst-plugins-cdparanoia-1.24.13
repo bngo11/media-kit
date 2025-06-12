@@ -1,0 +1,8 @@
+DEFINED_PHASES=-
+DEPEND=>=media-sound/cdparanoia-3.10.2-r6 >=media-libs/gst-plugins-base-1.24:1.0=
+DESCRIPTION=CD Audio Source (cdda) plugin for GStreamer
+EAPI=7
+KEYWORDS=*
+RDEPEND=>=media-sound/cdparanoia-3.10.2-r6 >=media-libs/gst-plugins-base-1.24:1.0=
+SLOT=1.0
+_md5_=141c9939f5cf728761820394aeb89921
