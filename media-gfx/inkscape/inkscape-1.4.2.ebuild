@@ -95,6 +95,7 @@ DEPEND="${COMMON_DEPEND}
 RESTRICT="!test? ( test )"
 
 PATCHES=(
+	"${FILESDIR}/inkscape-1.4-poppler-25.06.0.patch"
 )
 
 pkg_pretend() {
