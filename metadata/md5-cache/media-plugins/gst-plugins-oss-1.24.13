@@ -1,8 +1,0 @@
-DEFINED_PHASES=-
-DEPEND=virtual/os-headers >=media-libs/gst-plugins-good-1.24:1.0=
-DESCRIPTION=OSS (Open Sound System) support plugin for GStreamer
-EAPI=7
-KEYWORDS=*
-RDEPEND=virtual/os-headers >=media-libs/gst-plugins-good-1.24:1.0=
-SLOT=1.0
-_md5_=1139891bc25ba3770d646cad9c7b26e1

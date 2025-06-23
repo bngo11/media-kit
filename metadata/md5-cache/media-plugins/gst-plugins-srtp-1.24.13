@@ -1,8 +1,0 @@
-DEFINED_PHASES=-
-DEPEND=>=net-libs/libsrtp-2.1.0:2= >=media-libs/gst-plugins-bad-1.24:1.0=
-DESCRIPTION=SRTP encoder/decoder plugin for GStreamer
-EAPI=7
-KEYWORDS=*
-RDEPEND=>=net-libs/libsrtp-2.1.0:2= >=media-libs/gst-plugins-bad-1.24:1.0=
-SLOT=1.0
-_md5_=aa067c2b8a1c9ad3b3671dccbe81e06d
