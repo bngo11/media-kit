@@ -1,4 +1,4 @@
-BDEPEND=>=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.5:1.16 ) >=sys-devel/autoconf-2.71 >=sys-devel/libtool-2.4
+BDEPEND=>=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.17:1.17 ) >=sys-devel/autoconf-2.71 >=sys-devel/libtool-2.4
 DEFINED_PHASES=configure install prepare
 DEPEND=jbig? ( >=media-libs/jbigkit-2.1:= ) jpeg? ( >=virtual/jpeg-0-r2:0= ) lzma? ( >=app-arch/xz-utils-5.0.5-r1 ) webp? ( media-libs/libwebp:= ) zlib? ( >=sys-libs/zlib-1.2.8-r1 ) zstd? ( >=app-arch/zstd-1.3.7-r1:= )
 DESCRIPTION=Tag Image File Format (TIFF) library
@@ -11,5 +11,5 @@ RDEPEND=jbig? ( >=media-libs/jbigkit-2.1:= ) jpeg? ( >=virtual/jpeg-0-r2:0= ) lz
 REQUIRED_USE=test? ( jpeg )
 SLOT=0
 SRC_URI=https://download.osgeo.org/libtiff/tiff-4.7.0.tar.xz -> tiff-4.7.0.tar.xz
-_eclasses_=autotools	e9ade2787b2f54643c7cdffbfa1cca9c	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_eclasses_=autotools	619846d0d85ed5d3334692c0215a603e	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
 _md5_=62103d8068788309be1cf8d7ad960507
