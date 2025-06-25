@@ -10,4 +10,4 @@ RDEPEND=dev-libs/libltdl:0= >=media-sound/gsm-1.0.12-r1 alsa? ( media-libs/alsa-
 SLOT=0
 SRC_URI=https://www.github.com/mansr/sox/tarball/0be259eaa9ce3f3fa587a3ef0cf2c0b9c73167a2 -> sox-14.4.2-github-0be259eaa9ce3f3fa587a3ef0cf2c0b9c73167a2.tar.gz
 _eclasses_=autotools	619846d0d85ed5d3334692c0215a603e	eqawarn	bb3d80ca38bc542ed397ab65f64256a6	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
-_md5_=14d4ade814ecfbfc4d3e28fadacb5122
+_md5_=a7962c0211211b25c17e3140f2e4f87b

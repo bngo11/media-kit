@@ -73,6 +73,8 @@ src_compile() {
 }
 
 src_configure() {
+	export CC=/usr/bin/gcc-12.3.0 CXX=/usr/bin/g++-12.3.0
+
 	econf \
 		$(use_with alsa) \
 		$(use_with amr amrnb) \
