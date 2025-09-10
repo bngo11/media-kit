@@ -97,6 +97,7 @@ RESTRICT="!test? ( test )"
 PATCHES=(
 	"${FILESDIR}/inkscape-1.4-poppler-25.06.0.patch"
 	"${FILESDIR}/inkscape-1.4-poppler-25.07.patch"
+	"${FILESDIR}/inkscape-1.4-poppler-25.09.patch"
 )
 
 pkg_pretend() {
