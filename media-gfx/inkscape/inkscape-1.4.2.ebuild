@@ -98,6 +98,7 @@ PATCHES=(
 	"${FILESDIR}/inkscape-1.4-poppler-25.06.0.patch"
 	"${FILESDIR}/inkscape-1.4-poppler-25.07.patch"
 	"${FILESDIR}/inkscape-1.4-poppler-25.09.patch"
+	"${FILESDIR}/inkscape-1.4.2-poppler-25.10.0.patch"
 )
 
 pkg_pretend() {

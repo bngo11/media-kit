@@ -1,0 +1,80 @@
+From 412bebc651cb80e0918a18419b0de3d2d33e1445 Mon Sep 17 00:00:00 2001
+From: PBS <pbs3141@gmail.com>
+Date: Tue, 7 Oct 2025 18:30:45 +0200
+Subject: [PATCH] Fix build breakage with poppler 25.10.0
+
+Breakage caused by upstream change
+https://gitlab.freedesktop.org/poppler/poppler/-/commit/f6dcd06445b6b7795b4c8f654206c5aef3d79100#dc7dd8e370
+---
+ src/extension/internal/pdfinput/pdf-parser.cpp           | 4 ++--
+ src/extension/internal/pdfinput/poppler-transition-api.h | 6 ++++++
+ src/extension/internal/pdfinput/poppler-utils.cpp        | 6 +++---
+ 3 files changed, 11 insertions(+), 5 deletions(-)
+
+diff --git a/src/extension/internal/pdfinput/pdf-parser.cpp b/src/extension/internal/pdfinput/pdf-parser.cpp
+index 1bdd0c6374..7400609647 100644
+--- a/src/extension/internal/pdfinput/pdf-parser.cpp
++++ b/src/extension/internal/pdfinput/pdf-parser.cpp
+@@ -2262,7 +2262,7 @@ void PdfParser::doShowText(GooString *s) {
+     auto font = state->getFont();
+     int wMode = font->getWMode(); // Vertical/Horizontal/Invalid
+ 
+-    builder->beginString(state, s->getLength());
++    builder->beginString(state, _POPPLER_GOOSTRING_SIZE(s));
+ 
+     // handle a Type 3 char
+     if (font->getType() == fontType3) {
+@@ -2273,7 +2273,7 @@ void PdfParser::doShowText(GooString *s) {
+     state->textTransformDelta(0, state->getRise(), &riseX, &riseY);
+ 
+     auto p = s->getCString(); // char* or const char*
+-    int len = s->getLength();
++    int len = _POPPLER_GOOSTRING_SIZE(s);
+ 
+     while (len > 0) {
+ 
+diff --git a/src/extension/internal/pdfinput/poppler-transition-api.h b/src/extension/internal/pdfinput/poppler-transition-api.h
+index 866b630bb6..3d5d83bbe3 100644
+--- a/src/extension/internal/pdfinput/poppler-transition-api.h
++++ b/src/extension/internal/pdfinput/poppler-transition-api.h
+@@ -15,6 +15,12 @@
+ #include <glib/poppler-features.h>
+ #include <poppler/UTF.h>
+ 
++#if POPPLER_CHECK_VERSION(25, 10, 0)
++#define _POPPLER_GOOSTRING_SIZE(x) x->size()
++#else
++#define _POPPLER_GOOSTRING_SIZE(x) x->getLength()
++#endif
++
+ #if POPPLER_CHECK_VERSION(25, 7, 0)
+ #define _POPPLER_TEXT_SHIFT_WITH_USER_COORDS(dx, dy) textShiftWithUserCoords(dx, dy)
+ #define _POPPLER_FOFI_TRUETYPE_MAKE(font_data, faceIndex) FoFiTrueType::make(std::span(font_data), faceIndex)
+diff --git a/src/extension/internal/pdfinput/poppler-utils.cpp b/src/extension/internal/pdfinput/poppler-utils.cpp
+index a50f59001b..4ab0aec4fb 100644
+--- a/src/extension/internal/pdfinput/poppler-utils.cpp
++++ b/src/extension/internal/pdfinput/poppler-utils.cpp
+@@ -164,7 +164,7 @@
+         case objString:
+             h->hash('s');
+             s = obj->getString();
+-            h->hash(s->c_str(), s->getLength());
++            h->hash(s->c_str(), _POPPLER_GOOSTRING_SIZE(s));
+             break;
+         case objName:
+             h->hash('n');
+@@ -582,10 +582,10 @@
+ std::string getString(const GooString *value)
+ {
+     if (_POPPLER_HAS_UNICODE_BOM(value)) {
+-        return g_convert(value->getCString () + 2, value->getLength () - 2,
++        return g_convert(value->getCString () + 2, _POPPLER_GOOSTRING_SIZE(value) - 2,
+                          "UTF-8", "UTF-16BE", NULL, NULL, NULL);
+     } else if (_POPPLER_HAS_UNICODE_BOMLE(value)) {
+-        return g_convert(value->getCString () + 2, value->getLength () - 2,
++        return g_convert(value->getCString () + 2, _POPPLER_GOOSTRING_SIZE(value) - 2,
+                          "UTF-8", "UTF-16LE", NULL, NULL, NULL);
+     }
+     return value->toStr();
+-- 
+GitLab
