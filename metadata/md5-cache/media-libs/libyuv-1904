@@ -11,5 +11,5 @@ RDEPEND=>=media-libs/libjpeg-turbo-3.0.0
 RESTRICT=!test? ( test )
 SLOT=0/1904
 SRC_URI=https://salsa.debian.org/debian/libyuv/-/archive/upstream/0.0.1904.20250204/libyuv-upstream-0.0.1904.20250204.tar.bz2 -> libyuv-1904.tar.bz2
-_eclasses_=cmake	ac7cb516f6a288b6a82bc0649ce49878	edo	c0eb9cbe6b0bd01fcb4918f12598a4d3	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	d0939f99dd528dd0c5ec25284877bf5c	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	132cbb376048d079b5a012f5467c4e7f	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	xdg-utils	14d00d009167652b1fa363e55effe213
+_eclasses_=cmake	ac7cb516f6a288b6a82bc0649ce49878	edo	c0eb9cbe6b0bd01fcb4918f12598a4d3	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	d0939f99dd528dd0c5ec25284877bf5c	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	e7575bc4a90349d76e72777013b2bbc2	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	xdg-utils	14d00d009167652b1fa363e55effe213
 _md5_=65f98fcd42c8f247788955b61e8b8d10
