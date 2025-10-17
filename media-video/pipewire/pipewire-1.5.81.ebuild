@@ -135,9 +135,11 @@ src_configure() {
 		$(meson_feature gstreamer)
 		$(meson_feature gstreamer gstreamer-device-provider)
 
-		-Dsystemd=disabled
+		-Dlibsystemd=disabled
 		-Dsystemd-system-service=disabled # Matches upstream
 		-Dsystemd-user-service=disabled
+		-Dlogind=enabled
+		-Dlogind-provider=libelogind
 
 		$(meson_feature pipewire-alsa) # Allows integrating ALSA apps into PW graph
 		-Dspa-plugins=enabled
