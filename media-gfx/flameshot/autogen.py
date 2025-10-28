@@ -21,7 +21,7 @@ async def generate(hub, **pkginfo):
 
 	if version:
 		final_name = f"flameshot-{version}.tar.gz"
-		url = f"https://github.com/flameshot-org/flameshot/archive/v{version}.tar.gz"
+		url = f"https://github.com/flameshot-org/flameshot/archive/refs/tags/v{version}.tar.gz"
 		ebuild = hub.pkgtools.ebuild.BreezyBuild(
 			**pkginfo,
 			version=version,
