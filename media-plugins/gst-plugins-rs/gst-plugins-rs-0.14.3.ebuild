@@ -6,7 +6,7 @@ inherit meson
 
 DESCRIPTION="GStreamer GTK 4 sink element"
 HOMEPAGE="https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs"
-SRC_URI=" https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/0.14.2/gst-plugins-rs-0.14.2.tar.gz -> gst-plugins-rs-0.14.2.tar.gz "
+SRC_URI=" https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/0.14.3/gst-plugins-rs-0.14.3.tar.gz -> gst-plugins-rs-0.14.3.tar.gz "
 
 LICENSE="MPL-2.0"
 # Dependent crate licenses
