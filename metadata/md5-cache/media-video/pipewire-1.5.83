@@ -12,6 +12,6 @@ RDEPEND=media-libs/alsa-lib sys-apps/dbus sys-libs/readline:= sys-libs/ncurses:=
 REQUIRED_USE=jack-sdk? ( !jack-client ) !sound-server? ( !pipewire-alsa )
 RESTRICT=!test? ( test )
 SLOT=0
-SRC_URI=https://github.com/PipeWire/pipewire/tarball/3263e2497e989eabf63f64cfb9b7e607be85f445 -> pipewire-1.5.81-3263e24.tar.gz
+SRC_URI=https://github.com/PipeWire/pipewire/tarball/2374d034d7b0994972178c372cf18fe6d73ccbc9 -> pipewire-1.5.83-2374d03.tar.gz
 _eclasses_=eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	meson	9dd80e336e5b53305fbef9693721928e	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	e7575bc4a90349d76e72777013b2bbc2	prefix	e51c7882b7b721e54e684f7eb143cbfe	python-any-r1	54a3178500786b0a7ede4a23b7f2a6ad	python-utils-r1	c57a84554d3dca7c828e40d877b2dd7d	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	udev	7752f306eec7b286d00bdb47b763e7ac
-_md5_=bf2bcd10b37b662bfade13bb273ba166
+_md5_=d2712bc4cde5162ab8fe576e0ccb242e
