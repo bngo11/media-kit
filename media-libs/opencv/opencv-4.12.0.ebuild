@@ -11,7 +11,6 @@ DESCRIPTION="A collection of algorithms and sample code for various computer vis
 HOMEPAGE="https://opencv.org"
 SRC_URI="
 	https://github.com/opencv/opencv/tarball/cbee6841638edb6fbc8110df7cd52bb8e3d66211 -> opencv-4.12.0-cbee684.tar.gz
-	contrib? ( https://github.com/opencv/opencv_contrib/tarball/d943e1d61c8bc556a13783e1546ee7c1a9e0b1cf -> opencv_contrib-4.12.0-d943e1d.tar.gz )
 "
 
 LICENSE="BSD"
