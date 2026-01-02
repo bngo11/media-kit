@@ -19,6 +19,7 @@ BDEPEND=""
 DEPEND="
 	media-libs/dav1d:=
 	media-libs/libde265:=
+	>=media-libs/x264-0.0.20250910:=
 	aom? ( >=media-libs/libaom-2.0.0:= )
 	gdk-pixbuf? ( x11-libs/gdk-pixbuf )
 	rav1e? ( media-video/rav1e:= )
