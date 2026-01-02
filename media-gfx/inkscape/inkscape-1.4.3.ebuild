@@ -94,12 +94,7 @@ DEPEND="${COMMON_DEPEND}
 
 RESTRICT="!test? ( test )"
 
-PATCHES=(
-	"${FILESDIR}/inkscape-1.4-poppler-25.06.0.patch"
-	"${FILESDIR}/inkscape-1.4-poppler-25.07.patch"
-	"${FILESDIR}/inkscape-1.4-poppler-25.09.patch"
-	"${FILESDIR}/inkscape-1.4.2-poppler-25.10.0.patch"
-)
+PATCHES=()
 
 pkg_pretend() {
 	[[ ${MERGE_TYPE} != binary ]] && use openmp && tc-check-openmp
