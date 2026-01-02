@@ -17,7 +17,7 @@ RESTRICT="( test )"
 
 BDEPEND=""
 DEPEND="
-	media-libs/dav1d:=
+	>=media-libs/dav1d-1.5.3:=
 	media-libs/libde265:=
 	>=media-libs/x264-0.0.20250910:=
 	aom? ( >=media-libs/libaom-2.0.0:= )
