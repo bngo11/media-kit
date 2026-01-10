@@ -9,7 +9,7 @@ inherit cmake python-single-r1
 DESCRIPTION="Intel® Open Image Denoise library"
 HOMEPAGE="https://www.openimagedenoise.org/ https://github.com/OpenImageDenoise/oidn"
 
-SRC_URI="https://github.com/RenderKit/oidn/releases/download/v2.3.3/oidn-2.3.3.src.tar.gz -> oidn-2.3.3.src.tar.gz"
+SRC_URI="https://github.com/RenderKit/oidn/releases/download/v2.4.0/oidn-2.4.0.src.tar.gz -> oidn-2.4.0.src.tar.gz"
 KEYWORDS="*"
 
 LICENSE="Apache-2.0"
