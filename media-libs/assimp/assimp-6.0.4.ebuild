@@ -6,7 +6,7 @@ inherit cmake
 
 DESCRIPTION="Importer library to import assets from 3D files"
 HOMEPAGE="https://github.com/assimp/assimp"
-SRC_URI="https://github.com/assimp/assimp/tarball/cf7b652190827878a4726709f0998ce170e55ce8 -> assimp-6.0.3-cf7b652.tar.gz"
+SRC_URI="https://github.com/assimp/assimp/tarball/e0b52347c6e52de2827ec957a9ebf00ce3c54f79 -> assimp-6.0.4-e0b5234.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/5.2.5"

@@ -4,7 +4,7 @@ inherit flag-o-matic
 
 DESCRIPTION="Sound card based multimode software modem for Amateur Radio use"
 HOMEPAGE="http://www.w1hkj.com"
-SRC_URI="https://www.w1hkj.org/files/fldigi/fldigi-4.2.10.tar.gz -> fldigi-4.2.10.tar.gz"
+SRC_URI="https://www.w1hkj.org/files/fldigi/fldigi-4.2.11.tar.gz -> fldigi-4.2.11.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
