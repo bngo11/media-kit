@@ -10,7 +10,7 @@ LICENSE=LGPL-2.1+ opengl? ( MIT )
 RDEPEND=lcms? ( media-libs/lcms:2 ) opengl? ( media-libs/libglvnd ) shaderc? ( media-libs/shaderc ) !shaderc? ( glslang? ( dev-util/glslang:= ) ) unwind? ( llvm-libunwind? ( sys-libs/llvm-libunwind ) !llvm-libunwind? ( sys-libs/libunwind:= ) ) vulkan? ( media-libs/vulkan-loader )
 REQUIRED_USE=vulkan? ( || ( glslang shaderc ) )
 RESTRICT=!test? ( test )
-SLOT=0/351
-SRC_URI=https://code.videolan.org/videolan/libplacebo/-/archive/v7.351.0/libplacebo-v7.351.0.tar.gz -> libplacebo-v7.351.0.tar.gz https://github.com/Dav1dde/glad/archive/refs/tags/v2.0.8.tar.gz -> libplacebo-glad-2.0.8.tar.gz
+SLOT=0/360
+SRC_URI=https://code.videolan.org/videolan/libplacebo/-/archive/v7.360.0/libplacebo-v7.360.0.tar.gz -> libplacebo-v7.360.0.tar.gz https://github.com/Dav1dde/glad/archive/refs/tags/v2.0.8.tar.gz -> libplacebo-glad-2.0.8.tar.gz
 _eclasses_=eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	meson	9dd80e336e5b53305fbef9693721928e	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	e7575bc4a90349d76e72777013b2bbc2	python-any-r1	54a3178500786b0a7ede4a23b7f2a6ad	python-utils-r1	c57a84554d3dca7c828e40d877b2dd7d	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
-_md5_=2879432fb0e5e1a4f3704c5e5e02ed21
+_md5_=148700aed0adcaba810cf97fd3f153ae
