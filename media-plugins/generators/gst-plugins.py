@@ -14,6 +14,27 @@ async def generate(hub, **pkginfo):
 		name = pkginfo["name"]
 
 	version = None
+	gst_vaapi_version = None
+
+	if name in ['gstreamer-vaapi', 'gst-plugins-meta']:
+		html_data = await hub.pkgtools.fetch.get_page(f"https://gstreamer.freedesktop.org/src/gstreamer-vaapi/")
+		soup = BeautifulSoup(html_data, "html.parser")
+		links = soup.find_all("a")
+		links.reverse()
+
+		for link in links:
+			href = link.get("href")
+			if href and "tar.xz" in href:
+				parts = href.rsplit("-", 1)
+				gst_vaapi_version = version = parts[-1].rsplit(".", 2)[0]
+
+				try:
+					list(map(int, version.split(".")))
+					break
+
+				except ValueError:
+					continue
+
 	if name not in ['gstreamer-vaapi']:
 		json_data = await hub.pkgtools.fetch.get_page(f"https://gitlab.freedesktop.org/api/v4/projects/{gitlab_id}/repository/tags?per_page=100")
 		json_list = json.loads(json_data)
@@ -35,24 +56,6 @@ async def generate(hub, **pkginfo):
 				continue
 		else:
 			version = None
-	else:
-		html_data = await hub.pkgtools.fetch.get_page(f"https://gstreamer.freedesktop.org/src/{name}/")
-		soup = BeautifulSoup(html_data, "html.parser")
-		links = soup.find_all("a")
-		links.reverse()
-
-		for link in links:
-			href = link.get("href")
-			if href and "tar.xz" in href:
-				parts = href.rsplit("-", 1)
-				version = parts[-1].rsplit(".", 2)[0]
-
-				try:
-					list(map(int, version.split(".")))
-					break
-
-				except ValueError:
-					continue
 
 
 	if version:
@@ -64,11 +67,19 @@ async def generate(hub, **pkginfo):
 		else:
 			url = f"https://gstreamer.freedesktop.org/src/{name}/{name}-{version}.tar.xz"
 
-		ebuild = hub.pkgtools.ebuild.BreezyBuild(
-			**pkginfo,
-			version=version,
-			artifacts=[hub.pkgtools.ebuild.Artifact(url=url)],
-		)
+		if name in ['gst-plugins-meta']:
+			ebuild = hub.pkgtools.ebuild.BreezyBuild(
+				**pkginfo,
+				version=version,
+				gst_vaapi_version=gst_vaapi_version,
+				artifacts=[hub.pkgtools.ebuild.Artifact(url=url)],
+			)
+		else:
+			ebuild = hub.pkgtools.ebuild.BreezyBuild(
+				**pkginfo,
+				version=version,
+				artifacts=[hub.pkgtools.ebuild.Artifact(url=url)],
+			)
 
 		ebuild.push()
 
