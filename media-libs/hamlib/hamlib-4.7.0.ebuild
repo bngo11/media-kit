@@ -9,7 +9,7 @@ inherit autotools python-single-r1 lua-single toolchain-funcs
 
 DESCRIPTION="Ham radio backend rig control libraries"
 HOMEPAGE="http://www.hamlib.org"
-SRC_URI="https://github.com/hamlib/hamlib/tarball/a1de76612507742cfec88a819b80244049af21ce -> hamlib-4.6.5-a1de766.tar.gz"
+SRC_URI="https://github.com/hamlib/hamlib/tarball/5cc9075e16d7cb101c273da9eb00e07ca1bf6a9d -> hamlib-4.7.0-5cc9075.tar.gz"
 
 LICENSE="LGPL-2 GPL-2"
 
