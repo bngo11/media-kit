@@ -10,6 +10,6 @@ LICENSE=MPL-2.0 Apache-2.0-with-LLVM-exceptions MIT Unicode-3.0
 RDEPEND=dev-libs/glib >=gui-libs/gtk-4.16:4 >=media-libs/gstreamer-1.24:1.0 >=media-libs/gst-plugins-base-1.24:1.0[egl=,gles2=,opengl=,wayland=,X=] >=media-sound/csound-6.17
 RESTRICT=network-sandbox
 SLOT=1.0
-SRC_URI=https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/0.14.4/gst-plugins-rs-0.14.4.tar.gz -> gst-plugins-rs-0.14.4.tar.gz
+SRC_URI=https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/archive/0.15.0/gst-plugins-rs-0.15.0.tar.gz -> gst-plugins-rs-0.15.0.tar.gz
 _eclasses_=eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	meson	9dd80e336e5b53305fbef9693721928e	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	e7575bc4a90349d76e72777013b2bbc2	python-utils-r1	c57a84554d3dca7c828e40d877b2dd7d	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
-_md5_=f95ade63c42ab628658c4733ae529daf
+_md5_=8ddbca24c8a989cec77660c507a9f00a
