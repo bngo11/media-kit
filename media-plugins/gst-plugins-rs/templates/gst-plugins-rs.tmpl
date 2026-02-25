@@ -22,6 +22,7 @@ DEPEND="
 	>=media-libs/gstreamer-1.24:1.0
 	>=media-libs/gst-plugins-base-1.24:${SLOT}[egl=,gles2=,opengl=,wayland=,X=]
 	>=media-sound/csound-6.17
+	>=dev-util/gst-devtools-1.22
 "
 RDEPEND="
 	${DEPEND}
