@@ -7,7 +7,7 @@ inherit desktop eutils linux-mod readme.gentoo-r1 xdg
 DESCRIPTION="Use android phone as webcam, using a v4l device driver and app"
 HOMEPAGE="https://www.dev47apps.com/droidcam/linux/
 	https://github.com/aramg/droidcam"
-SRC_URI="https://github.com/dev47apps/droidcam/tarball/a001daf9f883610cb3394d5c080332d008e3df6a -> droidcam-2.1.4-a001daf.tar.gz"
+SRC_URI="https://github.com/dev47apps/droidcam/tarball/cdc044bd74873c6b8750750aac42db8029dac5c1 -> droidcam-2.1.5-cdc044b.tar.gz"
 
 KEYWORDS="*"
 LICENSE="GPL-2"
