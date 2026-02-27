@@ -6,7 +6,7 @@ inherit meson
 
 DESCRIPTION="Development and debugging tools for GStreamer"
 HOMEPAGE="https://gstreamer.freedesktop.org/"
-SRC_URI="https://gstreamer.freedesktop.org/src/gst-devtools/gst-devtools-1.28.0.tar.xz -> gst-devtools-1.28.0.tar.xz"
+SRC_URI="https://gstreamer.freedesktop.org/src/gst-devtools/gst-devtools-1.28.1.tar.xz -> gst-devtools-1.28.1.tar.xz"
 
 LICENSE="LGPL-2+"
 SLOT="1.0"
