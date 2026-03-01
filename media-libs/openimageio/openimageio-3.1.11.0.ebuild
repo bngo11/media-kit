@@ -8,7 +8,7 @@ inherit cmake font python-single-r1
 
 DESCRIPTION="A library for reading and writing images"
 HOMEPAGE="https://sites.google.com/site/openimageio/ https://github.com/OpenImageIO"
-SRC_URI="https://api.github.com/repos/AcademySoftwareFoundation/OpenImageIO/tarball/v3.1.10.0 -> openimageio-3.1.10.0.tar.gz"
+SRC_URI="https://api.github.com/repos/AcademySoftwareFoundation/OpenImageIO/tarball/v3.1.11.0 -> openimageio-3.1.11.0.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/2.2"
