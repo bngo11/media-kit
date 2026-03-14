@@ -49,7 +49,7 @@ RDEPEND="
 	pulseaudio? ( >=media-plugins/gst-plugins-pulse-${PV}:1.0 )
 	taglib? ( >=media-plugins/gst-plugins-taglib-${PV}:1.0 )
 	v4l? ( >=media-plugins/gst-plugins-v4l2-${PV}:1.0 )
-	vaapi? ( >=media-plugins/gst-plugins-vaapi-1.26.10:1.0 )
+	vaapi? ( >=media-plugins/gst-plugins-vaapi-1.26.11:1.0 )
 	vcd? (
 		>=media-plugins/gst-plugins-mplex-${PV}:1.0
 		>=media-plugins/gst-plugins-mpeg2dec-${PV}:1.0 )

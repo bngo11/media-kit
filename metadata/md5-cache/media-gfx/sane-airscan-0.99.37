@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install
+DEPEND=net-dns/avahi net-libs/gnutls dev-libs/libxml2 virtual/jpeg media-libs/libpng
+DESCRIPTION=SANE backend for AirScan (eSCL) and WSD document scanners
+EAPI=7
+HOMEPAGE=https://github.com/alexpevzner/sane-airscan
+KEYWORDS=*
+LICENSE=GPL-2
+RDEPEND=net-dns/avahi net-libs/gnutls dev-libs/libxml2 virtual/jpeg media-libs/libpng media-gfx/sane-backends
+SLOT=0
+SRC_URI=https://github.com/alexpevzner/sane-airscan/tarball/03eddd0d8058c482462bccabadad0e56e8400cb4 -> sane-airscan-0.99.37-03eddd0.tar.gz
+_eclasses_=multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=093c48a5d14093174a76a0c7a04104d4

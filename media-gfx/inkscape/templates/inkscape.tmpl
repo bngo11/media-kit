@@ -97,6 +97,7 @@ RESTRICT="!test? ( test )"
 PATCHES=(
 	"${FILESDIR}/${PN}-1.3-poppler-26.01.00.patch"
 	"${FILESDIR}/${PN}-1.4.3-poppler-26.02.00.patch"
+	"${FILESDIR}/${PN}-1.4.3-poppler-26.03.00.patch"
 )
 
 pkg_pretend() {
