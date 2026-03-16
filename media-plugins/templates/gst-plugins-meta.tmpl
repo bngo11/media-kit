@@ -8,7 +8,7 @@ HOMEPAGE="https://gstreamer.freedesktop.org/"
 LICENSE="metapackage"
 SLOT="1.0"
 KEYWORDS="*"
-IUSE="aac a52 alsa cdda dts dv dvb dvd ffmpeg flac http jack lame libass libvisual mms mp3 modplug mpeg ogg opus oss pulseaudio taglib theora v4l vaapi vcd vorbis vpx wavpack X x264"
+IUSE="aac a52 alsa cdda dts dv dvb dvd ffmpeg flac http jack lame libass libvisual mms mp3 modplug mpeg ogg opus oss pulseaudio taglib theora v4l vcd vorbis vpx wavpack X x264"
 REQUIRED_USE="opus? ( ogg ) theora? ( ogg ) vorbis? ( ogg )"
 
 RDEPEND="
@@ -49,7 +49,6 @@ RDEPEND="
 	pulseaudio? ( >=media-plugins/gst-plugins-pulse-${PV}:1.0 )
 	taglib? ( >=media-plugins/gst-plugins-taglib-${PV}:1.0 )
 	v4l? ( >=media-plugins/gst-plugins-v4l2-${PV}:1.0 )
-	vaapi? ( >=media-plugins/gst-plugins-vaapi-{{ gst_vaapi_version }}:1.0 )
 	vcd? (
 		>=media-plugins/gst-plugins-mplex-${PV}:1.0
 		>=media-plugins/gst-plugins-mpeg2dec-${PV}:1.0 )
