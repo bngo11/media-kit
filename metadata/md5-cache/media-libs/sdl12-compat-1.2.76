@@ -11,6 +11,6 @@ RDEPEND=media-libs/libsdl2[alsa=,joystick=,opengl=,sound=,video=,X=] !media-libs
 REQUIRED_USE=test? ( joystick opengl sound video )
 RESTRICT=test
 SLOT=0
-SRC_URI=https://github.com/libsdl-org/sdl12-compat/tarball/8cb4550f9aff307e3df6ce628c2bb1287c6c105b -> sdl12-compat-1.2.74-8cb4550.tar.gz
+SRC_URI=https://github.com/libsdl-org/sdl12-compat/tarball/293b4cbd9eea61b18b9c9425d0c9200bff037360 -> sdl12-compat-1.2.76-293b4cb.tar.gz
 _eclasses_=cmake	ac7cb516f6a288b6a82bc0649ce49878	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	d0939f99dd528dd0c5ec25284877bf5c	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	e7575bc4a90349d76e72777013b2bbc2	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	xdg-utils	14d00d009167652b1fa363e55effe213
-_md5_=ba58991839da65176d43196a1469716b
+_md5_=c14aea535cc203a867897ff65e8ffa08

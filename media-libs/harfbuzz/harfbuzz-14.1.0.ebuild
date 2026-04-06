@@ -8,7 +8,7 @@ inherit flag-o-matic meson python-any-r1 xdg-utils
 
 DESCRIPTION="HarfBuzz text shaping engine"
 HOMEPAGE="https://github.com/harfbuzz/harfbuzz"
-SRC_URI="https://github.com/harfbuzz/harfbuzz/tarball/49844c32a7a3f6be371355a1213c952a3f4a44e7 -> harfbuzz-13.2.1-49844c3.tar.gz"
+SRC_URI="https://github.com/harfbuzz/harfbuzz/tarball/7c851afb28207004cbb1cb641d6503b028504258 -> harfbuzz-14.1.0-7c851af.tar.gz"
 
 LICENSE="Old-MIT ISC icu"
 KEYWORDS="*"

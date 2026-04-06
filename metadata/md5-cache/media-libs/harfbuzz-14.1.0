@@ -11,6 +11,6 @@ RDEPEND=cairo? ( x11-libs/cairo ) glib? ( >=dev-libs/glib-2.38:2 ) graphite? ( >
 REQUIRED_USE=introspection? ( glib )
 RESTRICT=!test? ( test )
 SLOT=0
-SRC_URI=https://github.com/harfbuzz/harfbuzz/tarball/49844c32a7a3f6be371355a1213c952a3f4a44e7 -> harfbuzz-13.2.1-49844c3.tar.gz
+SRC_URI=https://github.com/harfbuzz/harfbuzz/tarball/7c851afb28207004cbb1cb641d6503b028504258 -> harfbuzz-14.1.0-7c851af.tar.gz
 _eclasses_=eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	d0939f99dd528dd0c5ec25284877bf5c	meson	9dd80e336e5b53305fbef9693721928e	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	e7575bc4a90349d76e72777013b2bbc2	python-any-r1	54a3178500786b0a7ede4a23b7f2a6ad	python-utils-r1	c57a84554d3dca7c828e40d877b2dd7d	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	xdg-utils	14d00d009167652b1fa363e55effe213
-_md5_=e38eb33a7619a7d3229b6a6e2b198971
+_md5_=61879408ac791a4c55e9d4ae00f13ce4
