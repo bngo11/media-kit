@@ -4,7 +4,7 @@ EAPI=7
 
 DESCRIPTION="Image decoding for many popular formats for SDL."
 HOMEPAGE="https://www.libsdl.org/projects/SDL_image/"
-SRC_URI="https://github.com/libsdl-org/SDL_image/tarball/96a73a551a857b7c8d0ca3cc553a266eabbab6a7 -> SDL_image-3.4.2-96a73a5.tar.gz"
+SRC_URI="https://github.com/libsdl-org/SDL_image/tarball/bec9134a26c7d0f31b36d6083c25296e04cabff5 -> SDL_image-3.4.4-bec9134.tar.gz"
 
 LICENSE="ZLIB"
 SLOT="0"
