@@ -95,10 +95,8 @@ DEPEND="${COMMON_DEPEND}
 RESTRICT="!test? ( test )"
 
 PATCHES=(
-	"${FILESDIR}/${PN}-1.4.3-poppler-26.01.00.patch"
-	"${FILESDIR}/${PN}-1.4.3-poppler-26.02.00.patch"
-	"${FILESDIR}/${PN}-1.4.3-poppler-26.03.00.patch"
-	"${FILESDIR}/${PN}-1.4.3-poppler-26.04.00.patch"
+	"${FILESDIR}/${PN}-1.4.4-respect-EPYTHON.patch"
+	"${FILESDIR}/${PN}-1.4.4-poppler-26.05.00.patch"
 )
 
 pkg_pretend() {
