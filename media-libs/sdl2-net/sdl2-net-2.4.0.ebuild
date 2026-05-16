@@ -4,7 +4,7 @@ EAPI=7
 
 DESCRIPTION="A simple, cross-platform wrapper over TCP/IP sockets."
 HOMEPAGE="https://libsdl.org/projects/SDL_mixer/"
-SRC_URI="https://github.com/libsdl-org/SDL_net/tarball/669e75b84632e2c6cc5c65974ec9e28052cb7a4e -> SDL_net-2.2.0-669e75b.tar.gz"
+SRC_URI="https://github.com/libsdl-org/SDL_net/tarball/904600c6133e0435d627ec1878bfdfeac414a899 -> SDL_net-2.4.0-904600c.tar.gz"
 
 LICENSE="ZLIB"
 SLOT="0"
