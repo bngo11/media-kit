@@ -9,7 +9,7 @@ KEYWORDS="*"
 
 DESCRIPTION="Open h.265 video codec implementation"
 HOMEPAGE="https://github.com/strukturag/libde265"
-SRC_URI="https://api.github.com/repos/strukturag/libde265/tarball/refs/tags/v1.0.19 -> libde265-1.0.19-824b4138ecd51611d7073f1b50d5d6f982609b06.tar.gz"
+SRC_URI="https://api.github.com/repos/strukturag/libde265/tarball/refs/tags/v1.1.0 -> libde265-1.1.0-f0e5137ee10af674dcb5ac8ed5d02f5a102225af.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

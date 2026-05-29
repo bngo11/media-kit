@@ -4,7 +4,7 @@ EAPI=7
 
 DESCRIPTION="Library parsing the Corel cdr documents"
 HOMEPAGE="https://wiki.documentfoundation.org/DLP/Libraries/libcdr"
-SRC_URI="https://dev-www.libreoffice.org/src/libcdr/libcdr-0.1.8.tar.xz -> libcdr-0.1.8.tar.xz"
+SRC_URI="https://dev-www.libreoffice.org/src/libcdr/libcdr-0.1.9.tar.xz -> libcdr-0.1.9.tar.xz"
 KEYWORDS="*"
 
 LICENSE="MPL-2.0"
