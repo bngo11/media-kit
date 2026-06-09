@@ -8,7 +8,7 @@ inherit xdg autotools
 
 DESCRIPTION="Lightweight and versatile audio player"
 HOMEPAGE="https://audacious-media-player.org/"
-SRC_URI="https://github.com/audacious-media-player/audacious/tarball/354946d0fe96d9a477f1b0c76a374667a155d1af -> audacious-4.5.1-354946d.tar.gz"
+SRC_URI="https://github.com/audacious-media-player/audacious/tarball/17b29a330a106033ae96d57ce52f2c900e07addd -> audacious-4.6.1-17b29a3.tar.gz"
 
 LICENSE="BSD-2"
 SLOT="0"
