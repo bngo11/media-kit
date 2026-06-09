@@ -1,0 +1,12 @@
+DEFINED_PHASES=configure install
+DEPEND=media-libs/libsdl2
+DESCRIPTION=A simple, cross-platform wrapper over TCP/IP sockets.
+EAPI=7
+HOMEPAGE=https://libsdl.org/projects/SDL_mixer/
+IUSE=static-libs
+KEYWORDS=*
+LICENSE=ZLIB
+RDEPEND=media-libs/libsdl2
+SLOT=0
+SRC_URI=https://github.com/libsdl-org/SDL_net/tarball/1a84a2a6b9663572f77e2eb5348d42845bac0053 -> SDL_net-3.2.0-1a84a2a.tar.gz
+_md5_=ccd577d8c46a7f28d99ac045192523cb

@@ -1,0 +1,15 @@
+BDEPEND=>=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.17:1.17 ) >=sys-devel/autoconf-2.71 >=sys-devel/libtool-2.4
+DEFINED_PHASES=configure install postinst prepare
+DEPEND=media-libs/libsdl2 flac? ( media-libs/flac ) midi? ( fluidsynth? ( media-sound/fluidsynth ) timidity? ( media-sound/timidity++ ) ) mod? ( modplug? ( media-libs/libmodplug ) libxmp? ( media-libs/libxmp ) ) mp3? ( media-sound/mpg123 ) opus? ( media-libs/opusfile ) vorbis? ( tremor? ( media-libs/tremor ) !tremor? ( media-libs/libvorbis media-libs/libogg ) )
+DESCRIPTION=An audio mixer that supports various file formats for SDL.
+EAPI=7
+HOMEPAGE=https://libsdl.org/projects/SDL_mixer/
+IUSE=flac fluidsynth libxmp midi mod modplug mp3 opus playtools static-libs timidity tremor vorbis +wav
+KEYWORDS=*
+LICENSE=ZLIB
+RDEPEND=media-libs/libsdl2 flac? ( media-libs/flac ) midi? ( fluidsynth? ( media-sound/fluidsynth ) timidity? ( media-sound/timidity++ ) ) mod? ( modplug? ( media-libs/libmodplug ) libxmp? ( media-libs/libxmp ) ) mp3? ( media-sound/mpg123 ) opus? ( media-libs/opusfile ) vorbis? ( tremor? ( media-libs/tremor ) !tremor? ( media-libs/libvorbis media-libs/libogg ) )
+REQUIRED_USE=midi? ( || ( timidity fluidsynth ) ) timidity? ( midi ) fluidsynth? ( midi ) mod? ( || ( modplug libxmp ) ) modplug? ( mod ) libxmp? ( mod ) tremor? ( vorbis )
+SLOT=0
+SRC_URI=https://github.com/libsdl-org/SDL_mixer/tarball/72a81869b45e249e8e67102db4e98dd2441f05a1 -> SDL_mixer-3.2.4-72a8186.tar.gz
+_eclasses_=autotools	619846d0d85ed5d3334692c0215a603e	libtool	f143db5a74ccd9ca28c1234deffede96	multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=be84fe5f7188834811ef96ae14167800
