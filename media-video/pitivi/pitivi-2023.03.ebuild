@@ -22,7 +22,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 # Do not forget to check pitivi/check.py for dependencies!!!
 # gsound, libav, libnotify and v4l are optional
-GST_VER="1.28.3"
+GST_VER="1.28.4"
 
 COMMON_DEPEND="
 	${PYTHON_DEPS}
