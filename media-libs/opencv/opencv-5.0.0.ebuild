@@ -363,8 +363,8 @@ multilib_src_configure() {
 	# ===================================================
 	# Not building protobuf but update files bug #631418
 	# ===================================================
-		-DBUILD_PROTOBUF=OFF
-		-DPROTOBUF_UPDATE_FILES=ON
+		-DBUILD_PROTOBUF=ON
+		-DPROTOBUF_UPDATE_FILES=OFF
 	# ===================================================
 	# things we want to be hard enabled not worth useflag
 	# ===================================================

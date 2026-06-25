@@ -12,4 +12,4 @@ REQUIRED_USE=cuda? ( tesseract? ( opencl ) ) gflags? ( contrib ) glog? ( contrib
 SLOT=0/5.0.0
 SRC_URI=https://github.com/opencv/opencv/tarball/9e2ede9628a55ec2742a1b180d3e69b0322281b9 -> opencv-5.0.0-9e2ede9.tar.gz contrib? ( https://github.com/opencv/opencv_contrib/tarball/755e50675d97db9b7d449d8bd6b09888646f6c6e -> opencv_contrib-5.0.0-755e506.tar.gz )
 _eclasses_=cmake-multilib	b396704c8c04bb210b7b45dff5c67fea	cmake-utils	77cd39e6009811bf97a59d91ffd5b54f	eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	d0939f99dd528dd0c5ec25284877bf5c	multibuild	b2c915190b051f55a23b9354b9849847	multilib	d410501a125f99ffb560b0c523cd3d1e	multilib-build	dbed54cab0d2fac962c6342aeae40ef9	multilib-minimal	8bddda43703ba94d8341f4e247f97566	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	e7575bc4a90349d76e72777013b2bbc2	python-r1	5bbb250a8d0b8f4496dcef8e8c1c1a8a	python-utils-r1	c57a84554d3dca7c828e40d877b2dd7d	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	xdg-utils	14d00d009167652b1fa363e55effe213
-_md5_=7e01cc36a0ee3da328d805dca26977d2
+_md5_=da456b53ce2f018c3a93ab4e6c6110db
