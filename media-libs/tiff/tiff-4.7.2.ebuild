@@ -6,7 +6,7 @@ inherit autotools libtool
 
 DESCRIPTION="Tag Image File Format (TIFF) library"
 HOMEPAGE="http://libtiff.maptools.org"
-SRC_URI="https://download.osgeo.org/libtiff/tiff-4.7.1.tar.xz -> tiff-4.7.1.tar.xz"
+SRC_URI="https://download.osgeo.org/libtiff/tiff-4.7.2.tar.xz -> tiff-4.7.2.tar.xz"
 
 LICENSE="libtiff"
 SLOT="0"
