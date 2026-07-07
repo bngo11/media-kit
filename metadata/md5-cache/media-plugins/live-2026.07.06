@@ -9,6 +9,6 @@ KEYWORDS=*
 LICENSE=LGPL-2.1
 RDEPEND=ssl? ( !libressl? ( dev-libs/openssl:0= ) libressl? ( dev-libs/libressl:0= ) )
 SLOT=0/9
-SRC_URI=https://download.live555.com/live.2026.07.04.tar.gz -> live.2026.07.04.tar.gz
+SRC_URI=https://download.live555.com/live.2026.07.06.tar.gz -> live.2026.07.06.tar.gz
 _eclasses_=multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
-_md5_=b2d1e20d0e259905172b3acd0651a522
+_md5_=cd86eea78f1340ef42aecc7323c2d281

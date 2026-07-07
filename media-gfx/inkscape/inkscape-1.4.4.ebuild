@@ -98,6 +98,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-1.4.4-respect-EPYTHON.patch"
 	"${FILESDIR}/${PN}-1.4.4-poppler-26.05.00.patch"
 	"${FILESDIR}/${PN}-1.4.4-poppler-26.06.00.patch"
+	"${FILESDIR}/${PN}-1.4.4-poppler-26.07.00.patch"
 )
 
 pkg_pretend() {
