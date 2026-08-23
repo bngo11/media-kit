@@ -6,8 +6,8 @@ inherit cargo
 
 DESCRIPTION="Cross-platform ncurses Spotify client written in Rust, inspired by ncmpc and the likes."
 HOMEPAGE="https://github.com/hrkfdn/ncspot"
-SRC_URI="https://github.com/hrkfdn/ncspot/tarball/71861ff4e71b4aeda032a0547fad83ec5f126267 -> ncspot-1.3.4-71861ff.tar.gz
-https://direct.funtoo.org/1c/64/13/1c64135772174ef6425a7b3a0bde957ae561771d29e2c297d311adef700ec82df88b9fa5bd7364705ed99e2bcf0968bc6b6769e29103a84cd3776b0589cf5bb5 -> ncspot-1.3.4-funtoo-crates-bundle-dafe7559942324c5b19fd293e5e4cc85def50c55fe55ec65737fc3713719f08b156df170ebee9d6e7d5f28c63bf4c2d05ea0dd9501cef93be648fc92bda1263c.tar.gz"
+SRC_URI="https://github.com/hrkfdn/ncspot/tarball/1905c7967ab13c8dafa38e632205f4b53e745a0e -> ncspot-1.4.0-1905c79.tar.gz
+https://direct.funtoo.org/b5/04/3e/b5043e530050ae22a19ba61ae443e78b6b2dd7002fca8b7e416a9cc42b982cd7aee2beb8dcd81d2245b34c2d5929e6ae03878cdf265247597a272aed0178deed -> ncspot-1.4.0-funtoo-crates-bundle-50634be867748a8dc26a8216d514f4345bd13b09202716e15241fb29dc1b85a4a432f4bc51c669d45442e826aca49da28273ad3e0bd3a9440ab138722b4a066f.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
