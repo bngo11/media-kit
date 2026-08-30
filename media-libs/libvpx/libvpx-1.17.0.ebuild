@@ -6,7 +6,7 @@ inherit toolchain-funcs multilib-minimal
 
 DESCRIPTION="WebM VP8 and VP9 Codec SDK"
 HOMEPAGE="https://www.webmproject.org"
-SRC_URI="https://github.com/webmproject/libvpx/archive/v1.16.0.tar.gz -> libvpx-1.16.0.tar.gz"
+SRC_URI="https://github.com/webmproject/libvpx/archive/v1.17.0.tar.gz -> libvpx-1.17.0.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/6"

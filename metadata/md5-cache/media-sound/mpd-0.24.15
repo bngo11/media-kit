@@ -11,6 +11,6 @@ RDEPEND=sys-libs/liburing:= alsa? ( media-libs/alsa-lib media-sound/alsa-utils )
 REQUIRED_USE=|| ( alsa ao fifo jack network openal oss pipe pulseaudio sndio recorder ) || ( audiofile faad ffmpeg flac fluidsynth mad mikmod modplug mpg123 musepack opus flac sid vorbis wavpack wildmidi ) network? ( || ( audiofile flac lame twolame vorbis ) ) recorder? ( || ( audiofile flac lame twolame vorbis ) ) upnp? ( expat ) webdav? ( curl expat )
 RESTRICT=!test? ( test )
 SLOT=0
-SRC_URI=https://github.com/MusicPlayerDaemon/mpd/tarball/62b5bc313b9f20ffc66efa500235ecb620e2ea08 -> mpd-0.24.14-62b5bc3.tar.gz
+SRC_URI=https://github.com/MusicPlayerDaemon/mpd/tarball/b1c87eb85e9b211369e42433526b55469bf1b6c9 -> mpd-0.24.15-b1c87eb.tar.gz
 _eclasses_=eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	d0939f99dd528dd0c5ec25284877bf5c	linux-info	c90a203b1c14cfa77bd3e37a0e96c955	meson	9dd80e336e5b53305fbef9693721928e	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	e7575bc4a90349d76e72777013b2bbc2	python-utils-r1	c57a84554d3dca7c828e40d877b2dd7d	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	user	875055ddd565382c728563992ae3abf7	xdg-utils	14d00d009167652b1fa363e55effe213
-_md5_=d3b918376496aff4556c751412c4d9fa
+_md5_=aecc0bc110cc4f4a337bca5f373cd985
