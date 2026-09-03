@@ -14,6 +14,10 @@ KEYWORDS="*"
 
 S="${WORKDIR}/ldacBT"
 
+PATCHES=(
+	"${FILESDIR}/libldac-2.0.2.3-cmake4.patch"
+)
+
 src_configure() {
 	local mycmakeargs=(
 		-DLDAC_SOFT_FLOAT=OFF

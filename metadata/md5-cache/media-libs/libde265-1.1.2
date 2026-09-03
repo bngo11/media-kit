@@ -1,0 +1,14 @@
+BDEPEND=dec265? ( virtual/pkgconfig ) dev-util/ninja dev-util/cmake
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=dec265? ( sdl? ( media-libs/libsdl ) )
+DESCRIPTION=Open h.265 video codec implementation
+EAPI=7
+HOMEPAGE=https://github.com/strukturag/libde265
+IUSE=enc265 dec265 sdl tools
+KEYWORDS=*
+LICENSE=GPL-3
+RDEPEND=dec265? ( sdl? ( media-libs/libsdl ) )
+SLOT=0
+SRC_URI=https://api.github.com/repos/strukturag/libde265/tarball/refs/tags/v1.1.2 -> libde265-1.1.2-d0bcab76380c079358a3156b3e3b37d17c00a078.tar.gz
+_eclasses_=cmake	ac7cb516f6a288b6a82bc0649ce49878	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	d0939f99dd528dd0c5ec25284877bf5c	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	e7575bc4a90349d76e72777013b2bbc2	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	xdg-utils	14d00d009167652b1fa363e55effe213
+_md5_=a86ef3762d7a3df6db3b569c9120056c

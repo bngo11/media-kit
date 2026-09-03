@@ -11,7 +11,7 @@ SRC_URI="https://github.com/google/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~arm arm64 ~ia64 ~ppc ~ppc64 ~s390 ~sparc x86 ~amd64-fbsd ~amd64-linux ~x86-linux ~x64-macos ~x86-macos ~x64-solaris"
+KEYWORDS="*"
 IUSE=""
 
 RDEPEND="app-arch/brotli"
@@ -19,8 +19,15 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 "
 
+PATCHES=(
+	"${FILESDIR}/woff2-1.0.2-aliasing.patch"
+	"${FILESDIR}/woff2-1.0.2-gcc15.patch"
+	"${FILESDIR}/woff2-cmake-minimum-ver-3.10.patch"
+)
+
 src_configure() {
 	local mycmakeargs=(
+		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 		-DCMAKE_SKIP_RPATH=ON # needed, causes QA warnings otherwise
 		-DCANONICAL_PREFIXES=ON #661942
 	)
