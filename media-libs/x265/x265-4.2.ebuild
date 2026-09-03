@@ -6,14 +6,15 @@ inherit cmake-utils multilib-minimal multilib multibuild flag-o-matic
 
 DESCRIPTION="Library for encoding video streams into the H.265/HEVC format"
 HOMEPAGE="http://x265.org/ https://bitbucket.org/multicoreware/x265_git/wiki/Home"
-SRC_URI="https://bitbucket.org/multicoreware/x265_git/get/${PV}.tar.bz2 -> ${P}.tar.bz2"
+SRC_URI="https://api.bitbucket.org/2.0/repositories/multicoreware/x265_git/downloads/${PN}_${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 # subslot = libx265 soname
-SLOT="0/192"
+SLOT="0/215"
 IUSE="+10bit +12bit cpu_flags_arm_neon cpu_flags_ppc_vsx2 numa pic test"
 KEYWORDS="*"
 RESTRICT="!test? ( test )"
+S="${WORKDIR}/${PN}_${PV}/source"
 
 RDEPEND="numa? ( >=sys-process/numactl-2.0.10-r1[${MULTILIB_USEDEP}] )"
 DEPEND="${RDEPEND}"
@@ -23,13 +24,8 @@ BDEPEND="
 	abi_x86_64? ( ${ASM_DEPEND} )"
 
 PATCHES=(
-	"${FILESDIR}/x265-3.6-cmake-cleanup.patch"
+#	"${FILESDIR}/x265-3.6-cmake-cleanup.patch"
 )
-
-src_unpack() {
-	unpack ${A}
-	export S="$(echo "${WORKDIR}/multicoreware-x265_git-"*"/source" )"
-}
 
 # By default, the library and the encoder is configured for only one output bit
 # depth. Meaning, one has to rebuild libx265 if (s)he wants to produce HEVC
