@@ -10,6 +10,6 @@ LICENSE=BSD
 RDEPEND=app-arch/brotli:= >=dev-cpp/highway-1.0.7 media-libs/giflib:= >=media-libs/lcms-2.13:2 media-libs/libjpeg-turbo:= media-libs/libpng:= >=x11-misc/shared-mime-info-2.2 openexr? ( media-libs/openexr:= ) test? ( dev-cpp/gtest )
 RESTRICT=!test? ( test )
 SLOT=0
-SRC_URI=https://github.com/libjxl/libjxl/archive/refs/tags/v0.12.0.tar.gz -> libjxl-0.12.0.tar.gz test? ( https://github.com/libjxl/testdata/archive/d6168ffb9e1cc24007e64b65dd84d822ad1fc759.tar.gz -> libjxl-testdata-d6168ffb9e1cc24007e64b65dd84d822ad1fc759.tar.gz )
+SRC_URI=https://github.com/libjxl/libjxl/archive/refs/tags/v0.12.0.tar.gz -> libjxl-0.12.0.tar.gz test? ( https://github.com/libjxl/testdata/archive/73695d303670c90e4d506ea89d9901b081385089.tar.gz -> libjxl-testdata-73695d303670c90e4d506ea89d9901b081385089.tar.gz )
 _eclasses_=cmake	ac7cb516f6a288b6a82bc0649ce49878	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	d0939f99dd528dd0c5ec25284877bf5c	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	ninja-utils	e7575bc4a90349d76e72777013b2bbc2	toolchain-funcs	24921b57d6561d87cbef4916a296ada4	xdg-utils	14d00d009167652b1fa363e55effe213
-_md5_=23e08ece3e258912c98d8b7f851fda07
+_md5_=2ecc5d808a6c356e32bdf751f8ab5cdb
