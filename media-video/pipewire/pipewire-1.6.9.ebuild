@@ -10,7 +10,7 @@ RESTRICT="mirror"
 
 DESCRIPTION="Multimedia processing graphs"
 HOMEPAGE="http://pipewire.org/"
-SRC_URI="https://github.com/PipeWire/pipewire/tarball/b741e0c74f5436f0c925f7741140db0efd32cf4e -> pipewire-1.6.8-b741e0c.tar.gz"
+SRC_URI="https://github.com/PipeWire/pipewire/tarball/8fa27cabdc6c0c1350c69c026af5850ef0af1e26 -> pipewire-1.6.9-8fa27ca.tar.gz"
 
 LICENSE="MIT LGPL-2.1+ GPL-2"
 SLOT="0"
@@ -42,6 +42,7 @@ BDEPEND="
 	)
 "
 RDEPEND="
+	sys-auth/rtkit
 	media-libs/alsa-lib
 	sys-apps/dbus
 	sys-libs/readline:=

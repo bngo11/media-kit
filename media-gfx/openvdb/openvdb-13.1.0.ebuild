@@ -8,7 +8,7 @@ inherit cmake flag-o-matic python-single-r1
 
 DESCRIPTION="Library for the efficient manipulation of volumetric data"
 HOMEPAGE="https://www.openvdb.org"
-SRC_URI="https://github.com/AcademySoftwareFoundation/openvdb/tarball/7c03e1f084873cd1b3422c7ff7aec6ee681b3b38 -> openvdb-13.0.0-7c03e1f.tar.gz"
+SRC_URI="https://github.com/AcademySoftwareFoundation/openvdb/tarball/e26f5a569201d3236e0c30580572101022d3d754 -> openvdb-13.1.0-e26f5a5.tar.gz"
 
 LICENSE="MPL-2.0"
 SLOT="0"
