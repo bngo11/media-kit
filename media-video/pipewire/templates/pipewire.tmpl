@@ -212,6 +212,9 @@ src_install() {
 		dosym ../../../usr/share/alsa/alsa.conf.d/99-pipewire-default-hook.conf /etc/alsa/conf.d/99-pipewire-default-hook.conf
 	fi
 
+	exeinto /etc/user/init.d
+	newexe "${FILESDIR}/pipewire.initd" pipewire
+
 	# Enable required wireplumber alsa and bluez monitors
 	if use sound-server; then
 		dodir /etc/wireplumber/main.lua.d

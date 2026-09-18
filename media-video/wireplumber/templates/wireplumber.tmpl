@@ -13,7 +13,8 @@ LUA_COMPAT=( lua5-{3,4} )
 
 inherit lua-single meson systemd
 
-SRC_URI="https://gitlab.freedesktop.org/pipewire/${PN}/-/archive/${PV}/${P}.tar.bz2"
+#SRC_URI="https://gitlab.freedesktop.org/pipewire/${PN}/-/archive/${PV}/${P}.tar.bz2"
+SRC_URI="{{ src_uri }}"
 KEYWORDS="*"
 
 DESCRIPTION="Replacement for pipewire-media-session"
@@ -55,7 +56,7 @@ RDEPEND="${DEPEND}
 DOCS=( {NEWS,README}.rst )
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-0.4.15-config-disable-sound-server-parts.patch # defer enabling sound server parts to media-video/pipewire
+#	"${FILESDIR}"/${PN}-0.4.15-config-disable-sound-server-parts.patch # defer enabling sound server parts to media-video/pipewire
 )
 
 src_configure() {
@@ -78,6 +79,13 @@ src_configure() {
 	)
 
 	meson_src_configure
+}
+
+src_install() {
+	meson_src_install
+
+	exeinto /etc/user/init.d
+	newexe "${FILESDIR}/wireplumber.initd" wireplumber
 }
 
 pkg_postinst() {
