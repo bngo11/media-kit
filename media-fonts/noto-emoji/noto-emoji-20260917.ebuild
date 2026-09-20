@@ -8,7 +8,7 @@ inherit font python-any-r1
 DESCRIPTION="Google Noto Emoji fonts"
 HOMEPAGE="https://www.google.com/get/noto/ https://github.com/googlefonts/noto-emoji"
 
-SRC_URI="https://github.com/googlefonts/noto-emoji/tarball/8998f5dd683424a73e2314a8c1f1e359c19e8742 -> noto-emoji-20250912-8998f5dd683424a73e2314a8c1f1e359c19e8742.tar.gz"
+SRC_URI="https://github.com/googlefonts/noto-emoji/tarball/06121655d0e82f9cae6e7ba6feed4fa6fdbfc2a4 -> noto-emoji-20260917-06121655d0e82f9cae6e7ba6feed4fa6fdbfc2a4.tar.gz"
 
 LICENSE="Apache-2.0 OFL-1.1"
 SLOT="0"
