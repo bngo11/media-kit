@@ -8,7 +8,7 @@ MY_PN=OpenEXR
 
 DESCRIPTION="ILM's OpenEXR high dynamic-range image file format libraries"
 HOMEPAGE="https://www.openexr.com/"
-SRC_URI="https://github.com/AcademySoftwareFoundation/openexr/tarball/4423edbe101a78da06c32ada013cc13ce27954c9 -> openexr-3.4.15-4423edb.tar.gz"
+SRC_URI="https://github.com/AcademySoftwareFoundation/openexr/tarball/a11a3b5773d72fdd9fa03fcf148a03f0feadea89 -> openexr-3.5.0-a11a3b5.tar.gz"
 
 LICENSE="BSD"
 SLOT="0/${PV}"
