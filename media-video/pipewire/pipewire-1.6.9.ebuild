@@ -217,11 +217,10 @@ src_install() {
 
 	# Enable required wireplumber alsa and bluez monitors
 	if use sound-server; then
-		dodir /etc/wireplumber/main.lua.d
-		echo "alsa_monitor.enabled = true" > "${ED}"/etc/wireplumber/main.lua.d/89-gentoo-sound-server-enable-alsa-monitor.lua || die
+		newexe "${FILESDIR}/pipewire-pulse.initd" pipewire-pulse
 
-		dodir /etc/wireplumber/bluetooth.lua.d
-		echo "bluez_monitor.enabled = true" > "${ED}"/etc/wireplumber/bluetooth.lua.d/89-gentoo-sound-server-enable-bluez-monitor.lua || die
+		insinto /etc/wireplumber/wireplumber.conf.d
+		doins "${FILESDIR}/10-enable-audio-bluetooth.conf"
 	fi
 
 	insinto /etc/xdg/autostart
@@ -237,6 +236,7 @@ src_install() {
 
 	eprefixify "${ED}"/usr/libexec/pipewire-launcher
 }
+
 pkg_postinst() {
 	elog "It is recommended to raise RLIMIT_MEMLOCK to 256 for users"
 	elog "using PipeWire. Do it either manually or add yourself"
