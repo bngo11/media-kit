@@ -188,7 +188,7 @@ src_configure() {
 		# libtool file collision, bug #276609
 		--without-included-ltdl
 		--disable-ltdl-install
-		QMAKE=$(usev qt5 qmake5)
+		QMAKE=$(usev qt5)
 	)
 	econf "${myconf[@]}"
 }
