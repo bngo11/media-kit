@@ -14,7 +14,7 @@ LUA_COMPAT=( lua5-{3,4} )
 inherit lua-single meson systemd
 
 #SRC_URI="https://gitlab.freedesktop.org/pipewire/${PN}/-/archive/${PV}/${P}.tar.bz2"
-SRC_URI="https://gitlab.freedesktop.org/pipewire/wireplumber/-/archive/0.5.17/wireplumber-0.5.17.tar.bz2 -> wireplumber-0.5.17.tar.bz2"
+SRC_URI="https://gitlab.freedesktop.org/pipewire/wireplumber/-/archive/0.5.18/wireplumber-0.5.18.tar.bz2 -> wireplumber-0.5.18.tar.bz2"
 KEYWORDS="*"
 
 DESCRIPTION="Replacement for pipewire-media-session"
