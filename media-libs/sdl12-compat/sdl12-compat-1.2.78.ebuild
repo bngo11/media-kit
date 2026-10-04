@@ -6,7 +6,7 @@ inherit cmake
 
 DESCRIPTION="Simple Direct Media Layer 1.2 compatibility wrapper around SDL2"
 HOMEPAGE="https://github.com/libsdl-org/sdl12-compat"
-SRC_URI="https://github.com/libsdl-org/sdl12-compat/tarball/293b4cbd9eea61b18b9c9425d0c9200bff037360 -> sdl12-compat-1.2.76-293b4cb.tar.gz"
+SRC_URI="https://github.com/libsdl-org/sdl12-compat/tarball/07043bdcfd0d16ea8f14fe2a375089d00566a5e9 -> sdl12-compat-1.2.78-07043bd.tar.gz"
 
 LICENSE="ZLIB"
 SLOT="0"

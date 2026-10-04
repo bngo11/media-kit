@@ -88,8 +88,8 @@ EGO_SUM=(
 	"golang.org/x/net v0.0.0-20210226172049-e18ecbb05110/go.mod"
 	"golang.org/x/net v0.0.0-20220722155237-a158d28d115b/go.mod"
 	"golang.org/x/net v0.6.0/go.mod"
-	"golang.org/x/net v0.57.0"
-	"golang.org/x/net v0.57.0/go.mod"
+	"golang.org/x/net v0.58.0"
+	"golang.org/x/net v0.58.0/go.mod"
 	"golang.org/x/sync v0.0.0-20190423024810-112230192c58/go.mod"
 	"golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4/go.mod"
 	"golang.org/x/sync v0.1.0/go.mod"
@@ -105,8 +105,8 @@ EGO_SUM=(
 	"golang.org/x/sys v0.1.0/go.mod"
 	"golang.org/x/sys v0.5.0/go.mod"
 	"golang.org/x/sys v0.6.0/go.mod"
-	"golang.org/x/sys v0.47.0"
-	"golang.org/x/sys v0.47.0/go.mod"
+	"golang.org/x/sys v0.48.0"
+	"golang.org/x/sys v0.48.0/go.mod"
 	"golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1/go.mod"
 	"golang.org/x/term v0.0.0-20210220032956-6a3ed077a48d/go.mod"
 	"golang.org/x/term v0.0.0-20210615171337-6886f2dfbf5b/go.mod"
@@ -119,8 +119,8 @@ EGO_SUM=(
 	"golang.org/x/text v0.3.7/go.mod"
 	"golang.org/x/text v0.7.0/go.mod"
 	"golang.org/x/text v0.9.0/go.mod"
-	"golang.org/x/text v0.40.0"
-	"golang.org/x/text v0.40.0/go.mod"
+	"golang.org/x/text v0.41.0"
+	"golang.org/x/text v0.41.0/go.mod"
 	"golang.org/x/tools v0.0.0-20180917221912-90fa682c2a6e/go.mod"
 	"golang.org/x/tools v0.0.0-20191119224855-298f0cb1881e/go.mod"
 	"golang.org/x/tools v0.1.12/go.mod"
@@ -140,14 +140,14 @@ go-module_set_globals
 
 DESCRIPTION="Commandline tool to customize Spotify client."
 HOMEPAGE="https://github.com/khanhas/spicetify-cli"
-SRC_URI="https://github.com/spicetify/spicetify-cli/tarball/c01a9db39d008e4331f4d91d79012060e73ae643 -> spicetify-cli-2.45.1-c01a9db.tar.gz
-https://direct.funtoo.org/72/a6/31/72a631f9f9bd210300e6a2fcf8500093cb9af025513f25b9639951598ef06d324716bf5381f66f41316f1f81390f4431a542c01b59d37459796e6340ea9bc801 -> spicetify-cli-2.45.1-funtoo-go-bundle-cf3af28b26c2efd9de6c135719549d759ba334eab72ce33c4b1b3fc0d4de29c00bb14ac00a868ed537033ac7e2087bd628a4190eea193aaa3dd9f34f0a26e967.tar.gz"
+SRC_URI="https://github.com/spicetify/spicetify-cli/tarball/8c92e3067de9659caca4c9da7979da3897458e27 -> spicetify-cli-2.45.3-8c92e30.tar.gz
+https://direct.funtoo.org/66/ec/42/66ec42743441ca73313db9895837f8e053a0d9a4c9738202b03bcbb3ef9ac119fe8e395dc3f07b25d3412a3bbb5d7cfa6d17cc11cad1b11ab9b7a2e861eeaff1 -> spicetify-cli-2.45.3-funtoo-go-bundle-950b76e784c454f7765cce45ba20074833f1d36470c755e9db894f80b30ce1e28155c7a815db207caf8678590e185c4da15834a87648b98fc5be2a2f1d35c0e6.tar.gz"
 
 LICENSE="Apache-2.0 BSD GPL-3 MIT"
 SLOT="0"
 KEYWORDS="*"
 IUSE="hook"
-S="${WORKDIR}/spicetify-cli-c01a9db"
+S="${WORKDIR}/spicetify-cli-8c92e30"
 
 INSTALLDIR="/opt/${PN}"
 
