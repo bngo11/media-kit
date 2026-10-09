@@ -1,0 +1,12 @@
+DEFINED_PHASES=configure install
+DEPEND=media-libs/libsdl2 sys-libs/zlib png? ( media-libs/libpng ) jpeg? ( virtual/jpeg ) tiff? ( media-libs/tiff ) webp? ( media-libs/libwebp )
+DESCRIPTION=Image decoding for many popular formats for SDL.
+EAPI=7
+HOMEPAGE=https://www.libsdl.org/projects/SDL_image/
+IUSE=gif jpeg png static-libs tiff webp
+KEYWORDS=*
+LICENSE=ZLIB
+RDEPEND=media-libs/libsdl2 sys-libs/zlib png? ( media-libs/libpng ) jpeg? ( virtual/jpeg ) tiff? ( media-libs/tiff ) webp? ( media-libs/libwebp )
+SLOT=0
+SRC_URI=https://github.com/libsdl-org/SDL_image/tarball/0891fc30428b518e7d018677bd6fa95c1a50f4c6 -> SDL_image-3.4.8-0891fc3.tar.gz
+_md5_=d4736c5f4d66041f99c9eff43cec2e0f
