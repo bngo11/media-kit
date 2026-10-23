@@ -6,7 +6,7 @@ inherit flag-o-matic linux-info meson xdg-utils user
 
 DESCRIPTION="The Music Player Daemon (mpd)"
 HOMEPAGE="https://www.musicpd.org https://github.com/MusicPlayerDaemon/MPD"
-SRC_URI="https://github.com/MusicPlayerDaemon/mpd/tarball/a07478faa8c94cef77b22e62d755ab19e30b9085 -> mpd-0.24.16-a07478f.tar.gz"
+SRC_URI="https://github.com/MusicPlayerDaemon/mpd/tarball/83202ab4fb35196023163b007e537c0e60da8200 -> mpd-0.24.17-83202ab.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
