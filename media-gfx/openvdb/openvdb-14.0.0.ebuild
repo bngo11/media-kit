@@ -8,17 +8,17 @@ inherit cmake flag-o-matic python-single-r1
 
 DESCRIPTION="Library for the efficient manipulation of volumetric data"
 HOMEPAGE="https://www.openvdb.org"
-SRC_URI="https://github.com/AcademySoftwareFoundation/openvdb/tarball/d05b564ad165aa0f6fc15f52d59ef5703105a50c -> openvdb-13.2.0-d05b564.tar.gz"
+SRC_URI="https://github.com/AcademySoftwareFoundation/openvdb/tarball/ecae2bda85744412b0cd47e1b8e1e4e76beb7b88 -> openvdb-14.0.0-ecae2bd.tar.gz"
 
 LICENSE="MPL-2.0"
 SLOT="0"
 KEYWORDS="*"
-IUSE="cpu_flags_x86_avx cpu_flags_x86_sse4_2 +blosc doc numpy python static-libs test utils zlib abi11-compat abi12-compat +abi13-compat"
+IUSE="cpu_flags_x86_avx cpu_flags_x86_sse4_2 +blosc doc numpy python static-libs test utils zlib abi12-compat abi13-compat +abi14-compat"
 RESTRICT="test"
 
 REQUIRED_USE="
 	numpy? ( python )
-	^^ ( abi11-compat abi12-compat abi13-compat )
+	^^ ( abi12-compat abi13-compat abi14-compat )
 	python? ( ${PYTHON_REQUIRED_USE} )
 "
 
@@ -82,12 +82,12 @@ src_configure() {
 	local myprefix="${EPREFIX}/usr/"
 
 	local version
-	if use abi11-compat; then
-		version=11
-	elif use abi12-compat; then
+	if use abi12-compat; then
 		version=12
 	elif use abi13-compat; then
 		version=13
+	elif use abi14-compat; then
+		version=14
 	else
 		die "Openvdb abi version is not compatible"
 	fi
